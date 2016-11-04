@@ -23,7 +23,8 @@ namespace Communitel.Views.helpers
             http.Method = "POST";
             
             ASCIIEncoding encoding = new ASCIIEncoding();
-            if(parsedContent != "") { Byte[] bytes = encoding.GetBytes(parsedContent);
+            if(parsedContent != "") {
+                Byte[] bytes = encoding.GetBytes(parsedContent);
                 Stream newStream = http.GetRequestStream();
                 newStream.Write(bytes, 0, bytes.Length);
                 newStream.Close();

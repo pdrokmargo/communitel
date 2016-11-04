@@ -34,6 +34,10 @@ namespace Communitel.Views
             grdOverlay.Visibility = Visibility.Collapsed;
             dynamic user = App.Current.Properties["User"];
             txbWelcomeUser.Text += (string)user["firstname"] + " " + (string)user["lastname"];
+            if (true)
+            {
+                
+            }
         }
     }
 }
