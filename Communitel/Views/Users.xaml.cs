@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Communitel.Views.Views
+namespace Communitel.Views
 {
     /// <summary>
     /// Interaction logic for Users.xaml

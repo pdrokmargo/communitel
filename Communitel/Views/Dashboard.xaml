@@ -66,15 +66,6 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <TextBlock x:Name="txbWelcomeUser" Text="Bienvenido, " Grid.Column="0" Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="1" Foreground="White" FontSize="29.333"/>
-            <Grid x:Name="grdMenuOption1" Background="#FF10354F" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2"/>
-            <Grid x:Name="grdMenuOption2" Background="#FF83C720" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2"/>
-            <Grid x:Name="grdMenuOption3" Background="#FF35104F" Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2"/>
-            <Grid x:Name="grdMenuOption4" Background="#FFCBBB1B" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Grid.RowSpan="2"/>
-            <Grid x:Name="grdMenuOption5" Background="#FFD3582A" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="4" Grid.RowSpan="2"/>
-            <Grid x:Name="grdMenuOption6" Background="#FF4F1021" Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="4" Grid.RowSpan="2"/>
-            <Grid x:Name="grdMenuOption7" Background="#FF12C1A1" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7" Grid.RowSpan="2"/>
-            <Grid x:Name="grdMenuOption8" Background="#FFB9064F" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="7" Grid.RowSpan="2"/>
-            <Grid x:Name="grdMenuOption9" Background="#FF397591" Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="7" Grid.RowSpan="2"/>
         </Grid>
 
 

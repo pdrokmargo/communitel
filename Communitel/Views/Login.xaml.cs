@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
-
+using Communitel.Views;
 using Communitel.Views.helpers;
 
 
@@ -46,7 +46,6 @@ namespace Communitel.Views
                 dynamic obj = svc.requestToken("/oauth/token", parsedContent);
                 App.Current.Properties["Token"] = (string)obj["access_token"];
                 App.Current.Properties["User"] = svc.GET("/api/userIdentity/" + txtUsername.Text, (string)App.Current.Properties["Token"]);
-
                 Dashboard dsh = ((Dashboard)((Grid)((Grid)this.Parent).Parent).Parent);
                 dsh.InitDashboard();
             }
