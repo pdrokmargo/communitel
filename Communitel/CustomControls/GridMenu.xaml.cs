@@ -30,9 +30,6 @@ namespace Communitel.Views.CustomControls
             OptionMenuViewModel opv = new OptionMenuViewModel();
             grdMenu.DataContext = opv.Menu;
             Label lbl = new Label();
-            grdMenu.Children = { lbl };
-            
-            //grdMenu.Children.
         }
     }
 }

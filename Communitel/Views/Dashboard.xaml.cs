@@ -26,6 +26,7 @@ namespace Communitel.Views
             Login login = new Login();
             grdOverlay.Children.Add(login);
             grdMenu.Visibility = Visibility.Collapsed;
+           
         }
         public void InitDashboard()
         {

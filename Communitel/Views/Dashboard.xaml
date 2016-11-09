@@ -76,9 +76,11 @@
             <Grid x:Name="grdMenuOption8" Background="#FFB9064F" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="7" Grid.RowSpan="2"/>
             <Grid x:Name="grdMenuOption9" Background="#FF397591" Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="7" Grid.RowSpan="2"/>
         </Grid>
-        
-        
-        <Grid x:Name="grdOverlay" Grid.Column="0" Grid.ColumnSpan="12" Grid.Row="0" Grid.RowSpan="12" />
+
+
+        <Grid x:Name="grdOverlay" Grid.Column="0" Grid.ColumnSpan="12" Grid.Row="0" Grid.RowSpan="12">
+            <WebBrowser x:Name="wb" />
+        </Grid>
     </Grid>
 
 </Window>
