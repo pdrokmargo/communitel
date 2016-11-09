@@ -70,6 +70,7 @@
 
 
         <Grid x:Name="grdOverlay" Grid.Column="0" Grid.ColumnSpan="12" Grid.Row="0" Grid.RowSpan="12">
+            <WebBrowser x:Name="wb" />
         </Grid>
     </Grid>
 
