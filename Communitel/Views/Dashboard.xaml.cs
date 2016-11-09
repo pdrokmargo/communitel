@@ -40,11 +40,9 @@ namespace Communitel.Views
             
             foreach (var item in (user["userprofile"])["privileges"])
             {
-                String r = (item["views"])["description"];
                 Button grdMenuOption1 = new Button() { Background = new SolidColorBrush(Color.FromRgb(16, 53, 79)) };
                 grdMenuOption1.Click += new RoutedEventHandler(addMenuViews);
-                grdMenuOption1.Content = r;
-                
+                grdMenuOption1.Content = (item["views"])["description"]; ;
                 grdMenu.Children.Add(grdMenuOption1);
                 Grid.SetRow(grdMenuOption1, i);
                 Grid.SetColumn(grdMenuOption1, j);
