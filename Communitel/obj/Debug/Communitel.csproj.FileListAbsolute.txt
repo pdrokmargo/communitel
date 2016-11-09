@@ -69,3 +69,4 @@ C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\o
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.g.resources
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.Views.Properties.Resources.resources
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache
