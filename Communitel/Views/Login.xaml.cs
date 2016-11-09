@@ -16,7 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 using Communitel.Views;
-using Communitel.Views.helpers;
+using Communitel.helpers;
 
 
 namespace Communitel.Views

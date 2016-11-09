@@ -25,7 +25,7 @@ namespace Communitel.Views
         {
             InitializeComponent();
             ServiceRequest svc = new ServiceRequest();
-            dynamic obj = svc.GET("/api/config", (string)App.Current.Properties["Token"]);
+            dynamic obj = svc.GET("/api/config");
             grd.DataContext = obj;
         }
 
@@ -40,7 +40,7 @@ namespace Communitel.Views
             ServiceRequest svc = new ServiceRequest();
 
             string parsedContent = "tax_percent=" + txtTax.Text + "&expiry_days=" + txtExpiryDays.Text + "&red_price=" + txtRedPrice.Text + "&yellow_price=" + txtYellowPrice.Text + "&green_price=" + txtGreenPrice.Text;
-            dynamic obj = svc.PUT("/api/config/change", (string)App.Current.Properties["Token"], parsedContent);
+            dynamic obj = svc.PUT("/api/config/change", parsedContent);
 
         }
     }

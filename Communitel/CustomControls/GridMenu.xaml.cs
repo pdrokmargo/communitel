@@ -29,14 +29,10 @@ namespace Communitel.Views.CustomControls
         {
             OptionMenuViewModel opv = new OptionMenuViewModel();
             grdMenu.DataContext = opv.Menu;
-<<<<<<< HEAD
+
 
             Label lbl = new Label();
-=======
-            Label lbl = new Label();
-            
-            
->>>>>>> origin/users_ui
+
         }
     }
 }
