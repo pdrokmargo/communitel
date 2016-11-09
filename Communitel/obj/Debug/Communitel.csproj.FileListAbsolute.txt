@@ -56,3 +56,4 @@ C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Deb
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\App.g.cs
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel_MarkupCompile.cache
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel_MarkupCompile.lref
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\Communitel.exe.config
