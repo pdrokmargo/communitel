@@ -45,7 +45,7 @@ namespace Communitel.Views
                 string parsedContent = "grant_type=password&client_id="+ConfigurationManager.AppSettings["clientID"] + "&client_secret=" + ConfigurationManager.AppSettings["clientSecret"] + "&username=" + txtUsername.Text + "&password=" + txtPassword.Password + "&scope=";
                 dynamic obj = svc.requestToken("/oauth/token", parsedContent);
                 App.Current.Properties["Token"] = (string)obj["access_token"];
-                App.Current.Properties["User"] = svc.GET("/api/userIdentity/" + txtUsername.Text, (string)App.Current.Properties["Token"]);
+                App.Current.Properties["User"] = svc.GET("/api/userIdentity/" + txtUsername.Text);
                 Dashboard dsh = ((Dashboard)((Grid)((Grid)this.Parent).Parent).Parent);
                 dsh.InitDashboard();
             }

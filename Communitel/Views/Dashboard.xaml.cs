@@ -20,7 +20,7 @@ namespace Communitel.Views
     /// </summary>
     public partial class Dashboard : Window
     {
-
+        public int user_profile_id { get; set; }
         public Dashboard()
         {
             InitializeComponent();
@@ -66,31 +66,37 @@ namespace Communitel.Views
                     
                 }
             }
+
+            
         }
         void addMenuViews(object sender, RoutedEventArgs e)
         {
-            if(((Button)sender).Content.ToString().ToLower().CompareTo("configuration") == 0)
+            if (((Button)sender).Content.ToString().ToLower().CompareTo("configuration") == 0)
             {
                 grdOverlay.Children.Clear();
                 Configuration cng = new Configuration();
                 grdOverlay.Children.Add(cng);
                 grdMenu.Visibility = Visibility.Collapsed;
                 grdOverlay.Visibility = Visibility.Visible;
-            }else if (((Button)sender).Content.ToString().ToLower().CompareTo("users") == 0)
+            }
+            else if (((Button)sender).Content.ToString().ToLower().CompareTo("users") == 0)
             {
                 grdOverlay.Children.Clear();
-                Users cng = new Users();
+                dynamic gp = GetPrivilege("Users");
+                Users cng = new Users(gp, user_profile_id);
                 grdOverlay.Children.Add(cng);
                 grdMenu.Visibility = Visibility.Collapsed;
                 grdOverlay.Visibility = Visibility.Visible;
-            }else if (((Button)sender).Content.ToString().ToLower().CompareTo("inventory") == 0)
+            }
+            else if (((Button)sender).Content.ToString().ToLower().CompareTo("inventory") == 0)
             {
                 grdOverlay.Children.Clear();
                 /*Configuration cng = new Configuration();
                 grdOverlay.Children.Add(cng);
                 grdMenu.Visibility = Visibility.Collapsed;
                 grdOverlay.Visibility = Visibility.Visible;*/
-            }if(((Button)sender).Content.ToString().ToLower().CompareTo("parameter") == 0)
+            }
+            if (((Button)sender).Content.ToString().ToLower().CompareTo("parameter") == 0)
             {
                 grdOverlay.Children.Clear();
                 /*Configuration cng = new Configuration();
@@ -99,6 +105,20 @@ namespace Communitel.Views
                 grdOverlay.Visibility = Visibility.Visible;*/
             }
 
+        }
+        private dynamic GetPrivilege(String description)
+        {
+            dynamic user = App.Current.Properties["User"];
+            user_profile_id = (int)user.user_profile_id;
+            foreach (var item in user.userprofile.privileges)
+            {
+                string viewName = item.views.description;
+                if (viewName.Equals(description))
+                {
+                    return item;
+                }
+            }
+            return null;
         }
     }
 }

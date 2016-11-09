@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\
-Communitel.Views
+C:\communitel\Communitel\obj\Debug\
+Communitel
 none
 false
 DEBUG;TRACE
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\App.xaml
+C:\communitel\Communitel\App.xaml
 61203578553
 
-17-307695061
-19716658748
+17597998531
+15-1524503325
 CustomControls\GridMenu.xaml;Views\Configuration.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Users.xaml;
 
-True
+False
 
