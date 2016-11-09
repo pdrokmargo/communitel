@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using Communitel;
+using Communitel.Views;
 using System;
 using System.Diagnostics;
 using System.Windows;
