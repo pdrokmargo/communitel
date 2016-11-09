@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Communitel.Views
+namespace Communitel.Views.Views
 {
     /// <summary>
-    /// Interaction logic for Users.xaml
+    /// Lógica de interacción para Users.xaml
     /// </summary>
     public partial class Users : UserControl
     {
         public Users()
         {
             InitializeComponent();
-            view_user.Visibility = System.Windows.Visibility.Hidden;
-        }
-
-        private void showUser() {
-            view_user.Visibility = System.Windows.Visibility.Visible;
-            view_users.Visibility = System.Windows.Visibility.Hidden;
-        }
-        private void showUsers() {
-            view_users.Visibility = System.Windows.Visibility.Visible;
-            view_user.Visibility = System.Windows.Visibility.Hidden;
         }
     }
 }
