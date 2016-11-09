@@ -72,6 +72,14 @@ namespace Communitel.Views {
         #line default
         #line hidden
         
+        
+        #line 73 "..\..\..\Views\Dashboard.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.WebBrowser wb;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -113,6 +121,9 @@ namespace Communitel.Views {
             return;
             case 4:
             this.grdOverlay = ((System.Windows.Controls.Grid)(target));
+            return;
+            case 5:
+            this.wb = ((System.Windows.Controls.WebBrowser)(target));
             return;
             }
             this._contentLoaded = true;
