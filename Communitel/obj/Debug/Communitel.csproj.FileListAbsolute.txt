@@ -70,3 +70,7 @@ C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\o
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.Views.Properties.Resources.resources
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\EO.Base.dll
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\EO.Wpf.dll
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\EO.Base.xml
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\EO.Wpf.xml

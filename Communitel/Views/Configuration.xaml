@@ -1,13 +1,47 @@
-﻿<UserControl x:Class="Communitel.Views.Configuration"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Communitel.Views"
+             xmlns:eo="http://schemas.essentialobjects.com/wpf/" x:Class="Communitel.Views.Configuration"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Background="#FF02C9D3">
-        <Grid Margin="38,99,162,101"/>
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid x:Name="grd" Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button x:Name="btnClose" Grid.Row="0" Grid.Column="11" Background="Transparent" Foreground="White" FontSize="45" VerticalContentAlignment="Center" Content="X" Click="btnClose_Click" />
+        <Button x:Name="btnUpdate" Cursor="Hand" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" FontSize="45" VerticalContentAlignment="Center" Content="Update" Click="btnUpdate_Click" />
+        <TextBlock Text="Length Bag Prices" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="8" Grid.RowSpan="1" x:Name="textgBffox_Co2py2" Background="Transparent" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center"  FontStretch="ExtraExpanded" FontSize="32"/>
+        <TextBox Text="{Binding Path=green_price}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="txtGreenPrice" Background="Green" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center" FontStretch="ExtraExpanded" FontSize="32"/>
+        <TextBox Text="{Binding Path=yellow_price}" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="txtYellowPrice" Background="Yellow" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center" FontStretch="ExtraExpanded" FontSize="32"/>
+        <TextBox Text="{Binding Path=red_price}" Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="txtRedPrice" Background="Red" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center" FontStretch="ExtraExpanded" FontSize="32"/>
+        <TextBlock  Text="Tax (%)" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="1" x:Name="textBox_Co2py2" Background="Transparent" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center"  FontStretch="ExtraExpanded" FontSize="32"/>
+        <TextBox Text="{Binding Path=tax_percent}" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="txtTax" Background="White" Foreground="Gray"  TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center"  FontStretch="ExtraExpanded" FontSize="32"/>
+        <TextBlock Text="Expiry Days" Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="1" x:Name="textgBox_Co2py2" Background="Transparent" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center"  FontStretch="ExtraExpanded" FontSize="32"/>
+        <TextBox Text="{Binding Path=expiry_days}" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="txtExpiryDays" Background="White" Foreground="Gray"  TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center" FontStretch="ExtraExpanded" FontSize="32"/>
 
     </Grid>
 </UserControl>

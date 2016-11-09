@@ -29,20 +29,27 @@ namespace Communitel.Views
             grdMenu.Visibility = Visibility.Collapsed;
            
         }
+        public void closeCurrent()
+        {
+            grdOverlay.Children.Clear();
+            grdMenu.Visibility = Visibility.Visible;
+            grdOverlay.Visibility = Visibility.Collapsed;
+        }
         public void InitDashboard()
         {
             grdOverlay.Children.Clear();
             grdMenu.Visibility = Visibility.Visible;
             grdOverlay.Visibility = Visibility.Collapsed;
             dynamic user = App.Current.Properties["User"];
-            txbWelcomeUser.Text += (string)user["firstname"] + " " + (string)user["lastname"];
+            dynamic dashboardContext = new System.Dynamic.ExpandoObject(); 
+            dashboardContext.WelcomeFull = "Bienvenido, " + user.firstname+ " " + user.lastname;
+            txbWelcomeUser.DataContext = dashboardContext;
             int i = 1, j = 1;
-            
-            foreach (var item in (user["userprofile"])["privileges"])
+            foreach (var item in user.userprofile.privileges)
             {
                 Button grdMenuOption1 = new Button() { Background = new SolidColorBrush(Color.FromRgb(16, 53, 79)) };
                 grdMenuOption1.Click += new RoutedEventHandler(addMenuViews);
-                grdMenuOption1.Content = (item["views"])["description"]; ;
+                grdMenuOption1.Content = item.views.description;
                 grdMenu.Children.Add(grdMenuOption1);
                 Grid.SetRow(grdMenuOption1, i);
                 Grid.SetColumn(grdMenuOption1, j);
@@ -59,8 +66,6 @@ namespace Communitel.Views
                     
                 }
             }
-
-            
         }
         void addMenuViews(object sender, RoutedEventArgs e)
         {

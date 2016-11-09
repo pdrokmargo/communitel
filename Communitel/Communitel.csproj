@@ -38,6 +38,12 @@
     <StartupObject>Communitel.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EO.Base">
+      <HintPath>..\..\..\..\Visual Studio 2013\Projects\BF.ImmoStats.Crawler.C014_Lecobel\packages\EO.Wpf.16.1.75.0\lib\EO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="EO.Wpf">
+      <HintPath>..\..\..\..\Visual Studio 2013\Projects\BF.ImmoStats.Crawler.C014_Lecobel\packages\EO.Wpf.16.1.75.0\lib\EO.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -54,6 +60,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
