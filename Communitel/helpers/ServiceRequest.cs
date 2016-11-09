@@ -7,29 +7,30 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 using System.Configuration;
-namespace Communitel.Views.helpers
+namespace Communitel.helpers
 {
     class ServiceRequest
     {
-        
+
         public ServiceRequest()
         {
-            
+
         }
         public dynamic requestToken(string oauthUri, string parsedContent)
         {
             var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + oauthUri));
             http.ContentType = "application/x-www-form-urlencoded";
             http.Method = "POST";
-            
+
             ASCIIEncoding encoding = new ASCIIEncoding();
-            if(parsedContent != "") {
+            if (parsedContent != "")
+            {
                 Byte[] bytes = encoding.GetBytes(parsedContent);
                 Stream newStream = http.GetRequestStream();
                 newStream.Write(bytes, 0, bytes.Length);
                 newStream.Close();
             }
-            
+
             var response = http.GetResponse();
             var stream = response.GetResponseStream();
             var sr = new StreamReader(stream);
@@ -38,19 +39,19 @@ namespace Communitel.Views.helpers
             return magic;
         }
 
-        public dynamic GET(string requestUri, string token)
+        public dynamic GET(string requestUri)
         {
             if (requestUri == null)
             {
                 throw new ArgumentNullException("RequestUri");
             }
 
-            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"]+requestUri));
+            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));
             http.Method = "GET";
             http.ContentType = "application/x-www-form-urlencoded";
             http.Accept = "application/json";
-            http.Headers["Authorization"] = "Bearer " + token;
-            
+            http.Headers["Authorization"] = "Bearer " + (string)App.Current.Properties["Token"];
+
             var response = http.GetResponse();
             var stream = response.GetResponseStream();
             var sr = new StreamReader(stream);
@@ -59,5 +60,56 @@ namespace Communitel.Views.helpers
             return magic;
         }
 
+        public dynamic POST(string oauthUri, string parsedContent)
+        {
+            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + oauthUri));
+            http.ContentType = "application/x-www-form-urlencoded";
+            http.Method = "POST";
+            http.Accept = "application/json";
+            string token = (string)App.Current.Properties["Token"];
+            http.Headers["Authorization"] = "Bearer " + token;
+
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            if (parsedContent != "")
+            {
+                Byte[] bytes = encoding.GetBytes(parsedContent);
+                Stream newStream = http.GetRequestStream();
+                newStream.Write(bytes, 0, bytes.Length);
+                newStream.Close();
+            }
+
+            var response = http.GetResponse();
+            var stream = response.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic magic = JsonConvert.DeserializeObject(content);
+            return magic;
+        }
+
+        public dynamic PUT(string oauthUri, string parsedContent)
+        {
+            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + oauthUri));
+            http.ContentType = "application/x-www-form-urlencoded";
+            http.Method = "PUT";
+            http.Accept = "application/json";
+            string token = (string)App.Current.Properties["Token"];
+            http.Headers["Authorization"] = "Bearer " + token;
+
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            if (parsedContent != "")
+            {
+                Byte[] bytes = encoding.GetBytes(parsedContent);
+                Stream newStream = http.GetRequestStream();
+                newStream.Write(bytes, 0, bytes.Length);
+                newStream.Close();
+            }
+
+            var response = http.GetResponse();
+            var stream = response.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic magic = JsonConvert.DeserializeObject(content);
+            return magic;
+        }
     }
 }

@@ -7,7 +7,7 @@
     <ProjectGuid>{DBAC0F93-FD2F-4923-A6FA-7A463FF7544B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Communitel.Views</RootNamespace>
+    <RootNamespace>Communitel</RootNamespace>
     <AssemblyName>Communitel</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
