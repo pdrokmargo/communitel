@@ -60,9 +60,9 @@ namespace Communitel.helpers
             return magic;
         }
 
-        public dynamic POST(string oauthUri, string parsedContent)
+        public dynamic POST(string requestUri, string parsedContent)
         {
-            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + oauthUri));
+            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));
             http.ContentType = "application/x-www-form-urlencoded";
             http.Method = "POST";
             http.Accept = "application/json";
@@ -86,11 +86,11 @@ namespace Communitel.helpers
             return magic;
         }
 
-        public dynamic PUT(string oauthUri, string parsedContent)
+        public dynamic PUT(string requestUri, string parsedContent)
         {
-            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + oauthUri));
-            http.ContentType = "application/x-www-form-urlencoded";
+            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));
             http.Method = "PUT";
+            http.ContentType = "application/x-www-form-urlencoded";
             http.Accept = "application/json";
             string token = (string)App.Current.Properties["Token"];
             http.Headers["Authorization"] = "Bearer " + token;
@@ -103,6 +103,27 @@ namespace Communitel.helpers
                 newStream.Write(bytes, 0, bytes.Length);
                 newStream.Close();
             }
+
+            var response = http.GetResponse();
+            var stream = response.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = sr.ReadToEnd();
+            dynamic magic = JsonConvert.DeserializeObject(content);
+            return magic;
+        }
+
+        public dynamic DELETE(string requestUri)
+        {
+            if (requestUri == null)
+            {
+                throw new ArgumentNullException("RequestUri");
+            }
+
+            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));
+            http.Method = "DELETE";
+            http.ContentType = "application/x-www-form-urlencoded";
+            http.Accept = "application/json";
+            http.Headers["Authorization"] = "Bearer " + (string)App.Current.Properties["Token"];
 
             var response = http.GetResponse();
             var stream = response.GetResponseStream();
