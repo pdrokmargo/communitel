@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="700.5" d:DesignWidth="588">
     <Grid>
-        <Grid x:Name="GridUsers" Visibility="Hidden">
+        <Grid x:Name="GridUsers" Visibility="Visible">
             <ListView x:Name="listView" Margin="10,54,10,10" SelectionChanged="listView_SelectionChanged">
                 <ListView.View>
                     <GridView x:Name="ListViewHeader">
@@ -22,7 +22,7 @@
             <TextBox x:Name="textBox" Height="39" Margin="10,10,130,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
 
         </Grid>
-        <Grid x:Name="GridUser" Visibility="Visible">
+        <Grid x:Name="GridUser" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="6*"/>
@@ -40,7 +40,7 @@
                 <Label x:Name="label4" Content="Lastname"/>
                 <TextBox x:Name="textBox5" Height="23" TextWrapping="Wrap" Text="{Binding Path=lastname}"/>
                 <Label x:Name="label" Content="Username"/>
-                <TextBox x:Name="txtUsername" Height="23" TextWrapping="Wrap" Text="{Binding Path=username}"/>
+                <TextBox x:Name="txtUsername" Height="23" TextWrapping="Wrap" Text="{Binding Path=username}" KeyUp="validateUsername"/>
                 <Label x:Name="labelValidPass" Content="Label" Foreground="Red" Margin="0,0,144,0"/>
                 <Label x:Name="label1" Content="Password"/>
                 <PasswordBox x:Name="txtPass1"/>

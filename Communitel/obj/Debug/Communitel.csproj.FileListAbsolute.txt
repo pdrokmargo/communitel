@@ -96,3 +96,7 @@ C:\communitel\Communitel\obj\Debug\Views\Users.baml
 C:\communitel\Communitel\obj\Debug\Communitel.g.resources
 C:\communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
 C:\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
+C:\communitel\Communitel\obj\Debug\Views\Privileges.g.cs
+C:\communitel\Communitel\obj\Debug\Views\UserProfile.g.cs
+C:\communitel\Communitel\obj\Debug\Views\Privileges.baml
+C:\communitel\Communitel\obj\Debug\Views\UserProfile.baml

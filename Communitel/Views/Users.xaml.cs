@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Communitel.Models;
 using Communitel.helpers;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace Communitel.Views
 {
@@ -275,6 +276,11 @@ namespace Communitel.Views
             txtPass2.IsEnabled = false;
             txtPass1.Password = "";
             txtPass2.Password = "";
+        }
+
+        private void validateUsername(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }
