@@ -67,7 +67,6 @@ C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\o
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Login.baml
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Users.baml
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.g.resources
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.Views.Properties.Resources.resources
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache
 C:\communitel\Communitel\bin\Debug\Communitel.exe.config
@@ -96,3 +95,6 @@ C:\communitel\Communitel\obj\Debug\Views\Users.baml
 C:\communitel\Communitel\obj\Debug\Communitel.g.resources
 C:\communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
 C:\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\styles.baml
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\App.baml

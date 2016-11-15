@@ -43,28 +43,23 @@ namespace Communitel.Views
             dynamic user = App.Current.Properties["User"];
             dynamic dashboardContext = new System.Dynamic.ExpandoObject(); 
             dashboardContext.WelcomeFull = "Bienvenido, " + user.firstname+ " " + user.lastname;
-            txbWelcomeUser.DataContext = dashboardContext;
+            //txbWelcomeUser.DataContext = dashboardContext;
             int i = 1, j = 1;
             foreach (var item in user.userprofile.privileges)
             {
-                Button grdMenuOption1 = new Button() { Background = new SolidColorBrush(Color.FromRgb(16, 53, 79)) };
+                Button grdMenuOption1 = new Button() { Background = new SolidColorBrush(Color.FromRgb(38, 50, 56)) };
+                grdMenuOption1.Foreground = Brushes.White;
+                grdMenuOption1.FontSize = 32;
+                grdMenuOption1.Cursor = Cursors.Hand;
                 grdMenuOption1.Click += new RoutedEventHandler(addMenuViews);
                 grdMenuOption1.Content = item.views.description;
+                grdMenuOption1.BorderBrush = null;
                 grdMenu.Children.Add(grdMenuOption1);
                 Grid.SetRow(grdMenuOption1, i);
-                Grid.SetColumn(grdMenuOption1, j);
-                Grid.SetColumnSpan(grdMenuOption1, 2);
-                Grid.SetRowSpan(grdMenuOption1, 2);
-                if (j == 7)
-                {
-                    j = 1;
-                    i += 3;
-                }
-                else
-                {
-                    j += 3;
-                    
-                }
+                Grid.SetColumn(grdMenuOption1, 0);
+                Grid.SetColumnSpan(grdMenuOption1, 12);
+                Grid.SetRowSpan(grdMenuOption1, 1);
+                i++;
             }
 
             
@@ -73,24 +68,24 @@ namespace Communitel.Views
         {
             if (((Button)sender).Content.ToString().ToLower().CompareTo("configuration") == 0)
             {
-                grdOverlay.Children.Clear();
+                grdContent.Children.Clear();
                 Configuration cng = new Configuration();
-                grdOverlay.Children.Add(cng);
-                grdMenu.Visibility = Visibility.Collapsed;
-                grdOverlay.Visibility = Visibility.Visible;
+                grdContent.Children.Add(cng);
+                //grdMenu.Visibility = Visibility.Collapsed;
+                grdContent.Visibility = Visibility.Visible;
             }
             else if (((Button)sender).Content.ToString().ToLower().CompareTo("users") == 0)
             {
-                grdOverlay.Children.Clear();
+                grdContent.Children.Clear();
                 dynamic gp = GetPrivilege("Users");
                 Users cng = new Users(gp, user_profile_id);
-                grdOverlay.Children.Add(cng);
-                grdMenu.Visibility = Visibility.Collapsed;
-                grdOverlay.Visibility = Visibility.Visible;
+                grdContent.Children.Add(cng);
+                //grdMenu.Visibility = Visibility.Collapsed;
+                grdContent.Visibility = Visibility.Visible;
             }
             else if (((Button)sender).Content.ToString().ToLower().CompareTo("inventory") == 0)
             {
-                grdOverlay.Children.Clear();
+                grdContent.Children.Clear();
                 /*Configuration cng = new Configuration();
                 grdOverlay.Children.Add(cng);
                 grdMenu.Visibility = Visibility.Collapsed;
@@ -98,7 +93,7 @@ namespace Communitel.Views
             }
             if (((Button)sender).Content.ToString().ToLower().CompareTo("parameter") == 0)
             {
-                grdOverlay.Children.Clear();
+                grdContent.Children.Clear();
                 /*Configuration cng = new Configuration();
                 grdOverlay.Children.Add(cng);
                 grdMenu.Visibility = Visibility.Collapsed;

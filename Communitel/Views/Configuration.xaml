@@ -7,7 +7,7 @@
              xmlns:eo="http://schemas.essentialobjects.com/wpf/" x:Class="Communitel.Views.Configuration"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
-    <Grid x:Name="grd" Background="Gray">
+    <Grid x:Name="grd">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -33,7 +33,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Button x:Name="btnClose" Grid.Row="0" Grid.Column="11" Background="Transparent" Foreground="White" FontSize="45" VerticalContentAlignment="Center" Content="X" Click="btnClose_Click" />
-        <Button x:Name="btnUpdate" Cursor="Hand" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" FontSize="45" VerticalContentAlignment="Center" Content="Update" Click="btnUpdate_Click" />
+        <Button x:Name="btnUpdate" Margin="0,33,0,27" Cursor="Hand" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2" Background="Transparent" Foreground="White" FontSize="45" VerticalContentAlignment="Center" Content="Update" Click="btnUpdate_Click" Grid.RowSpan="2" />
         <TextBlock Text="Length Bag Prices" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="8" Grid.RowSpan="1" x:Name="textgBffox_Co2py2" Background="Transparent" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center"  FontStretch="ExtraExpanded" FontSize="32"/>
         <TextBox Text="{Binding Path=green_price}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="txtGreenPrice" Background="Green" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center" FontStretch="ExtraExpanded" FontSize="32"/>
         <TextBox Text="{Binding Path=yellow_price}" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="txtYellowPrice" Background="Yellow" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" VerticalContentAlignment="Center" FontStretch="ExtraExpanded" FontSize="32"/>
