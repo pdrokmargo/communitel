@@ -36,7 +36,6 @@ C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Deb
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\dMainWindow.baml
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Login.baml
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.g.resources
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.Views.Properties.Resources.resources
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Configuration.g.cs
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Configuration.baml
@@ -96,3 +95,4 @@ C:\communitel\Communitel\obj\Debug\Views\Users.baml
 C:\communitel\Communitel\obj\Debug\Communitel.g.resources
 C:\communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
 C:\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
