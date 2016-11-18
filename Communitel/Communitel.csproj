@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -66,6 +68,9 @@
     <Compile Include="CustomControls\GridMenu.xaml.cs">
       <DependentUpon>GridMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\MenuButton.xaml.cs">
+      <DependentUpon>MenuButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="helpers\ServiceRequest.cs" />
     <Compile Include="Models\OptionMenu.cs" />
     <Compile Include="ViewModel\OptionMenuViewModel.cs" />
@@ -79,6 +84,14 @@
       <DependentUpon>Users.xaml</DependentUpon>
     </Compile>
     <Page Include="CustomControls\GridMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\MenuButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,6 +162,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="media\img\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\img\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_catproducts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_checkin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_dashboard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
