@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\communitel\Communitel\App.xaml
-8-1614530604
+101871779899
 
-191402307887
+201236338661
 15-1524503325
-CustomControls\GridMenu.xaml;Views\Configuration.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Privileges.xaml;Views\UserProfile.xaml;Views\Users.xaml;
+CustomControls\GridMenu.xaml;Views\Checkin_bag.xaml;Views\Configuration.xaml;Views\Customers.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Privileges.xaml;Views\UserProfile.xaml;Views\Users.xaml;
 
-True
+False
 

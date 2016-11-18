@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Communitel.ViewModel;
+//using Communitel.ViewModel;
 namespace Communitel.Views.CustomControls
 {
     /// <summary>
@@ -27,8 +27,8 @@ namespace Communitel.Views.CustomControls
 
         public void createMenu()
         {
-            OptionMenuViewModel opv = new OptionMenuViewModel();
-            grdMenu.DataContext = opv.Menu;
+            //OptionMenuViewModel opv = new OptionMenuViewModel();
+            //grdMenu.DataContext = opv.Menu;
             Label lbl = new Label();
             
             

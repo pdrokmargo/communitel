@@ -68,9 +68,14 @@
     </Compile>
     <Compile Include="helpers\ServiceRequest.cs" />
     <Compile Include="Models\OptionMenu.cs" />
-    <Compile Include="ViewModel\OptionMenuViewModel.cs" />
+    <Compile Include="Views\Checkin_bag.xaml.cs">
+      <DependentUpon>Checkin_bag.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Configuration.xaml.cs">
       <DependentUpon>Configuration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customers.xaml.cs">
+      <DependentUpon>Customers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -88,7 +93,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Checkin_bag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Configuration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,6 +174,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="media\img\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

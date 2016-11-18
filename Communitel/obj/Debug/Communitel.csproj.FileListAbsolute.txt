@@ -73,7 +73,6 @@ C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\o
 C:\communitel\Communitel\bin\Debug\Communitel.exe.config
 C:\communitel\Communitel\obj\Debug\Communitel.exe
 C:\communitel\Communitel\obj\Debug\Communitel.pdb
-C:\communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache
 C:\communitel\Communitel\obj\Debug\CustomControls\GridMenu.g.cs
 C:\communitel\Communitel\obj\Debug\Views\Configuration.g.cs
 C:\communitel\Communitel\obj\Debug\Views\Dashboard.g.cs
@@ -100,3 +99,8 @@ C:\communitel\Communitel\obj\Debug\Views\Privileges.g.cs
 C:\communitel\Communitel\obj\Debug\Views\UserProfile.g.cs
 C:\communitel\Communitel\obj\Debug\Views\Privileges.baml
 C:\communitel\Communitel\obj\Debug\Views\UserProfile.baml
+C:\communitel\Communitel\obj\Debug\Views\Checkin_bag.g.cs
+C:\communitel\Communitel\obj\Debug\Views\Checkin_bag.baml
+C:\communitel\Communitel\obj\Debug\Views\Customers.g.cs
+C:\communitel\Communitel\obj\Debug\Views\Customers.baml
+C:\communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache

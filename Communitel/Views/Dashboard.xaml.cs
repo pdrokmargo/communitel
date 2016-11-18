@@ -41,7 +41,7 @@ namespace Communitel.Views
             int i = 1, j = 1;
             foreach (var item in user.userprofile.privileges)
             {
-                Button grdMenuOption1 = new Button() { Background = new SolidColorBrush(Color.FromRgb(16, 53, 79)) };
+                Button grdMenuOption1 = new Button();
                 grdMenuOption1.Click += new RoutedEventHandler(addMenuViews);
                 grdMenuOption1.Content = item.views.description;
                 grdMenu.Children.Add(grdMenuOption1);
@@ -67,8 +67,21 @@ namespace Communitel.Views
         {
             grdOverlay.Children.Clear();
             string str = ((Button)sender).Content.ToString().ToLower();
-            dynamic Privilege = GetPrivilege("Userprofile");
-            if (str.CompareTo("configuration") == 0)
+            dynamic Privilege = GetPrivilege(str);
+
+            if (str.CompareTo("users") == 0)
+            {
+                Users view = new Users(Privilege, profile_id);
+                grdOverlay.Children.Add(view);
+            }
+            if (str.CompareTo("check in") == 0)
+            {
+                dynamic Privilege_customers = GetPrivilege(str);
+                Checkin_bag view = new Checkin_bag(Privilege, Privilege_customers, profile_id);
+                grdOverlay.Children.Add(view);
+            }
+            //Check In
+            /*if (str.CompareTo("configuration") == 0)
             {
                 Configuration cng = new Configuration();
                 grdOverlay.Children.Add(cng);
@@ -76,37 +89,32 @@ namespace Communitel.Views
             }
             else if (str.CompareTo("users") == 0)
             {
-                dynamic gp = GetPrivilege("Users");
                 Users cng = new Users(gp, profile_id);
                 grdOverlay.Children.Add(cng);
             }
             else if (str.CompareTo("userprofile") == 0)
             {
-                
-                UserProfile up = new UserProfile(Privilege, profile_id);
-                grdOverlay.Children.Add(up);
+
+                UserProfile v = new UserProfile(Privilege, profile_id);
+                grdOverlay.Children.Add(v);
             }
             else if (str.CompareTo("privilege") == 0)
             {
-                Privileges up = new Privileges(Privilege,profile_id);
-                grdOverlay.Children.Add(up);
+                Privileges v = new Privileges(Privilege, profile_id);
+                grdOverlay.Children.Add(v);
+            }
+            else if (str.CompareTo("checkin bag") == 0)
+            {
+                Checkin_bag v = new Checkin_bag(Privilege, profile_id);
+                grdOverlay.Children.Add(v);
             }
             else if (str.CompareTo("inventory") == 0)
             {
-                grdOverlay.Children.Clear();
-                /*Configuration cng = new Configuration();
-                grdOverlay.Children.Add(cng);
-                grdMenu.Visibility = Visibility.Collapsed;
-                grdOverlay.Visibility = Visibility.Visible;*/
+
             }
             if (str.CompareTo("parameter") == 0)
             {
-                grdOverlay.Children.Clear();
-                /*Configuration cng = new Configuration();
-                grdOverlay.Children.Add(cng);
-                grdMenu.Visibility = Visibility.Collapsed;
-                grdOverlay.Visibility = Visibility.Visible;*/
-            }
+            }*/
             grdMenu.Visibility = Visibility.Collapsed;
             grdOverlay.Visibility = Visibility.Visible;
 
@@ -118,7 +126,7 @@ namespace Communitel.Views
             foreach (var item in user.userprofile.privileges)
             {
                 string viewName = item.views.description;
-                if (viewName.Equals(description))
+                if (viewName.ToLower().Equals(description))
                 {
                     return item;
                 }

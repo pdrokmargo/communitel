@@ -28,6 +28,7 @@ namespace Communitel.Views
         ServiceRequest sr = new ServiceRequest();
         string sMessageBoxText = "";
         string sCaption = "";
+        
 
         public Users(dynamic _Privilege, int profile)
         {
