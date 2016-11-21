@@ -34,8 +34,8 @@ namespace Communitel.Views
 
         private void LoadList()
         {
-            dynamic list = sr.GET("/api/costumers");
-            listView.ItemsSource = list.users;
+            dynamic list = sr.GET("/api/customers");
+            listView.ItemsSource = list.customers;
             GridList.Visibility = Visibility.Visible;
             GridForm.Visibility = Visibility.Hidden;
             id = 0;
