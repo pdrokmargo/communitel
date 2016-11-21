@@ -3,19 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:local="clr-namespace:Communitel.Views"
              mc:Ignorable="d" 
-             Height="356.09" Width="477.594" Background="#FF91B3BF">
-    <Border BorderThickness="1,1,1,1" CornerRadius="0,0,8,8" BorderBrush="White" Background="#FF347F9B" Margin="10,79,10,6">
-        <Grid Margin="9,5,9,9" Background="#FF347F9B">
+             Height="356.09" Width="477.594">
+    <xctk:BusyIndicator x:Name="ProgressIndicator" IsBusy="False">
+        <Border BorderThickness="1,1,1,1" CornerRadius="0,0,8,8" BorderBrush="#FFB9B9B9" Margin="10,79,10,6">
+        <Grid Margin="9,5,9,9">
             <Button x:Name="btnSignin" Content="SIGN IN" HorizontalAlignment="Left" Margin="54,200,0,0" VerticalAlignment="Top" Width="321" Height="48" BorderBrush="#FF005770" Background="#FF0ABF54" Foreground="White" Cursor="Hand" FontSize="16" FontWeight="Bold" Click="btnSignin_Click"/>
-            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="54,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Height="16" FontWeight="Bold" Foreground="White"><Run Text="USER"/><LineBreak/><Run/></TextBlock>
-            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="54,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Height="16" FontWeight="Bold" Foreground="White" Text="PASSWORD"/>
+            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="54,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Height="16" FontWeight="Bold" Foreground="#FF004891"><Run Text="USER"/><LineBreak/><Run/></TextBlock>
+            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="54,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Height="16" FontWeight="Bold" Foreground="#FF004891" Text="PASSWORD"/>
             <TextBox x:Name="txtUsername" Padding="0" HorizontalAlignment="Left" FontSize="26" Margin="57,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318" TextChanged="textBox_TextChanged" Height="50" Background="#FFEEEEEE" />
             <PasswordBox x:Name="txtPassword" Padding="0" HorizontalAlignment="Left" FontSize="26" Margin="54,138,0,0" VerticalAlignment="Top" Width="318" Height="50" Background="#FFEEEEEE"  />
-            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="-8,-68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="56" Foreground="White" Text="Hello." FontSize="48"/>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="-8,-68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="56" Foreground="#FF6E6E6E" Text="Hello." FontSize="48"/>
 
         </Grid>
-    </Border>
+        </Border>
+    </xctk:BusyIndicator>
 
 </UserControl>
