@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\App.xaml
-7846695788
+8-59930978
 
-17-187951261
-15-58365636
-CustomControls\GridMenu.xaml;styles.xaml;Views\Configuration.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Users.xaml;
+18-1594272347
+18-978743749
+CustomControls\GridMenu.xaml;CustomControls\MenuButton.xaml;styles.xaml;Views\Configuration.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Users.xaml;
 
-False
+True
 

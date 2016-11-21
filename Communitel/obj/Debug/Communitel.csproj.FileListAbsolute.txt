@@ -36,7 +36,6 @@ C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Deb
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\dMainWindow.baml
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Login.baml
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.g.resources
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.Views.Properties.Resources.resources
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Configuration.g.cs
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Configuration.baml
@@ -98,3 +97,11 @@ C:\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\styles.baml
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\App.baml
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\App.baml
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\styles.baml
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\MenuButton.g.cs
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\MenuButton.baml
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\CustomControls\MenuButton.g.cs
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\CustomControls\MenuButton.baml

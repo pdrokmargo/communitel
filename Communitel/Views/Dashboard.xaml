@@ -26,6 +26,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
+            
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
@@ -35,7 +36,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Grid x:Name="grdTop" Grid.Column="0" Grid.ColumnSpan="12" Grid.Row="0" Grid.RowSpan="1">
+        <Grid x:Name="grdTop" Background="#37474f" Grid.Column="0" Grid.ColumnSpan="12" Grid.Row="0" Grid.RowSpan="1" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -50,45 +51,25 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Background="#FF004781">
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Background="#FF18C6F9">
                 
             </StackPanel>
-            <StackPanel Grid.Column="2" Grid.ColumnSpan="10" Background="#37474f">
+            <StackPanel Grid.Column="2" Background="#f5f5f5">
+                <TextBlock x:Name="txbWindowTitle" Text="Dashboard" FontSize="50" Width="auto">
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="4" Grid.ColumnSpan="10" Background="#37474f">
                 
             </StackPanel>
         </Grid>
-        <Grid x:Name="grdMenu" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="11" Background="#37474f">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
+        <StackPanel x:Name="grdMenu" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="11" Background="#FF37474F">
+           
             <!--<TextBlock x:Name="txbWelcomeUser" Text="{Binding Path=WelcomeFull}" Grid.Column="0" Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="1" Foreground="White" FontSize="29.333"/>-->
-        </Grid>
+        </StackPanel>
         <Grid x:Name="grdOverlay" Grid.Column="0" Grid.ColumnSpan="12" Grid.Row="0" Grid.RowSpan="12">
 
         </Grid>
-
-        <Grid x:Name="grdContent" Grid.Column="2" Grid.ColumnSpan="10" Grid.Row="1" Grid.RowSpan="11">
+        <Grid x:Name="grdContent" Grid.Column="2" Grid.ColumnSpan="10" Grid.Row="1" Grid.RowSpan="11" Margin="50">
 
         </Grid>
     </Grid>
