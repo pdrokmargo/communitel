@@ -61,8 +61,6 @@ namespace Communitel.Views
                 Grid.SetRowSpan(grdMenuOption1, 1);
                 i++;
             }
-
-            
         }
         void addMenuViews(object sender, RoutedEventArgs e)
         {
