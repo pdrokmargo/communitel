@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\communitel_bk\Communitel\App.xaml
-101871779899
+8-59930978
 
-161873129605
-15-1282650447
-CustomControls\GridMenu.xaml;Views\Checkin_bag.xaml;Views\Configuration.xaml;Views\Customers.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Privileges.xaml;Views\UserProfile.xaml;Views\Users.xaml;
+14-171531611
+18-1370763116
+CustomControls\GridMenu.xaml;CustomControls\MenuButton.xaml;styles.xaml;Views\Configuration.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Users.xaml;
 
 False
 

@@ -7,21 +7,22 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 using System.Configuration;
+using System.Windows;
 namespace Communitel.helpers
 {
     class ServiceRequest
     {
-
+        
         public ServiceRequest()
         {
-
+            
         }
         public dynamic requestToken(string oauthUri, string parsedContent)
         {
             var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + oauthUri));
             http.ContentType = "application/x-www-form-urlencoded";
             http.Method = "POST";
-
+            
             ASCIIEncoding encoding = new ASCIIEncoding();
             if (parsedContent != "")
             {
@@ -30,7 +31,7 @@ namespace Communitel.helpers
                 newStream.Write(bytes, 0, bytes.Length);
                 newStream.Close();
             }
-
+            
             var response = http.GetResponse();
             var stream = response.GetResponseStream();
             var sr = new StreamReader(stream);
@@ -68,7 +69,7 @@ namespace Communitel.helpers
             http.Accept = "application/json";
             string token = (string)App.Current.Properties["Token"];
             http.Headers["Authorization"] = "Bearer " + token;
-
+            
             ASCIIEncoding encoding = new ASCIIEncoding();
             if (parsedContent != "")
             {

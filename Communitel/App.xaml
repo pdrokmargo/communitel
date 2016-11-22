@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Communitel.Views"
              Startup="Application_Startup">
     <Application.Resources>
-         
+        <ResourceDictionary Source="styles.xaml" />
     </Application.Resources>
 </Application>

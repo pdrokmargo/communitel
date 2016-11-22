@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,6 +59,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\..\..\..\Desktop\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -66,25 +71,17 @@
     <Compile Include="CustomControls\GridMenu.xaml.cs">
       <DependentUpon>GridMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\MenuButton.xaml.cs">
+      <DependentUpon>MenuButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="helpers\ServiceRequest.cs" />
     <Compile Include="Models\OptionMenu.cs" />
-    <Compile Include="Views\Checkin_bag.xaml.cs">
-      <DependentUpon>Checkin_bag.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModel\OptionMenuViewModel.cs" />
     <Compile Include="Views\Configuration.xaml.cs">
       <DependentUpon>Configuration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Customers.xaml.cs">
-      <DependentUpon>Customers.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Privileges.xaml.cs">
-      <DependentUpon>Privileges.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UserProfile.xaml.cs">
-      <DependentUpon>UserProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Users.xaml.cs">
       <DependentUpon>Users.xaml</DependentUpon>
@@ -93,15 +90,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Checkin_bag.xaml">
+    <Page Include="CustomControls\MenuButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Configuration.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Customers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,14 +122,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Privileges.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\UserProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,7 +156,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="media\img\blur-wallpaper.jpg" />
@@ -176,7 +167,22 @@
     <Resource Include="media\img\bg.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModel\" />
+    <Resource Include="media\img\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_catproducts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_checkin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="media\icons\ic_dashboard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

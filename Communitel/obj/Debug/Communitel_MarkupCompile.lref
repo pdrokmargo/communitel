@@ -1,13 +1,11 @@
 ﻿
-
+FC:\communitel_bk\Communitel\App.xaml;;
 FC:\communitel_bk\Communitel\CustomControls\GridMenu.xaml;;
-FC:\communitel_bk\Communitel\Views\Checkin_bag.xaml;;
+FC:\communitel_bk\Communitel\CustomControls\MenuButton.xaml;;
+FC:\communitel_bk\Communitel\styles.xaml;;
 FC:\communitel_bk\Communitel\Views\Configuration.xaml;;
-FC:\communitel_bk\Communitel\Views\Customers.xaml;;
 FC:\communitel_bk\Communitel\Views\Dashboard.xaml;;
 FC:\communitel_bk\Communitel\dMainWindow.xaml;;
 FC:\communitel_bk\Communitel\Views\Login.xaml;;
-FC:\communitel_bk\Communitel\Views\Privileges.xaml;;
-FC:\communitel_bk\Communitel\Views\UserProfile.xaml;;
 FC:\communitel_bk\Communitel\Views\Users.xaml;;
 

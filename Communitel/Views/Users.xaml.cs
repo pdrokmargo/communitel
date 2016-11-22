@@ -25,35 +25,21 @@ namespace Communitel.Views
         public dynamic Privilege { get; set; }
         public dynamic ModelUser { get; set; }
         public int IdUser { get; set; }
+        public int idAuth { get; set; }
+        public int profile { get; set; }
         ServiceRequest sr = new ServiceRequest();
         string sMessageBoxText = "";
         string sCaption = "";
-        
 
-        public Users(dynamic _Privilege, int profile)
+
+        public Users(dynamic _Privilege, int _profile, int _idAuth)
         {
             Privilege = _Privilege;
+            profile = _profile;
+            idAuth = _idAuth;
             InitializeComponent();
             LoadGridUsers();
-            ComboboxItem item = new ComboboxItem();
-            switch (profile)
-            {
-                case 1:
-
-                    comboBox.Items.Add(new ComboboxItem() { Text = "Super Admin", Value = 1 });
-                    comboBox.Items.Add(new ComboboxItem() { Text = "Admin", Value = 2 });
-                    comboBox.Items.Add(new ComboboxItem() { Text = "Employee", Value = 3 });
-                    break;
-                case 2:
-                    comboBox.Items.Add(new ComboboxItem() { Text = "Admin", Value = 2 });
-                    comboBox.Items.Add(new ComboboxItem() { Text = "Employee", Value = 3 });
-                    break;
-                case 3:
-                    comboBox.Items.Add(new ComboboxItem() { Text = "Employee", Value = 3 });
-                    break;
-            }
-
-
+            LoadCombo();
             labelValidPass.Content = "";
             labelValidPass.Visibility = Visibility.Collapsed;
         }
@@ -62,9 +48,28 @@ namespace Communitel.Views
         {
             dynamic list = sr.GET("/api/users");
             listView.ItemsSource = list.users;
+
+
             GridUsers.Visibility = Visibility.Visible;
             GridUser.Visibility = Visibility.Hidden;
             IdUser = 0;
+        }
+        private void LoadCombo()
+        {
+            var com = sr.GET("/api/userprofile");
+            com = com.userprofile;
+            /*
+            for (int i = 0; i < com.Count; i++)
+            {
+                if ((int)com[i].id <= profile)
+                {
+                    com.Remove(com[i]);
+                }
+            }*/
+
+            comboBox.ItemsSource = com;
+            comboBox.DisplayMemberPath = "description";
+            comboBox.SelectedValuePath = "id";
         }
 
         //NEW USER
@@ -74,9 +79,9 @@ namespace Communitel.Views
             GridUser.Visibility = Visibility.Visible;
             if ((bool)Privilege.create)
             {
-                btnCreate.IsEnabled = true;
-                btnUpdate.IsEnabled = false;
-                btnDelete.IsEnabled = false;
+                btnCreate.Visibility = Visibility.Visible;
+                btnUpdate.Visibility = Visibility.Collapsed;
+                btnDelete.Visibility = Visibility.Collapsed;
             }
 
             txtPass1.IsEnabled = true;
@@ -92,7 +97,7 @@ namespace Communitel.Views
             ModelUser.user.lastname = "";
             ModelUser.user.username = "";
             ModelUser.user.user_profile_id = 0;
-            stFormUser.DataContext = ModelUser.user;
+            GridUser.DataContext = ModelUser.user;
         }
         //to back
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -112,12 +117,15 @@ namespace Communitel.Views
                     ModelUser = sr.GET("/api/users/" + IdUser);
                     txtPass1.Password = "";
                     txtPass2.Password = "";
-                    stFormUser.DataContext = ModelUser.user;
+                    GridUser.DataContext = ModelUser.user;
+                    comboBox.SelectedValue = ModelUser.user.userprofile.id;
                     GridUsers.Visibility = Visibility.Hidden;
                     GridUser.Visibility = Visibility.Visible;
-                    btnCreate.IsEnabled = false;
-                    btnUpdate.IsEnabled = true;
-                    btnDelete.IsEnabled = true;
+
+                    btnCreate.Visibility = Visibility.Collapsed;
+                    btnUpdate.Visibility = Visibility.Visible;
+                    btnDelete.Visibility = Visibility.Visible;
+
                     txtUsername.IsEnabled = false;
                     txtPass1.IsEnabled = false;
                     txtPass2.IsEnabled = false;
@@ -226,8 +234,8 @@ namespace Communitel.Views
             {
                 if (txtPass1.Password == txtPass2.Password)
                 {
-                    string json = "password=" + txtPass1.Password + "&id=" + IdUser;
-                    dynamic obj = sr.POST("/api/reset-password/", json);
+                    string json = "newPass=" + txtPass1.Password + "&id=" + IdUser + "&idAuth=" + idAuth;
+                    dynamic obj = sr.POST("/api/resetPassword", json);
 
                     sMessageBoxText = "Success";
                     sCaption = "Password reset";
@@ -281,7 +289,7 @@ namespace Communitel.Views
 
         private void validateUsername(object sender, KeyEventArgs e)
         {
-            
+
         }
     }
 }
