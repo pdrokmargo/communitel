@@ -139,7 +139,7 @@ namespace Communitel.Views
         {
             if (((Button)sender).Tag.ToString().CompareTo("configuration") == 0)
             {
-                txbWindowTitle.Text = "Configuration";
+                //txbWindowTitle.Text = "Configuration";
                 grdContent.Children.Clear();
                 Configuration cng = new Configuration();
                 grdContent.Children.Add(cng);
@@ -155,21 +155,13 @@ namespace Communitel.Views
                 //grdMenu.Visibility = Visibility.Collapsed;
                 grdContent.Visibility = Visibility.Visible;
             }
-            else if (((Button)sender).Content.ToString().ToLower().CompareTo("inventory") == 0)
+            else if (((Button)sender).Content.ToString().ToLower().CompareTo("check in") == 0)
             {
                 grdContent.Children.Clear();
-                /*Configuration cng = new Configuration();
-                grdOverlay.Children.Add(cng);
-                grdMenu.Visibility = Visibility.Collapsed;
-                grdOverlay.Visibility = Visibility.Visible;*/
             }
-            if (((Button)sender).Content.ToString().ToLower().CompareTo("parameter") == 0)
+            if (((Button)sender).Content.ToString().ToLower().CompareTo("catalog products") == 0)
             {
                 grdContent.Children.Clear();
-                /*Configuration cng = new Configuration();
-                grdOverlay.Children.Add(cng);
-                grdMenu.Visibility = Visibility.Collapsed;
-                grdOverlay.Visibility = Visibility.Visible;*/
             }
 
         }
