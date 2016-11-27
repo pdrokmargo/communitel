@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< HEAD
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\App.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\CustomControls\GridMenu.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\CustomControls\MenuButton.xaml;;
@@ -9,4 +10,15 @@ FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\dMainW
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\Views\Login.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\Views\Users.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\Views\Products.xaml;;
+=======
+FC:\communitel_bk\Communitel\App.xaml;;
+FC:\communitel_bk\Communitel\CustomControls\GridMenu.xaml;;
+FC:\communitel_bk\Communitel\CustomControls\MenuButton.xaml;;
+FC:\communitel_bk\Communitel\styles.xaml;;
+FC:\communitel_bk\Communitel\Views\Configuration.xaml;;
+FC:\communitel_bk\Communitel\Views\Dashboard.xaml;;
+FC:\communitel_bk\Communitel\dMainWindow.xaml;;
+FC:\communitel_bk\Communitel\Views\Login.xaml;;
+FC:\communitel_bk\Communitel\Views\Users.xaml;;
+>>>>>>> checkin_ui
 

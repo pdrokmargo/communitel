@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\
+C:\communitel_bk\Communitel\obj\Debug\
 Communitel
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\App.xaml
 9-785816805
 
 15829090417
 18-1297293974
 CustomControls\GridMenu.xaml;CustomControls\MenuButton.xaml;styles.xaml;Views\Configuration.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Products.xaml;Views\Users.xaml;
+=======
+C:\communitel_bk\Communitel\App.xaml
+8-59930978
+
+14-171531611
+18-1370763116
+CustomControls\GridMenu.xaml;CustomControls\MenuButton.xaml;styles.xaml;Views\Configuration.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Users.xaml;
+>>>>>>> checkin_ui
 
 False
 

@@ -21,6 +21,7 @@ namespace Communitel.Views
     public partial class Dashboard : Window
     {
         public int user_profile_id { get; set; }
+        public int idAuth { get; set; }
         public Dashboard()
         {
             InitializeComponent();
@@ -43,7 +44,8 @@ namespace Communitel.Views
             grdOverlay.Visibility = Visibility.Collapsed;
             grdTop.Visibility = Visibility.Visible;
             dynamic user = App.Current.Properties["User"];
-            dynamic dashboardContext = new System.Dynamic.ExpandoObject();
+            idAuth = (int)user.id;
+            dynamic dashboardContext = new System.Dynamic.ExpandoObject(); 
             dashboardContext.WelcomeFull = "Bienvenido, " + user.firstname+ " " + user.lastname;
             //txbWelcomeUser.DataContext = dashboardContext;
             int i = 1;
@@ -71,52 +73,22 @@ namespace Communitel.Views
                     img.Height = 80;
                     img.Width = 80;
                     TextBlock t1 = new TextBlock();
-                    t1.Text = user.firstname + " " + user.lastname;
-                    t1.Foreground = new SolidColorBrush(Colors.White);
+                    t.Text = user.firstname + " " + user.lastname;
+                    t.Foreground = new SolidColorBrush(Colors.White);
                     t1.Text = user.userprofile.description;
                     t1.Foreground = new SolidColorBrush(Color.FromRgb(176, 190, 197));
                     stackPnl.Children.Add(img);
+                    stackPnl.Children.Add(t);
                     stackPnl.Children.Add(t1);
-
-                    Button btn2 = new Button() { };
-                    StackPanel stackPnl2 = new StackPanel();
-                    stackPnl2.Margin = new Thickness(10);
-                    stackPnl2.Orientation = Orientation.Vertical;
-                    btn2.Content = stackPnl2;
-                    btn2.Style = rd["MenuButtonStyle"] as Style;
-                    btn2.Click += new RoutedEventHandler(addMenuViews);
-                    Image img2 = new Image();
-                    img2.Height = 24;
-                    img2.Width = 24;
-                    img2.Source = new BitmapImage(new Uri("pack://application:,,,/media/icons/ic_dashboard.png"));
-                    TextBlock t2 = new TextBlock();
-                    t2.Text = "Dashboard";
-                    btn2.Tag = "dashboard";
-                    stackPnl2.Children.Add(img2);
-                    stackPnl2.Children.Add(t2);
-
-                    Button btn3 = new Button() { };
-                    StackPanel stackPnl3 = new StackPanel();
-                    stackPnl3.Margin = new Thickness(10);
-                    stackPnl3.Orientation = Orientation.Vertical;
-                    btn3.Content = stackPnl3;
-                    Image img3 = new Image();
-                    img3.Height = 24;
-                    img3.Width = 24;
-                    img3.Source = new BitmapImage(new Uri("pack://application:,,,/media/icons/" + item.views.icon));
-                    TextBlock t3 = new TextBlock();
-                    t3.Text = item.views.description;
-                    btn3.Style = rd["MenuButtonStyle"] as Style;
-                    btn3.Tag = item.views.description.ToString().ToLower();
-
-                    btn3.Click += new RoutedEventHandler(addMenuViews);
-                    stackPnl3.Children.Add(img3);
-                    stackPnl3.Children.Add(t3);
-
-                    grdMenu.Children.Add(stackPnl);
-                    grdMenu.Children.Add(btn2);
-                    grdMenu.Children.Add(btn3);
-                    
+                }
+                else if (i == 2)
+                {
+                    btn.Content = stackPnl;
+                    img.Source = new BitmapImage(new Uri("pack://application:,,,/media/icons/ic_dashboard.png"));
+                    t.Text = "Dashboard";
+                    btn.Tag = "dashboard";
+                    stackPnl.Children.Add(img);
+                    stackPnl.Children.Add(t);
                 }
                 else
                 {
@@ -128,18 +100,26 @@ namespace Communitel.Views
                     stackPnl.Children.Add(t);
                 }
                
-                if(i >1)
+                if(i == 1)
                 {
+                    grdMenu.Children.Add(stackPnl);
+                }
+                else
+                { 
                     grdMenu.Children.Add(btn);
                 }
+                
+                
                 i++;
             }
+
+
         }
         void addMenuViews(object sender, RoutedEventArgs e)
         {
             if (((Button)sender).Tag.ToString().CompareTo("configuration") == 0)
             {
-                //txbWindowTitle.Text = "Configuration";
+                txbWindowTitle.Text = "Configuration";
                 grdContent.Children.Clear();
                 Configuration cng = new Configuration();
                 grdContent.Children.Add(cng);
@@ -150,18 +130,26 @@ namespace Communitel.Views
             {
                 grdContent.Children.Clear();
                 dynamic gp = GetPrivilege("Users");
-                Users cng = new Users(gp, user_profile_id);
+                Users cng = new Users(gp, user_profile_id,idAuth);
                 grdContent.Children.Add(cng);
                 //grdMenu.Visibility = Visibility.Collapsed;
                 grdContent.Visibility = Visibility.Visible;
             }
-            else if (((Button)sender).Content.ToString().ToLower().CompareTo("check in") == 0)
+            else if (((Button)sender).Content.ToString().ToLower().CompareTo("inventory") == 0)
             {
                 grdContent.Children.Clear();
+                /*Configuration cng = new Configuration();
+                grdOverlay.Children.Add(cng);
+                grdMenu.Visibility = Visibility.Collapsed;
+                grdOverlay.Visibility = Visibility.Visible;*/
             }
-            if (((Button)sender).Content.ToString().ToLower().CompareTo("catalog products") == 0)
+            if (((Button)sender).Content.ToString().ToLower().CompareTo("parameter") == 0)
             {
                 grdContent.Children.Clear();
+                /*Configuration cng = new Configuration();
+                grdOverlay.Children.Add(cng);
+                grdMenu.Visibility = Visibility.Collapsed;
+                grdOverlay.Visibility = Visibility.Visible;*/
             }
 
         }

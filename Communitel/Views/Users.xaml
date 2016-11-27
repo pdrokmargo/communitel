@@ -5,55 +5,111 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Communitel.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="700.5" d:DesignWidth="588">
-    <Grid>
-        <Grid x:Name="GridUsers" Visibility="Visible">
+             d:DesignHeight="634.5" d:DesignWidth="588">
+    <Grid Background="White" >
+        <Grid x:Name="GridUsers" Visibility="Collapsed">
             <ListView x:Name="listView" Margin="10,54,10,10" SelectionChanged="listView_SelectionChanged">
                 <ListView.View>
                     <GridView x:Name="ListViewHeader">
-                        <GridViewColumn Header="id" DisplayMemberBinding="{Binding id}" Width="100"/>
-                        <GridViewColumn Header="Username" DisplayMemberBinding="{Binding username}" Width="200"/>
-                        <GridViewColumn Header="Firstname" DisplayMemberBinding="{Binding firstname}" Width="200"/>
-                        <GridViewColumn Header="Lastname" DisplayMemberBinding="{Binding lastname}" Width="200"/>
+                        <GridViewColumn Header="id" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding id}" FontSize="30px"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Username" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding username}" FontSize="30px"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="Firstname" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding firstname}" FontSize="30px"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="Lastname" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding lastname}" FontSize="30px"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Button x:Name="btnNewUser" Content="Add new user" Margin="0,10,10,0" Height="39" VerticalAlignment="Top" HorizontalAlignment="Right" Width="115" Click="button_Click"/>
-            <TextBox x:Name="textBox" Height="39" Margin="10,10,130,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
 
+            <Button x:Name="btnNewUser" Content="Add new user" Margin="0,10,10,0" Height="39" VerticalAlignment="Top" HorizontalAlignment="Right" Width="115" Click="button_Click"/>
+            <TextBox x:Name="textBox" Height="39" Margin="10,10,130,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
         </Grid>
-        <Grid x:Name="GridUser" Visibility="Hidden">
+        <Grid x:Name="GridUser" Visibility="Visible">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="6*"/>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="6*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="54*"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="43*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="54*"/>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="114*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="button1" Content="Back" Click="button1_Click" Margin="10,10,10,46"/>
-            <StackPanel x:Name="stFormUser" Grid.Column="1" Grid.Row="1">
-                <Label x:Name="label3" Content="Firstname"/>
-                <TextBox x:Name="textBox4" Height="23" TextWrapping="Wrap" Text="{Binding Path=firstname}"/>
-                <Label x:Name="label4" Content="Lastname"/>
-                <TextBox x:Name="textBox5" Height="23" TextWrapping="Wrap" Text="{Binding Path=lastname}"/>
-                <Label x:Name="label" Content="Username"/>
-                <TextBox x:Name="txtUsername" Height="23" TextWrapping="Wrap" Text="{Binding Path=username}"/>
-                <Label x:Name="label1" Content="Password"/>
-                <PasswordBox x:Name="txtPass1"/>
-                <Label x:Name="label2" Content="Confirm Password"/>
-                <PasswordBox x:Name="txtPass2"/>
-                <Label x:Name="labelValidPass" Content="Label"/>
-                <Label x:Name="label5" Content="Email"/>
-                <TextBox x:Name="txtEmail" Height="23" TextWrapping="Wrap" Text="{Binding Path=email}"/>
-                <Label x:Name="label6" Content="User profile"/>
-                <ComboBox x:Name="comboBox"/>
+            <Button x:Name="button1" Content="Back" Click="button1_Click" Margin="10,10,10,0" Grid.ColumnSpan="2" Height="38" VerticalAlignment="Top"/>
 
+            <Label x:Name="label3" Content="Firstname" Grid.ColumnSpan="6" Margin="10,0" Grid.Row="1" Height="26" VerticalAlignment="Top" FontSize="15"/>
+            <TextBox x:Name="textBox4" FontSize="20" TextWrapping="Wrap" Text="{Binding Path=firstname}" Margin="10,0" Grid.Row="2" Grid.ColumnSpan="6" Height="40" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
 
+            <Label x:Name="label4" Content="Lastname" Grid.ColumnSpan="6" Grid.Column="6" Margin="10,0" Grid.Row="1" Height="26" VerticalAlignment="Top" FontSize="15"/>
+            <TextBox x:Name="textBox5" FontSize="20" TextWrapping="Wrap" Text="{Binding Path=lastname}" Grid.Column="6" Margin="10,0" Grid.Row="2" Grid.ColumnSpan="6" HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top"/>
+
+            <Label x:Name="label" Content="Username" Grid.ColumnSpan="6" Margin="10,0" Grid.Row="3" RenderTransformOrigin="0.592,1.471" Height="26" VerticalAlignment="Top" FontSize="15"/>
+            <TextBox x:Name="txtUsername" FontSize="20" TextWrapping="Wrap" Text="{Binding Path=username}" KeyUp="validateUsername" Margin="10,0" Grid.Row="4" Grid.ColumnSpan="6" HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top"/>
+
+            <Label x:Name="labelValidPass" Content="Label" Foreground="Red" Margin="10,1,10,0" Grid.ColumnSpan="12" Grid.Row="5" Height="27" VerticalAlignment="Top" FontSize="15"/>
+
+            <Label x:Name="label1" Content="Password" Grid.ColumnSpan="6" Margin="10,0" Grid.Row="6" Height="26" VerticalAlignment="Top" FontSize="15"/>
+            <PasswordBox x:Name="txtPass1" FontSize="20" Grid.ColumnSpan="6" Margin="10,0" Grid.Row="7" Height="40" VerticalAlignment="Top"/>
+
+            <Label x:Name="label2" Content="Confirm Password" Grid.ColumnSpan="6" Grid.Column="6" Margin="10,0" Grid.Row="6" Height="26" VerticalAlignment="Top" FontSize="15"/>
+            <PasswordBox x:Name="txtPass2" FontSize="20" Grid.ColumnSpan="6" Grid.Column="6" Margin="10,0" Grid.Row="7" Height="40" VerticalAlignment="Top"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="6" Margin="10,1,10,0" Grid.Row="8" Grid.ColumnSpan="6" Height="54" VerticalAlignment="Top" Grid.RowSpan="2">
+                <Button x:Name="btn_reset" Content="Reset Password" Width="100" Height="34" Click="btn_reset_Click"/>
+                <Button x:Name="btn_reset_save" Content="Save"  Width="90" Height="34" Click="btn_reset_save_Click"/>
+                <Button x:Name="btn_reset_cancel" Content="Cancel" Width="90" Height="34" Click="btn_reset_cancel_Click"/>
             </StackPanel>
-            <Grid Grid.Column="1" Margin="10,40,10,10" Grid.Row="2">
+
+            <Label x:Name="label5" Content="Email" Grid.ColumnSpan="6" Margin="10,0" Grid.Row="9" Height="28" VerticalAlignment="Top" FontSize="15" Grid.RowSpan="2"/>
+            <TextBox x:Name="txtEmail" FontSize="20" TextWrapping="Wrap" Text="{Binding Path=email}" Margin="10,0" Grid.Row="10" Grid.ColumnSpan="6" Height="40" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+
+            <Label x:Name="label6" Content="User profile" Grid.ColumnSpan="6" Grid.Column="6" Margin="10,0" Grid.Row="9" Height="28" VerticalAlignment="Top" FontSize="15" Grid.RowSpan="2"/>
+            <ComboBox x:Name="comboBox" FontSize="20" Grid.ColumnSpan="6" Grid.Column="6" Margin="10,1,10,0" Grid.Row="10" Height="40" VerticalAlignment="Top"  />
+
+            <Grid Grid.Column="6" Margin="0,0,10,10" Grid.Row="12" Grid.ColumnSpan="6" Height="56" VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -61,9 +117,9 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="btnCreate" Content="Create" Margin="10,0" Click="btnCreate_Click"/>
                 <Button x:Name="btnUpdate" Content="Update" Grid.Column="1" Margin="10,0" Click="btnUpdate_Click"/>
-                <Button x:Name="btnDelete" Content="Delete" Grid.Column="2" Margin="10,0"/>
+                <Button x:Name="btnDelete" Content="Delete" Grid.Column="2" Margin="10,0,0,0" Click="btnDelete_Click" HorizontalAlignment="Left" Width="75"/>
             </Grid>
-
         </Grid>
+
     </Grid>
 </UserControl>

@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="Communitel.Views.Privileges"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Communitel.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="589.248">
+    <Grid>
+        <Grid x:Name="GridList" Visibility="Collapsed">
+            <ListView x:Name="listView" Margin="10" SelectionChanged="listView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="id" Width="50" DisplayMemberBinding="{Binding id}"/>
+                        <GridViewColumn Header="Userprofile" Width="200" DisplayMemberBinding="{Binding description}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+        <Grid x:Name="GridForm" Visibility="Visible">
+            <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="200"/>
+            <Button x:Name="button" Content="Back" Margin="0,10,10,0" HorizontalAlignment="Right" Width="75" Click="button_Click" Height="26" VerticalAlignment="Top"/>
+            <ListView x:Name="listView1" Margin="10,41,10,60" ItemsSource="{Binding Path=list, Mode=TwoWay}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="View" Width="150" DisplayMemberBinding="{Binding view}"/>
+                        <!--create-->
+                        <GridViewColumn  Width="100">
+                            <GridViewColumn.Header>
+                                <CheckBox Name="chkCreate" Content="Create" Click="chkCreate_Checked" />
+                            </GridViewColumn.Header>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Path=create, Mode=TwoWay}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--read-->
+                        <GridViewColumn  Width="100">
+                            <GridViewColumn.Header>
+                                <CheckBox Name="chkRead" Content="Read" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chkRead_Checked"/>
+                            </GridViewColumn.Header>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Path=read, Mode=TwoWay}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--update-->
+                        <GridViewColumn  Width="100">
+                            <GridViewColumn.Header>
+                                <CheckBox Name="chkUpdate" Content="Update" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chkUpdate_Checked"/>
+                            </GridViewColumn.Header>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Path=update, Mode=TwoWay}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!--delete-->
+                        <GridViewColumn  Width="100">
+                            <GridViewColumn.Header>
+                                <CheckBox Name="chkDelete" Content="delete" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chkDelete_Checked"/>
+                            </GridViewColumn.Header>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Path=delete, Mode=TwoWay}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Button x:Name="btnSave" Content="Save" Margin="0,0,10,10" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="90" Click="btnSave_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>
