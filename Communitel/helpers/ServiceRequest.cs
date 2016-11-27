@@ -14,9 +14,7 @@ namespace Communitel.helpers
     {
         
         public ServiceRequest()
-        {
-            
-        }
+        {}
         public dynamic requestToken(string oauthUri, string parsedContent)
         {
             var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + oauthUri));

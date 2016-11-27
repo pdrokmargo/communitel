@@ -6,5 +6,7 @@
              xmlns:local="clr-namespace:Communitel.Views"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
-    <Grid Background="#00000000"/>
+    <Grid Background="White">
+        
+    </Grid>
 </UserControl>

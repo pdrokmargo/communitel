@@ -43,7 +43,7 @@ namespace Communitel.Views
             grdOverlay.Visibility = Visibility.Collapsed;
             grdTop.Visibility = Visibility.Visible;
             dynamic user = App.Current.Properties["User"];
-            dynamic dashboardContext = new System.Dynamic.ExpandoObject(); 
+            dynamic dashboardContext = new System.Dynamic.ExpandoObject();
             dashboardContext.WelcomeFull = "Bienvenido, " + user.firstname+ " " + user.lastname;
             //txbWelcomeUser.DataContext = dashboardContext;
             int i = 1;
