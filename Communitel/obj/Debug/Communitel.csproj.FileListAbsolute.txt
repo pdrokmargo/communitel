@@ -140,3 +140,12 @@ C:\communitel_bk\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
 C:\communitel_bk\Communitel\obj\Debug\Communitel.exe
 C:\communitel_bk\Communitel\obj\Debug\Communitel.pdb
 >>>>>>> checkin_ui
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\ShowMessage.g.cs
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\ShowMessage.baml
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\TextField.g.cs
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\TextField.baml
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\AggregatedObject.g.cs
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\AggregatedObject.baml
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\PasswordField.g.cs
+C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\PasswordField.baml

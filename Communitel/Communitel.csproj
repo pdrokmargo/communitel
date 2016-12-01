@@ -42,6 +42,7 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -68,11 +69,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomControls\AggregatedObject.xaml.cs">
+      <DependentUpon>AggregatedObject.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\GridMenu.xaml.cs">
       <DependentUpon>GridMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\MenuButton.xaml.cs">
       <DependentUpon>MenuButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\PasswordField.xaml.cs">
+      <DependentUpon>PasswordField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ShowMessage.xaml.cs">
+      <DependentUpon>ShowMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\TextField.xaml.cs">
+      <DependentUpon>TextField.xaml</DependentUpon>
     </Compile>
     <Compile Include="helpers\ServiceRequest.cs" />
     <Compile Include="Models\OptionMenu.cs" />
@@ -89,11 +102,27 @@
     <Compile Include="Views\Users.xaml.cs">
       <DependentUpon>Users.xaml</DependentUpon>
     </Compile>
+    <Page Include="CustomControls\AggregatedObject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomControls\GridMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomControls\MenuButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\PasswordField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\ShowMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\TextField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

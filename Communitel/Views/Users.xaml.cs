@@ -32,16 +32,21 @@ namespace Communitel.Views
         string sCaption = "";
 
 
-        public Users(dynamic _Privilege, int _profile, int _idAuth)
+        public Users()
         {
-            Privilege = _Privilege;
-            profile = _profile;
-            idAuth = _idAuth;
             InitializeComponent();
             LoadGridUsers();
             LoadCombo();
             labelValidPass.Content = "";
             labelValidPass.Visibility = Visibility.Collapsed;
+        }
+
+        public Users(dynamic _Privilege, int _profile, int _idAuth) :
+            this()
+        {
+            Privilege = _Privilege;
+            profile = _profile;
+            idAuth = _idAuth;
         }
 
         private void LoadGridUsers()

@@ -1,24 +1,16 @@
 ﻿
-<<<<<<< HEAD
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\App.xaml;;
+FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\CustomControls\AggregatedObject.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\CustomControls\GridMenu.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\CustomControls\MenuButton.xaml;;
+FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\CustomControls\PasswordField.xaml;;
+FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\CustomControls\ShowMessage.xaml;;
+FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\CustomControls\TextField.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\styles.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\Views\Configuration.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\Views\Dashboard.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\dMainWindow.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\Views\Login.xaml;;
-FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\Views\Users.xaml;;
 FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\Views\Products.xaml;;
-=======
-FC:\communitel_bk\Communitel\App.xaml;;
-FC:\communitel_bk\Communitel\CustomControls\GridMenu.xaml;;
-FC:\communitel_bk\Communitel\CustomControls\MenuButton.xaml;;
-FC:\communitel_bk\Communitel\styles.xaml;;
-FC:\communitel_bk\Communitel\Views\Configuration.xaml;;
-FC:\communitel_bk\Communitel\Views\Dashboard.xaml;;
-FC:\communitel_bk\Communitel\dMainWindow.xaml;;
-FC:\communitel_bk\Communitel\Views\Login.xaml;;
-FC:\communitel_bk\Communitel\Views\Users.xaml;;
->>>>>>> checkin_ui
+FC:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\Views\Users.xaml;;
 

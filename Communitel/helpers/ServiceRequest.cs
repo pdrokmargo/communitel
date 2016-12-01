@@ -47,7 +47,7 @@ namespace Communitel.helpers
 
             var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));
             http.Method = "GET";
-            http.ContentType = "application/x-www-form-urlencoded";
+            http.ContentType = "application/json";
             http.Accept = "application/json";
             http.Headers["Authorization"] = "Bearer " + (string)App.Current.Properties["Token"];
 
@@ -62,9 +62,9 @@ namespace Communitel.helpers
         public dynamic POST(string requestUri, string parsedContent)
         {
             var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));
-            http.ContentType = "application/x-www-form-urlencoded";
+            http.ContentType = "application/json";
             http.Method = "POST";
-            http.Accept = "application/json";
+            //http.Accept = "application/json";
             string token = (string)App.Current.Properties["Token"];
             http.Headers["Authorization"] = "Bearer " + token;
             
@@ -89,11 +89,10 @@ namespace Communitel.helpers
         {
             var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));
             http.Method = "PUT";
-            http.ContentType = "application/x-www-form-urlencoded";
+            http.ContentType = "application/json";
             http.Accept = "application/json";
             string token = (string)App.Current.Properties["Token"];
             http.Headers["Authorization"] = "Bearer " + token;
-
             ASCIIEncoding encoding = new ASCIIEncoding();
             if (parsedContent != "")
             {
@@ -102,7 +101,6 @@ namespace Communitel.helpers
                 newStream.Write(bytes, 0, bytes.Length);
                 newStream.Close();
             }
-
             var response = http.GetResponse();
             var stream = response.GetResponseStream();
             var sr = new StreamReader(stream);
