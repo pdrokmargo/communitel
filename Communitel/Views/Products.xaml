@@ -16,7 +16,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TextBlock Text="Products Catalog" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" x:Name="txbTitle" Background="Transparent" Foreground="Gray"  TextWrapping="Wrap" TextAlignment="Left"  FontStretch="ExtraExpanded" FontSize="32" VerticalAlignment="Top" Margin="5"/>
-        <Grid x:Name="grdProductsForm" Grid.Column="0" Grid.Row="1" Visibility="Collapsed" Margin="5">
+        <Grid x:Name="grdProductsForm" Grid.Column="0" Grid.Row="1" Visibility="Visible" Margin="5">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                 <Button x:Name="btnClose" Style="{StaticResource ButtonClose}" Width="120" Height="40" Content="Close" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10,10,10,10" Click="btnClose_Click" />
                 <Button x:Name="btnSave" Style="{StaticResource ButtonSave}" Width="120" Height="40" Content="Save" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10,10,10,10" Click="btnSave_Click" />
@@ -25,22 +25,26 @@
             <CustomControls:TextField Label="Name" Text="{Binding name}" HorizontalAlignment="Left" Margin="159,10,0,0" VerticalAlignment="Top" Width="445"/>
             <CustomControls:TextField Label="Description" Text="{Binding description}" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Width="594"/>
             <CustomControls:TextField Label="Quantity" DataType="Numeric" Text="{Binding quantity}" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="81"/>
-            <CustomControls:AggregatedObject Label="Category" HorizontalAlignment="Left" Margin="159,204,0,0" VerticalAlignment="Top" Width="176"/>
+            <CustomControls:AggregatedObject Label="Category" HorizontalAlignment="Left" Margin="468,206,0,0" VerticalAlignment="Top" Width="176"/>
+            <CustomControls:TextField Label="Price" DataType="Numeric" Text="{Binding price}" HorizontalAlignment="Left" Margin="96,206,0,0" VerticalAlignment="Top" Width="81"/>
+            <CustomControls:TextField Label="Status" DataType="Numeric" Text="{Binding price}" HorizontalAlignment="Left" Margin="182,206,0,0" VerticalAlignment="Top" Width="81"/>
 
 
         </Grid>
-        <Grid x:Name="grdProductsList" Grid.Column="0" Grid.Row="1" Margin="5" Visibility="Visible">
+        <Grid x:Name="grdProductsList" Grid.Column="0" Grid.Row="1" Margin="5" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="11*"/>
+                <ColumnDefinition Width="68*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
                 <TextBox x:Name="txtSearch" Height="40" Width="200" Margin="5" />
                 <Button x:Name="btnAddNew" Style="{StaticResource AddNew}" Width="120" Height="40" Content="Add Product" Margin="5" Click="btnAddNew_Click"/>
             </StackPanel>
-            <ListView Grid.Row="1" x:Name="listView" Margin="5" BorderBrush="Transparent"  AlternationCount="2" ItemContainerStyle="{StaticResource alternatingStyle}" SelectionChanged="listView_SelectionChanged">
+            <ListView Grid.Row="1" x:Name="listView" Margin="5" BorderBrush="Transparent"  AlternationCount="2" ItemContainerStyle="{StaticResource alternatingStyle}" SelectionChanged="listView_SelectionChanged" Grid.ColumnSpan="2">
                 <ListView.View>
                     <GridView x:Name="ListViewHeader">
                         <GridViewColumn Header="Reference" Width="150">
