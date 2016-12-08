@@ -1,0 +1,353 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.fontawesome.io/icons/"
+                    xmlns:local="clr-namespace:Communitel.Common.Themes">
+
+    <SolidColorBrush x:Key="BackGroundButton" Color="#46be8a"/>
+    <SolidColorBrush x:Key="ForeGroundFontAwesome" Color="#FF37474F"/>
+    
+    <Style x:Key="DesignButton" TargetType="{x:Type Button}">
+        <Setter Property="FontFamily" Value="Century Gothic"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="#FFF7FAFC"/>
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="0" BorderThickness="0" Background="{DynamicResource BackGroundButton}"
+                                BorderBrush="#FFE8E8E8">
+
+                            <ContentPresenter HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <!--<Setter Property="Opacity" Value="1"/>-->
+                            <Setter Property="Background" TargetName="border" Value="#46be8a"/>
+                            <Setter Property="Opacity" TargetName="border" Value="0.8"/>
+                            <!--<Setter Property="Foreground" Value="White"/>-->
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="1"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="#46be8a"/>
+                            <Setter Property="Opacity" TargetName="border" Value="0.8"/>
+                            <!--<Setter Property="Foreground" Value="White"/>-->
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="grid" Value="1"/>
+                            <Setter Property="Opacity" TargetName="border" Value="0.8"/>
+                            <!--<Setter Property="Background" TargetName="grid" Value="#CCCCCCCC"/>-->
+                        </Trigger>
+                        <!--<Trigger Property="IsFocused" Value="True">
+                            --><!--<Setter Property="Opacity" Value="1"/>--><!--
+                            <Setter Property="BorderBrush" TargetName="border" Value="#46be8a"/>
+                            <Setter Property="Opacity" TargetName="border" Value="0.8"/>
+                            --><!--<Setter Property="Background" TargetName="border" Value="#FF2D89EF"/>                            
+                            <Setter Property="Foreground" Value="White"/>--><!--
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="DesignButtonSearch" BasedOn="{StaticResource DesignButton}" TargetType="{x:Type Button}">       
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="0,2,2,0" BorderThickness="2" 
+                                Background="{DynamicResource BackGroundButton}"
+                                BorderBrush="{DynamicResource BackGroundButton}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <fa:ImageAwesome Grid.Column="0" Icon="Search" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF37474F" Margin="4"/>
+                                <ContentPresenter Grid.Column="1" HorizontalAlignment="Right" 
+                                VerticalAlignment="Center"/>
+                            </Grid>
+
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <!--<Setter Property="Opacity" Value="1"/>-->
+                            <Setter Property="Background" TargetName="border" Value="#46be8a"/>
+                            <Setter Property="Opacity" TargetName="border" Value="0.8"/>
+                            <!--<Setter Property="Foreground" Value="White"/>-->
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="1"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="#46be8a"/>
+                            <Setter Property="Opacity" TargetName="border" Value="0.8"/>
+                            <!--<Setter Property="Foreground" Value="White"/>-->
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="grid" Value="1"/>
+                            <Setter Property="Opacity" TargetName="border" Value="0.8"/>
+                            <!--<Setter Property="Background" TargetName="grid" Value="#CCCCCCCC"/>-->
+                        </Trigger>
+                        <!--<Trigger Property="IsFocused" Value="True">
+                            
+                            <Setter Property="BorderBrush" TargetName="border" Value="#46be8a"/>
+                            <Setter Property="Opacity" TargetName="border" Value="0.8"/>
+                           
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="DesignButtonImage" TargetType="{x:Type Button}">
+
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="2" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center"
+                         VerticalAlignment="Center" Margin="2"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="1" />
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.5" />
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="DesignButtonImageFont" TargetType="{x:Type Button}">
+
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="5" BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <ContentPresenter Grid.Row="0" HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" Margin="2"/>
+                                <TextBlock Grid.Row="1" Text="{TemplateBinding Tag}" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                           MaxWidth="120" Height="Auto" TextWrapping="Wrap" TextAlignment="Justify" Margin="7"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="1" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.8" />
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DesignButtonMenu" TargetType="{x:Type Button}">
+
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="0" BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}" Padding="10">
+                            <ContentPresenter Grid.Row="0" HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" Margin="2"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Opacity" Value="1" />
+                            <Setter TargetName="border" Property="Background" Value="#263238" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Opacity" Value="0.8" />
+                            <Setter TargetName="border" Property="Background" Value="#263238" />
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DesignButtonClose" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="#FF4C585D"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="FontFamily" Value="Marlett"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="FontWeight" Value="ExtraLight"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Name="border" CornerRadius="0" BorderThickness="1">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="1" />
+                            <Setter TargetName="border" Property="Background" Value="LightSkyBlue"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="DesignButtonNextPage" TargetType="{x:Type Button}">       
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Gray"/>       
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="5" BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <fa:ImageAwesome Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Icon="AngleDoubleRight" Foreground="Gray" Width="20" Height="20"/>
+                                <ContentPresenter Grid.Row="1" HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" Margin="2"/>
+                                
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="1" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.8" />
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DesignButtonPreviousPage" TargetType="{x:Type Button}">
+
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Gray"/>       
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="5" BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <fa:ImageAwesome Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Icon="AngleDoubleLeft" Foreground="Gray" Width="20" Height="20"/>
+                                <ContentPresenter Grid.Row="1" HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" Margin="2"/>                               
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="1" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.8" />
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

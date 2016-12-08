@@ -14,13 +14,21 @@ namespace Communitel
     /// </summary>
     public partial class App : Application
     {
-        public static string Token { get; set; }
-        public static dynamic User { get; set; }
-        private void Application_Startup(object sender, StartupEventArgs e)
+        //public static string Token { get; set; }
+        //public static dynamic User { get; set; }
+        //private void Application_Startup(object sender, StartupEventArgs e)
+        //{
+        //    //Create the startup window
+        //    Dashboard wnd = new Dashboard();
+        //    wnd.Show();
+        //}
+
+        protected override void OnStartup(StartupEventArgs e)
         {
-            // Create the startup window
-            Dashboard wnd = new Dashboard();
-            wnd.Show();
+            base.OnStartup(e);
+
+            var bootstrapper = new Bootstrapper();
+            bootstrapper.Run();
         }
     }
 }

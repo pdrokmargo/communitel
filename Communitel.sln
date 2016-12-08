@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communitel", "Communitel\Communitel.csproj", "{DBAC0F93-FD2F-4923-A6FA-7A463FF7544B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communitel.Product", "Communitel.Product\Communitel.Product.csproj", "{65ED6FF2-5746-41F4-A6CA-AEBCC46E4572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communitel.Common", "Communitel.Common\Communitel.Common.csproj", "{3DA94798-CC36-4ED9-8E51-D4BBD5FDF206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{DBAC0F93-FD2F-4923-A6FA-7A463FF7544B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBAC0F93-FD2F-4923-A6FA-7A463FF7544B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBAC0F93-FD2F-4923-A6FA-7A463FF7544B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65ED6FF2-5746-41F4-A6CA-AEBCC46E4572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65ED6FF2-5746-41F4-A6CA-AEBCC46E4572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65ED6FF2-5746-41F4-A6CA-AEBCC46E4572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65ED6FF2-5746-41F4-A6CA-AEBCC46E4572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA94798-CC36-4ED9-8E51-D4BBD5FDF206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA94798-CC36-4ED9-8E51-D4BBD5FDF206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA94798-CC36-4ED9-8E51-D4BBD5FDF206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA94798-CC36-4ED9-8E51-D4BBD5FDF206}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

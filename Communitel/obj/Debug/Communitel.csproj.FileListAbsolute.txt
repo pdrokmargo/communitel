@@ -1,150 +1,72 @@
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\bin\Debug\Communitel.exe.config
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\bin\Debug\Communitel.exe
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\bin\Debug\Communitel.pdb
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Views\Login.g.cs
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\App.g.cs
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Communitel_MarkupCompile.cache
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Communitel_MarkupCompile.lref
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Views\Login.baml
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Communitel.g.resources
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Communitel.exe
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Communitel.pdb
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Views\Dashboard.g.cs
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Views\Dashboard.baml
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Communitel.Views.Properties.Resources.resources
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\dMainWindow.g.cs
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\dMainWindow.baml
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\bin\Debug\Newtonsoft.Json.dll
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\bin\Debug\Newtonsoft.Json.xml
-C:\Users\PiT\Dropbox\XamarinConcepts\InfoTreno\Communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\Communitel.exe.config
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.exe
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.pdb
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\Communitel.exe
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\Communitel.pdb
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\Newtonsoft.Json.dll
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\bin\Debug\Newtonsoft.Json.xml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Dashboard.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\dMainWindow.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Login.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\App.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel_MarkupCompile.cache
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel_MarkupCompile.lref
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Dashboard.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\dMainWindow.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Login.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.g.resources
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Configuration.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Configuration.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Users.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Users.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\GridMenu.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\GridMenu.baml
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\bin\Debug\Communitel.exe.config
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.exe
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.pdb
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\CustomControls\GridMenu.g.cs
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Configuration.g.cs
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Dashboard.g.cs
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\dMainWindow.g.cs
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Login.g.cs
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Users.g.cs
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\App.g.cs
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel_MarkupCompile.cache
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel_MarkupCompile.lref
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\bin\Debug\Communitel.exe
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\bin\Debug\Communitel.pdb
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\CustomControls\GridMenu.baml
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Configuration.baml
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Dashboard.baml
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\dMainWindow.baml
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Login.baml
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Views\Users.baml
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.g.resources
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache
-C:\communitel\Communitel\bin\Debug\Communitel.exe.config
-C:\communitel\Communitel\obj\Debug\Communitel.exe
-C:\communitel\Communitel\obj\Debug\Communitel.pdb
-C:\communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache
-C:\communitel\Communitel\obj\Debug\CustomControls\GridMenu.g.cs
-C:\communitel\Communitel\obj\Debug\Views\Configuration.g.cs
-C:\communitel\Communitel\obj\Debug\Views\Dashboard.g.cs
-C:\communitel\Communitel\obj\Debug\dMainWindow.g.cs
-C:\communitel\Communitel\obj\Debug\Views\Login.g.cs
-C:\communitel\Communitel\obj\Debug\Views\Users.g.cs
-C:\communitel\Communitel\obj\Debug\App.g.cs
-C:\communitel\Communitel\obj\Debug\Communitel_MarkupCompile.cache
-C:\communitel\Communitel\obj\Debug\Communitel_MarkupCompile.lref
-C:\communitel\Communitel\bin\Debug\Communitel.exe
-C:\communitel\Communitel\bin\Debug\Communitel.pdb
-C:\communitel\Communitel\bin\Debug\Newtonsoft.Json.dll
-C:\communitel\Communitel\bin\Debug\Newtonsoft.Json.xml
-C:\communitel\Communitel\obj\Debug\CustomControls\GridMenu.baml
-C:\communitel\Communitel\obj\Debug\Views\Configuration.baml
-C:\communitel\Communitel\obj\Debug\Views\Dashboard.baml
-C:\communitel\Communitel\obj\Debug\dMainWindow.baml
-C:\communitel\Communitel\obj\Debug\Views\Login.baml
-C:\communitel\Communitel\obj\Debug\Views\Users.baml
-C:\communitel\Communitel\obj\Debug\Communitel.g.resources
-C:\communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
-C:\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\styles.baml
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\App.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\App.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\styles.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\MenuButton.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\MenuButton.baml
-<<<<<<< HEAD
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\CustomControls\MenuButton.g.cs
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\CustomControls\MenuButton.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Products.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\Views\Products.baml
-=======
-C:\communitel_bk\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache
-C:\communitel_bk\Communitel\obj\Debug\CustomControls\GridMenu.g.cs
-C:\communitel_bk\Communitel\obj\Debug\CustomControls\MenuButton.g.cs
-C:\communitel_bk\Communitel\obj\Debug\Views\Configuration.g.cs
-C:\communitel_bk\Communitel\obj\Debug\Views\Dashboard.g.cs
-C:\communitel_bk\Communitel\obj\Debug\dMainWindow.g.cs
-C:\communitel_bk\Communitel\obj\Debug\Views\Login.g.cs
-C:\communitel_bk\Communitel\obj\Debug\Views\Users.g.cs
-C:\communitel_bk\Communitel\obj\Debug\App.g.cs
-C:\communitel_bk\Communitel\obj\Debug\Communitel_MarkupCompile.cache
-C:\communitel_bk\Communitel\obj\Debug\Communitel_MarkupCompile.lref
-C:\communitel_bk\Communitel\bin\Debug\Communitel.exe.config
-C:\communitel_bk\Communitel\bin\Debug\Communitel.exe
-C:\communitel_bk\Communitel\bin\Debug\Communitel.pdb
-C:\communitel_bk\Communitel\bin\Debug\Newtonsoft.Json.dll
-C:\communitel_bk\Communitel\bin\Debug\Newtonsoft.Json.xml
-C:\communitel_bk\Communitel\obj\Debug\App.baml
-C:\communitel_bk\Communitel\obj\Debug\CustomControls\GridMenu.baml
-C:\communitel_bk\Communitel\obj\Debug\CustomControls\MenuButton.baml
-C:\communitel_bk\Communitel\obj\Debug\styles.baml
-C:\communitel_bk\Communitel\obj\Debug\Views\Configuration.baml
-C:\communitel_bk\Communitel\obj\Debug\Views\Dashboard.baml
-C:\communitel_bk\Communitel\obj\Debug\dMainWindow.baml
-C:\communitel_bk\Communitel\obj\Debug\Views\Login.baml
-C:\communitel_bk\Communitel\obj\Debug\Views\Users.baml
-C:\communitel_bk\Communitel\obj\Debug\Communitel.g.resources
-C:\communitel_bk\Communitel\obj\Debug\Communitel.Properties.Resources.resources
-C:\communitel_bk\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
-C:\communitel_bk\Communitel\obj\Debug\Communitel.exe
-C:\communitel_bk\Communitel\obj\Debug\Communitel.pdb
->>>>>>> checkin_ui
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\ShowMessage.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\ShowMessage.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\TextField.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\TextField.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\AggregatedObject.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\AggregatedObject.baml
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\PasswordField.g.cs
-C:\Users\PiT\Documents\Visual Studio 2015\Projects\Communitel\Communitel\obj\Debug\CustomControls\PasswordField.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Communitel.exe.config
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Communitel.exe
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Communitel.pdb
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Communitel.Common.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\FontAwesome.WPF.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.Composition.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.MefExtensions.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.Mvvm.Desktop.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.PubSubEvents.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Communitel.Common.pdb
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\FontAwesome.WPF.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.Composition.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.MefExtensions.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\AggregatedObject.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\GridMenu.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\MenuButton.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\PasswordField.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\ShowMessage.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\TextField.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Configuration.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Dashboard.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\dMainWindow.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Login.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Products.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Shell\Shell.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Users.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\App.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Communitel_MarkupCompile.cache
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Communitel_MarkupCompile.lref
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\AggregatedObject.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\GridMenu.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\MenuButton.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\PasswordField.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\ShowMessage.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\CustomControls\TextField.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\styles.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Configuration.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Dashboard.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\dMainWindow.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Login.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Products.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Shell\Shell.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Views\Users.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Communitel.g.resources
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Communitel.exe
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Communitel.pdb
+C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\Communitel.csprojResolveAssemblyReference.cache

@@ -10,12 +10,12 @@
              Height="356.09" Width="477.594">
     <xctk:BusyIndicator x:Name="ProgressIndicator" IsBusy="False">
         <Border BorderThickness="1,1,1,1" CornerRadius="0,0,8,8" BorderBrush="#FFB9B9B9" Margin="10,79,10,6">
-            
+
             <StackPanel Margin="9,5,9,9">
                 <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="-8,-68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="56" Foreground="#FF6E6E6E" Text="Hello." FontSize="48" />
                 <CustomControls:TextField x:Name="txtUsername" Label="User" HorizontalAlignment="Stretch" Margin="10,10,10,10" />
                 <CustomControls:PasswordField x:Name="txtPassword" Label="Password" HorizontalAlignment="Stretch" Margin="10,10,10,10" />
-                <Button x:Name="btnAddNew" Style="{StaticResource AddNew}" Height="40" Content="Sign In" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Click="btnSignin_Click"  Margin="10,10,10,10"/>    
+                <Button x:Name="btnAddNew" Style="{StaticResource AddNew}" Height="40" Content="Sign In" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Click="btnSignin_Click"  Margin="10,10,10,10"/>
             </StackPanel>
         </Border>
     </xctk:BusyIndicator>

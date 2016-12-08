@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Communitel.Common.Themes">
+    
+    <SolidColorBrush x:Key="BackGroundGridTop" Color="#FF18C6F9"/>
+    <SolidColorBrush x:Key="BackGroundGridMenu" Color="#FF37474F"/>
+    <SolidColorBrush x:Key="HeaderBackGroundPage" Color="#FF18C6F9"/>
+    
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="Margin" Value="10,0,10,0"/>
+    </Style>
+    
+</ResourceDictionary>
