@@ -34,11 +34,11 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="120"/>
             <RowDefinition/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="0" Style="{DynamicResource DesignButton}" HorizontalAlignment="Left" Width="Auto"
+        <Button Grid.Column="2" Grid.Row="0" Style="{DynamicResource DesignButton}" HorizontalAlignment="Left" Width="Auto"
                 Command="{Binding OpenCreateCommand}">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -49,7 +49,7 @@
                 <TextBlock Text="Add New" Grid.Column="1" Foreground="White" VerticalAlignment="Center"/>
             </Grid>
         </Button>
-        <Grid Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+        <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
@@ -64,9 +64,9 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Reference" Binding="{Binding code}" SortMemberPath="code" SortDirection="{Binding code}"/>
                         <DataGridTextColumn Header="Name" Binding="{Binding name}" SortMemberPath="name"/>
-                        <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" SortMemberPath="quantity"/>
+                        <DataGridTextColumn Header="Stock" Binding="{Binding quantity}" SortMemberPath="quantity"/>
                         <DataGridTextColumn Header="Price" Binding="{Binding price, StringFormat='{}{0:C}'}" SortMemberPath="price"/>
-                        <DataGridTextColumn Header="Description" Binding="{Binding description}" SortMemberPath="description" />
+                        <!--<DataGridTextColumn Header="Description" Binding="{Binding description}" SortMemberPath="description" />-->
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>

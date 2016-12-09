@@ -22,8 +22,8 @@
         <Grid>
             <!--<ctl:GifImage Margin="10" Grid.Row="0" Stretch="None"
                       GifSource="/Communitel.Common;component/Images/loader.GIF" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="True"/>-->
-            <fa:ImageAwesome Icon="Spinner" Spin="True" SpinDuration="5" Foreground="#FF37474F"
-                             HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100"/>
+            <fa:ImageAwesome Icon="Spinner" Spin="True" SpinDuration="1.5" Foreground="#FF37474F"
+                             HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
         </Grid>
     </Border>
 </UserControl>

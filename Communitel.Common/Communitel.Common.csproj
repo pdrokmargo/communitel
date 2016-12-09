@@ -107,6 +107,7 @@
     <Compile Include="CompositeCommands\CompositeCommands.cs" />
     <Compile Include="Controls\GifImage.cs" />
     <Compile Include="Controls\PasswordHelper.cs" />
+    <Compile Include="Controls\TextBoxOnlyNumber.cs" />
     <Compile Include="Enums\DialogResultV.cs" />
     <Compile Include="Enums\MessageBoxButtonsV.cs" />
     <Compile Include="Enums\MessageBoxDefaultButtonV.cs" />
@@ -166,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\StyleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\StyleComboBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

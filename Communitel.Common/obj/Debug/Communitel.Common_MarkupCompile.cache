@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-12-1739469033
+13-98053358
 
-29390168597
+301056545851
 79-93861625
-Themes\StyleApp.xaml;Themes\StyleButton.xaml;Themes\StyleDataGrid.xaml;Themes\StyleGroupBox.xaml;Themes\StylePopup.xaml;Themes\StyleScrollBar.xaml;Themes\StyleTextBox.xaml;Views\HomeView.xaml;Views\IndicatorView.xaml;Views\LoginView.xaml;Views\MenuView.xaml;Views\MessageBoxView.xaml;
+Themes\StyleApp.xaml;Themes\StyleButton.xaml;Themes\StyleComboBox.xaml;Themes\StyleDataGrid.xaml;Themes\StyleGroupBox.xaml;Themes\StylePopup.xaml;Themes\StyleScrollBar.xaml;Themes\StyleTextBox.xaml;Views\HomeView.xaml;Views\IndicatorView.xaml;Views\LoginView.xaml;Views\MenuView.xaml;Views\MessageBoxView.xaml;
 
 False
 

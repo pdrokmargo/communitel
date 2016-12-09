@@ -1,4 +1,5 @@
-﻿using Communitel.Common.Helpers;
+﻿using Communitel.Common.Functions;
+using Communitel.Common.Helpers;
 using Communitel.Common.Messages;
 using Communitel.Common.Models;
 using Microsoft.Practices.Prism.Commands;
@@ -24,6 +25,7 @@ namespace Communitel.Product.ViewModels
         public DelegateCommand OpenCreateCommand { get; set; }
         public DelegateCommand<string> NextPageCommand { get; set; }
         public DelegateCommand<dynamic> OpenEditCommand { get; set; }
+        public DelegateCommand OpenSearchProductCommand { get; set; }
         [ImportingConstructor]
         public ProductViewModel()
         {
@@ -32,6 +34,7 @@ namespace Communitel.Product.ViewModels
             OpenCreateCommand = new DelegateCommand(OpenCreateExecute);
             NextPageCommand = new DelegateCommand<string>(NextPageExecute);
             OpenEditCommand = new DelegateCommand<dynamic>(OpenEditExecute);
+            OpenSearchProductCommand = new DelegateCommand(OpenSearchProductExecute);
             Product = new System.Dynamic.ExpandoObject();
             this.Product.id = 0;
         }
@@ -52,6 +55,16 @@ namespace Communitel.Product.ViewModels
         public int Page { get { return _page; } set { _page = value; NotifyPropertyChanged("Page"); } }
         public string SortBy { get { return _sortBy; } set { _sortBy = value; NotifyPropertyChanged("SortBy"); } }
         public int Reverse { get { return _reverse; } set { _reverse = value; NotifyPropertyChanged("Reverse"); } }
+        public List<Models.Status> Status
+        {
+            get
+            {
+                List<Models.Status> status = new List<Models.Status>();
+                status.Add(new Models.Status { id = 0, name = "Off" });
+                status.Add(new Models.Status { id = 1, name = "On" });
+                return status;
+            }
+        }
         #endregion
 
         private async void SaveExecute()
@@ -62,7 +75,7 @@ namespace Communitel.Product.ViewModels
                 OpenIndicator();
                 string json = JsonConvert.SerializeObject(Product);
 
-                if (this.Product.id > 0)
+                if (Functions.IsPropertyExist(this.Product, "id") && this.Product.id > 0)
                 {
                     dynamic obj = await s.PUT("/api/products/" + Product.id, json);
                     CloseIndicator();
@@ -171,6 +184,18 @@ namespace Communitel.Product.ViewModels
             {
                 CloseIndicator();
                 MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
+            }
+        }
+
+        private void OpenSearchProductExecute()
+        {
+            try
+            {
+                RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/SearchProductView");
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

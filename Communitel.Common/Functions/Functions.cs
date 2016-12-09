@@ -10,7 +10,8 @@ namespace Communitel.Common.Functions
     {
         public static bool IsPropertyExist(dynamic settings, string name)
         {
-            return settings.GetType().GetProperty(name) != null;
+            bool isDefined = ((IDictionary<string, object>)settings).ContainsKey(name);
+            return isDefined;
         }
     }
 }

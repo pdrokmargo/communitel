@@ -34,12 +34,12 @@ namespace Communitel.Common.ViewModels
         {
             try
             {
-                if (!Functions.Functions.IsPropertyExist(User, "user") && string.IsNullOrEmpty(User.user))
+                if (!Functions.Functions.IsPropertyExist(User, "user") || string.IsNullOrEmpty(User.user))
                 {
                     MessageBox.Show("Please enter the user.");
                     return;
                 }
-                if (string.IsNullOrEmpty(User.password))
+                if (!Functions.Functions.IsPropertyExist(User, "password") ||  string.IsNullOrEmpty(User.password))
                 {
                     MessageBox.Show("Please enter the password.");
                     return;

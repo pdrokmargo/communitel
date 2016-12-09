@@ -8,7 +8,9 @@
     
     <Style TargetType="TextBlock">
         <Setter Property="Foreground" Value="Gray"/>
-        <Setter Property="Margin" Value="10,0,10,0"/>
+        <Setter Property="Margin" Value="10,0,10,10"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="FontWeight" Value="Normal"/>
     </Style>
     
 </ResourceDictionary>

@@ -56,3 +56,4 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleP
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleScrollBar.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\MessageBoxView.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Communitel.Common.csprojResolveAssemblyReference.cache
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleComboBox.baml
