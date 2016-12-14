@@ -95,6 +95,7 @@ namespace Communitel.Product.ViewModels
                     CloseIndicator();
                     Product = new System.Dynamic.ExpandoObject();
                     MessageBox.Show("The product has been updated!", "Products");
+                    this.OpenSearchProductExecute();
                 }
                 else
                 {
@@ -102,6 +103,7 @@ namespace Communitel.Product.ViewModels
                     CloseIndicator();
                     Product = new System.Dynamic.ExpandoObject();
                     MessageBox.Show("A new product has been created!", "Products");
+
                 }
             }
             catch (Exception ex)

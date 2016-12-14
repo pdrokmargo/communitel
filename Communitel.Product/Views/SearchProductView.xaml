@@ -68,17 +68,45 @@
             <TextBox Grid.Column="0" Width="200" Style="{DynamicResource DesignTextBoxSearch}" HorizontalAlignment="Right" Text="{Binding Search}"/>
             <Button Grid.Column="1" Content="Search" Style="{DynamicResource DesignButtonSearch}" HorizontalAlignment="Left" Width="110" Command="{Binding GetAllCommand}"/>
         </Grid>
-                
+
         <GroupBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource DesignGroupBox}" Header="Search Products">
             <Grid>
                 <DataGrid AutoGenerateColumns="False" IsReadOnly="False" ItemsSource="{Binding Path=Products.data}" ColumnWidth="*"
                           Style="{DynamicResource DesignDataGrid}" Sorting="DataGrid_Sorting" CanUserSortColumns="True" CanUserReorderColumns="True">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DesignRowsDataGrid}">
+                            <Setter Property="MinHeight" Value="40"/>
+                            <Setter Property="Height" Value="Auto"/>
+                        </Style>
+                    </DataGrid.RowStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Reference" Binding="{Binding code}" SortMemberPath="code" SortDirection="{Binding code}"/>
                         <DataGridTextColumn Header="Name" Binding="{Binding name}" SortMemberPath="name"/>
                         <DataGridTextColumn Header="Stock" Binding="{Binding quantity}" SortMemberPath="quantity"/>
                         <DataGridTextColumn Header="Price" Binding="{Binding price, StringFormat='{}{0:C}'}" SortMemberPath="price"/>
                         <!--<DataGridTextColumn Header="Description" Binding="{Binding description}" SortMemberPath="description" />-->
+                        <DataGridTemplateColumn Header="Categories">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ItemsControl ItemsSource="{Binding categories}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <UniformGrid Columns="1" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Background="AliceBlue" BorderBrush="Gray" BorderThickness="1" Padding="6,3,6,3" CornerRadius="10" Height="20" Width="Auto" VerticalAlignment="Top" Margin="0,0,4,4">
+                                                    <DockPanel>
+                                                        <TextBlock DockPanel.Dock="Left" Text="{Binding description}" FontSize="12"/>
+                                                    </DockPanel>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>

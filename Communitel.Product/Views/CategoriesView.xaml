@@ -34,7 +34,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <CheckBox Style="{DynamicResource DesignCheckBox}" IsChecked="{Binding Path=add}" HorizontalAlignment="Center"/>
+                                <CheckBox Style="{DynamicResource DesignCheckBox}" IsChecked="{Binding Path=add,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
