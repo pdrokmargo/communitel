@@ -19,6 +19,7 @@
             <ContentControl Grid.Row="0" Grid.Column="1" prism:RegionManager.RegionName="WorkSpaceRegion" Width="Auto"/>
 
         </Grid>
+        <ContentControl prism:RegionManager.RegionName="PopupRegion" Width="Auto"/>
         <ContentControl prism:RegionManager.RegionName="IndicatorRegion" Width="Auto"/>
     </Grid>
 </Window>

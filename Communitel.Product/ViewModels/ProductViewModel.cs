@@ -1,4 +1,5 @@
-﻿using Communitel.Common.Functions;
+﻿using Communitel.Common.Enums;
+using Communitel.Common.Functions;
 using Communitel.Common.Helpers;
 using Communitel.Common.Messages;
 using Communitel.Common.Models;
@@ -7,12 +8,13 @@ using Microsoft.Practices.Prism.Regions;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Communitel.Product.Models;
 
 namespace Communitel.Product.ViewModels
 {
@@ -26,6 +28,11 @@ namespace Communitel.Product.ViewModels
         public DelegateCommand<string> NextPageCommand { get; set; }
         public DelegateCommand<dynamic> OpenEditCommand { get; set; }
         public DelegateCommand OpenSearchProductCommand { get; set; }
+        public DelegateCommand OpenMoreFiltersCommand { get; set; }
+        public DelegateCommand<object> RemoveCategoryCommand { get; set; }
+        public DelegateCommand GetCategoriesCommand { get; set; }
+        public DelegateCommand OpenCategoriesCommand { get; set; }
+        public DelegateCommand AddCategoriesCommand { get; set; }
         [ImportingConstructor]
         public ProductViewModel()
         {
@@ -35,6 +42,11 @@ namespace Communitel.Product.ViewModels
             NextPageCommand = new DelegateCommand<string>(NextPageExecute);
             OpenEditCommand = new DelegateCommand<dynamic>(OpenEditExecute);
             OpenSearchProductCommand = new DelegateCommand(OpenSearchProductExecute);
+            OpenMoreFiltersCommand = new DelegateCommand(OpenMoreFiltersExecute);
+            RemoveCategoryCommand = new DelegateCommand<object>(RemoveCategoryExecute);
+            GetCategoriesCommand = new DelegateCommand(GetCategoriesExecute);
+            OpenCategoriesCommand = new DelegateCommand(OpenCategoriesExecute);
+            AddCategoriesCommand = new DelegateCommand(AddCategoriesExecute);
             Product = new System.Dynamic.ExpandoObject();
             this.Product.id = 0;
         }
@@ -46,6 +58,7 @@ namespace Communitel.Product.ViewModels
         private int _page = 1;
         private string _sortBy = "id";
         private int _reverse = 0;
+        private ObservableCollection<Categories> _categories;
         #endregion
 
         #region property
@@ -55,6 +68,7 @@ namespace Communitel.Product.ViewModels
         public int Page { get { return _page; } set { _page = value; NotifyPropertyChanged("Page"); } }
         public string SortBy { get { return _sortBy; } set { _sortBy = value; NotifyPropertyChanged("SortBy"); } }
         public int Reverse { get { return _reverse; } set { _reverse = value; NotifyPropertyChanged("Reverse"); } }
+        public ObservableCollection<Models.Categories> Categories { get { return _categories; } set { _categories = value; NotifyPropertyChanged("Categories"); } }
         public List<Models.Status> Status
         {
             get
@@ -192,6 +206,104 @@ namespace Communitel.Product.ViewModels
             try
             {
                 RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/SearchProductView");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void OpenMoreFiltersExecute()
+        {
+            try
+            {
+                OpenPopupModal("Filters");
+                RegionManager.RequestNavigate(RegionNames.ContentModalRegion, "/FilterView");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void SearchbyFiltersExecute()
+        {
+            try
+            {
+                OpenPopupModal("Filters");
+                RegionManager.RequestNavigate(RegionNames.ContentModalRegion, "/FilterView");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void RemoveCategoryExecute(object category)
+        {
+            try
+            {
+                var resultDialog = MessageBox.Show("Do you want to remove the category?", "Confirm", MessageBoxButtonsV.YesNo, MessageBoxIconV.Question, MessageBoxDefaultButtonV.Button1);
+
+                if (resultDialog == DialogResultV.Yes)
+                {
+                    var list = (Newtonsoft.Json.Linq.JArray)this.Product.categories;
+                    var item = (Newtonsoft.Json.Linq.JToken)category;
+                    list.Remove(item);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private async void GetCategoriesExecute()
+        {
+            try
+            {
+                OpenIndicator();
+                ServiceRequest s = new ServiceRequest();
+                Dictionary<string, object> headers = new Dictionary<string, object>();
+                headers.Add("sortBy", "description");
+                headers.Add("reverse", 0);
+                var result = await s.GET<Common.Models.Result<ObservableCollection<Categories>>>("/api/categories", headers);
+                this.Categories = result.data;
+                CloseIndicator();
+            }
+            catch (Exception ex)
+            {
+                CloseIndicator();
+                MessageBox.Show(ex.Message, MessageBoxIconV.Error);
+            }
+        }
+
+        private void OpenCategoriesExecute()
+        {
+            try
+            {
+                OpenPopupModal("Categories");
+                RegionManager.RequestNavigate(RegionNames.ContentModalRegion, "/CategoriesView");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void AddCategoriesExecute()
+        {
+            try
+            {
+                foreach (var category in this.Categories)
+                {
+                    if (category.add)
+                    {
+                        var categorias = (Newtonsoft.Json.Linq.JArray)this.Product.categories;
+                        var json = Newtonsoft.Json.Linq.JToken.FromObject(category);
+                        categorias.Add(json);
+                    }
+                }
             }
             catch (Exception ex)
             {

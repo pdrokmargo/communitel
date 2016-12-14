@@ -44,3 +44,7 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Communitel.P
 C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\ProductView.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\SearchProductView.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Communitel.Product.Plugins.g.resources
+C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\FilterView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\FilterView.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\CategoriesView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\CategoriesView.baml

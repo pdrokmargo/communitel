@@ -10,6 +10,8 @@ namespace Communitel.Common.Models
     {
         public const string WorkSpaceRegion = "WorkSpaceRegion";
         public const string NavigationRegion = "NavigationRegion";
-        public const string IndicatorRegion = "IndicatorRegion";        
+        public const string IndicatorRegion = "IndicatorRegion";
+        public const string PopupRegion = "PopupRegion";
+        public const string ContentModalRegion = "ContentModalRegion";
     }
 }

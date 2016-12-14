@@ -57,3 +57,7 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleS
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\MessageBoxView.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Communitel.Common.csprojResolveAssemblyReference.cache
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleComboBox.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\PopupView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\PopupView.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleSwitch.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleCheckBox.baml

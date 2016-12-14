@@ -23,14 +23,15 @@
         <Grid>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition/>
-                <RowDefinition Height="40" />
+                <RowDefinition Height="60" />
             </Grid.RowDefinitions>
 
             <Border Grid.Row="0" Cursor="SizeAll" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                 <DockPanel Grid.Row="0" Background="{DynamicResource HeaderBackGroundPage}">
-                    <TextBlock x:Name="txttext" DockPanel.Dock="Left" FontFamily="Century Gothic" FontSize="12" FontWeight="Bold" Margin="10,0,0,0" Text="Mensaje" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="txttext" DockPanel.Dock="Left" FontFamily="Century Gothic" Margin="10,0,0,0" Text="Mensaje" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                     <Button Name="btncerrar" Content="r" Style="{DynamicResource DesignButtonClose}" DockPanel.Dock="Right"
                           Click="btn2_Click"/>
                 </DockPanel>
@@ -53,7 +54,7 @@
                 <fa:ImageAwesome Name="imgerror" Grid.Column="1" Icon="TimesCircle" Foreground="#FFFF591A" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
 
                 <ScrollViewer Grid.Column="2" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                    <TextBlock Name="txtmensaje" FontSize="12" FontWeight="Bold"  Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    <TextBlock Name="txtmensaje" Foreground="Black"  Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center" 
                                FontFamily="Century Gothic" MaxWidth="600" Height="Auto" TextWrapping="Wrap" TextAlignment="Justify">
                     </TextBlock>
                 </ScrollViewer>
@@ -66,11 +67,11 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Name="btn1" Content="" Width="75" Height="23" HorizontalAlignment="Center" Margin="11,0" Grid.Column="0" Style="{DynamicResource DesignButton}" 
+                <Button Name="btn1" Content="" MaxWidth="250" Margin="11,0" Grid.Column="0" Style="{DynamicResource DesignButton}" 
                         Focusable="True" TabIndex="0" Click="btn1_Click"/>
-                <Button Name="btn2" Content="" Width="75" Height="23" HorizontalAlignment="Center" Margin="11,0" Grid.Column="1" Style="{DynamicResource DesignButton}" Focusable="True" TabIndex="0"
+                <Button Name="btn2" Content="" MaxWidth="250" Margin="11,0" Grid.Column="1" Style="{DynamicResource DesignButton}" Focusable="True" TabIndex="0"
                         Click="btn2_Click"/>
-                <Button Name="btn3" Content="" Width="75" Height="23" HorizontalAlignment="Center" Margin="11,0" Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource DesignButton}" Focusable="True" TabIndex="0"
+                <Button Name="btn3" Content="" MaxWidth="250" Margin="11,0" Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource DesignButton}" Focusable="True" TabIndex="0"
                         Click="btn3_Click"/>
 
             </Grid>

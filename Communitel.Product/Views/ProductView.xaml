@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Communitel.Product.Views"
              xmlns:ctl="clr-namespace:Communitel.Common.Controls;assembly=Communitel.Common"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1000" >
+             d:DesignHeight="800" d:DesignWidth="1000" >
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -16,6 +17,7 @@
                 <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleButton.xaml"/>
                 <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleGroupBox.xaml"/>
                 <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleComboBox.xaml"/>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleSwitch.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -45,7 +47,9 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>                   
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Column="0" Grid.Row="0" Text="Reference"/>
@@ -64,15 +68,51 @@
                 <TextBlock Grid.Column="1" Grid.Row="4" Text="Price"/>
                 <ctl:TextBoxOnlyNumber Grid.Column="1" Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Product.price}"/>
 
-                <TextBlock Grid.Column="2" Grid.Row="4" Text="Status"/>
-                <ComboBox Grid.Column="2" Grid.Row="5" Style="{DynamicResource DesignComboBox}" ItemsSource="{Binding Status}" IsReadOnly="True"
-                        SelectedValuePath="id" DisplayMemberPath="name" SelectedValue="{Binding Path=Product.status}"/>
-                <!--<TextBox Grid.Column="2" Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Product.price}"/>-->
-                                                
-                <Button Grid.Column="1" Grid.Row="6" Content="Close" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
+                <TextBlock Grid.Column="2" Grid.Row="4" Text="Status" HorizontalAlignment="Center"/>
+                <CheckBox Grid.Column="2" Grid.Row="5" Style="{DynamicResource DesignSwitch}" 
+                          IsChecked="{Binding Path=Product.status}" HorizontalAlignment="Center"/>
+
+                <TextBlock Grid.Column="0" Grid.Row="6" Text="Categories" HorizontalAlignment="Left"/>
+
+                <Button Grid.Column="1" Grid.Row="6" Style="{DynamicResource DesignButtonImageFont}" HorizontalAlignment="Right" Width="Auto" Height="45"
+                Command="{Binding OpenCategoriesCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <fa:ImageAwesome Icon="Search" Grid.Column="0" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" VerticalAlignment="Center" Margin="4"/>
+                        <TextBlock Text="Search categories" Grid.Column="1" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" VerticalAlignment="Center" Margin="7"/>
+                    </Grid>
+                </Button>
+
+                <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" BorderBrush="Gray" Padding="10"
+                        BorderThickness="2" Height="200">
+                    <ItemsControl ItemsSource="{Binding Path=Product.categories}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="3" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="AliceBlue" BorderBrush="Gray" BorderThickness="1" Padding="10" CornerRadius="10" Height="45" Width="Auto" VerticalAlignment="Top" Margin="0,0,4,4">
+                                    <DockPanel>
+                                        <TextBlock DockPanel.Dock="Left" Text="{Binding description}" FontSize="17"/>
+                                        <Button DockPanel.Dock="Right" Content="r" Style="{DynamicResource DesignButtonClose}" Foreground="Gray" FontSize="17" Height="20" Width="20"
+                                                Command="{Binding Path=DataContext.RemoveCategoryCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                                CommandParameter="{Binding}"/>
+                                    </DockPanel>
+                                </Border>                                
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Border>
+
+                <Button Grid.Column="1" Grid.Row="8" Content="Close" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
                         VerticalAlignment="Bottom" Command="{Binding OpenSearchProductCommand}" MaxWidth="300"/>
 
-                <Button Grid.Column="2" Grid.Row="6" Content="Save" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
+                <Button Grid.Column="2" Grid.Row="8" Content="Save" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
                         VerticalAlignment="Bottom" Command="{Binding SaveCommand}" MaxWidth="300"/>
 
             </Grid>

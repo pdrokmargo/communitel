@@ -2,6 +2,7 @@
 
 FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Themes\StyleApp.xaml;;
 FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Themes\StyleButton.xaml;;
+FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Themes\StyleComboBox.xaml;;
 FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Themes\StyleDataGrid.xaml;;
 FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Themes\StyleGroupBox.xaml;;
 FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Themes\StylePopup.xaml;;
@@ -12,5 +13,7 @@ FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Views\IndicatorView.xa
 FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Views\LoginView.xaml;;
 FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Views\MenuView.xaml;;
 FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Views\MessageBoxView.xaml;;
-FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Themes\StyleComboBox.xaml;;
+FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Views\PopupView.xaml;;
+FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Themes\StyleSwitch.xaml;;
+FC:\Users\carlo\Source\Repos\communitel\Communitel.Common\Themes\StyleCheckBox.xaml;;
 

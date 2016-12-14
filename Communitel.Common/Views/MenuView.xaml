@@ -33,8 +33,8 @@
                             <ImageBrush ImageSource="/Communitel.Common;component/Images/profile.png"/>
                         </Border.Background>
                     </Border>
-                    <TextBlock Text="Pedro Camargo" Foreground="White" FontSize="14" HorizontalAlignment="Center" Margin="0,4,0,0"/>
-                    <TextBlock Text="Super Admin" Foreground="White" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+                <TextBlock Text="{Binding Path=FullName}" Foreground="White" FontSize="14" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                <TextBlock Text="{Binding Path=Profile.description}" Foreground="White" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
                
                 <ItemsControl ItemsSource="{Binding Menus}">
                     <ItemsControl.ItemTemplate>

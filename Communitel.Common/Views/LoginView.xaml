@@ -46,8 +46,8 @@
                 <TextBox Style="{DynamicResource ResourceKey=DesignTextBox}" Grid.Row="1" Text="{Binding Path=User.user}"/>
 
                 <TextBlock Text="Password" Grid.Row="2" HorizontalAlignment="Stretch"/>
-                <PasswordBox Style="{DynamicResource ResourceKey=DesignPasswordbox}" Grid.Row="3" 
-                             control:PasswordHelper.Attach="True"  control:PasswordHelper.Password="{Binding Path=User.password, Mode=TwoWay}"/>
+                <PasswordBox Style="{DynamicResource ResourceKey=DesignPasswordbox}" Grid.Row="3"
+                             control:PasswordHelper.Attach="True"  control:PasswordHelper.Password="{Binding Path=User.password, Mode=TwoWay}" PreviewKeyDown="PasswordBox_PreviewKeyDown"/>
                 <Button Content="Sign in" Command="{Binding Path=LoginCommand}" Style="{DynamicResource DesignButton}" Grid.Row="4"/>
             </Grid>
         </GroupBox>

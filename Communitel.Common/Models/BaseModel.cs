@@ -84,5 +84,13 @@ namespace Communitel.Common.Models
                 throw ex;
             }
         }
+
+        public void OpenPopupModal(string title = "Modal")
+        {
+            Parameters.save(title.GetHashCode(), title);
+            Uri viewUri = new Uri($"/PopupView?Title={title.GetHashCode().ToString()}", UriKind.RelativeOrAbsolute);
+            RegionManager.RequestNavigate(RegionNames.PopupRegion, viewUri);
+        }
+
     }
 }

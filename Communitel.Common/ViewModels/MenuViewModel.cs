@@ -27,15 +27,20 @@ namespace Communitel.Common.ViewModels
             Menus.Add(new Menu { Name = "Dashboard", Icon = FontAwesome.WPF.FontAwesomeIcon.Home, Command = OpenDashBoardCommand });
             Menus.Add(new Menu { Name = "Users", Icon = FontAwesome.WPF.FontAwesomeIcon.Users });
             Menus.Add(new Menu { Name = "Catalog Products", Icon = FontAwesome.WPF.FontAwesomeIcon.ShoppingBag, Command = OpenSearchProductCommand });
+            this.FullName = $"{Variables.User.firstname} {Variables.User.lastname}";
+            this.Profile = Variables.User.userprofile;
         }
 
         #region variables
         private ObservableCollection<Models.Menu> _menus;
-        public dynamic Product { get; set; }
+        private string _fullName;
+        private dynamic _profile;
         #endregion
 
         #region property
         public ObservableCollection<Models.Menu> Menus { get { return _menus; } set { _menus = value; NotifyPropertyChanged("Menus"); } }
+        public string FullName { get { return _fullName; } set { _fullName = value; NotifyPropertyChanged("FullName"); } }
+        public dynamic Profile { get { return _profile; } set { _profile = value; NotifyPropertyChanged("Profile"); } }
         #endregion
 
         private void OpenSearchProductExecute()

@@ -154,7 +154,7 @@
 
         <Setter Property="FontFamily" Value="Arial"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Foreground" Value="#FF37474F"/>
         <Setter Property="Width" Value="Auto"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -168,25 +168,27 @@
                         <Border x:Name="border" CornerRadius="5" BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}">
                             <Grid>
-                                <Grid.RowDefinitions>
+                                <!--<Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
+                                </Grid.RowDefinitions>-->
                                 <ContentPresenter Grid.Row="0" HorizontalAlignment="Center"
                                         VerticalAlignment="Center" Margin="2"/>
-                                <TextBlock Grid.Row="1" Text="{TemplateBinding Tag}" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                           MaxWidth="120" Height="Auto" TextWrapping="Wrap" TextAlignment="Justify" Margin="7"/>
+                                <!--<TextBlock Grid.Row="1" Text="{TemplateBinding Tag}" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                           MaxWidth="120" Height="Auto" TextWrapping="Wrap" TextAlignment="Justify" Margin="7" Visibility="Collapsed"/>-->
                             </Grid>
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Opacity" Value="1" />
+                            <Setter Property="Foreground" Value="#FF18C6F9"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Opacity" Value="0.8" />
+                            <Setter Property="Foreground" Value="#FF18C6F9"/>
                         </Trigger>
-
+                       
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -231,11 +233,11 @@
     </Style>
 
     <Style x:Key="DesignButtonClose" TargetType="{x:Type Button}">
-        <Setter Property="Foreground" Value="#FF4C585D"/>
-        <Setter Property="Height" Value="20"/>
-        <Setter Property="Width" Value="20"/>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Cursor" Value="Hand"/>        
         <Setter Property="Margin" Value="2"/>
         <Setter Property="FontFamily" Value="Marlett"/>
         <Setter Property="Opacity" Value="1"/>

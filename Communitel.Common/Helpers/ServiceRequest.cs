@@ -85,6 +85,32 @@ namespace Communitel.Common.Helpers
             return magic;
         }
 
+        public async Task<T> GET<T>(string requestUri, Dictionary<string, object> headers)
+        {
+            if (requestUri == null)
+            {
+                throw new ArgumentNullException("RequestUri");
+            }
+
+            var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));
+            http.Method = "GET";
+            http.ContentType = "application/json";
+            http.Accept = "application/json";
+            http.Headers["Authorization"] = "Bearer " + Variables.Token;
+
+            if (headers != null && headers.Count > 0)
+                foreach (var item in headers)
+                    http.Headers[item.Key] = item.Value.ToString();
+
+
+            var response = await http.GetResponseAsync();
+            var stream = response.GetResponseStream();
+            var sr = new StreamReader(stream);
+            var content = await sr.ReadToEndAsync();
+            T magic = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<T>(content));
+            return magic;
+        }
+
         public async Task<dynamic> POST(string requestUri, string parsedContent)
         {
             var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));

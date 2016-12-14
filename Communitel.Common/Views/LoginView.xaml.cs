@@ -35,5 +35,13 @@ namespace Communitel.Common.Views
 
         [Import]
         public LoginViewModel LoginViewModel { get { return DataContext as LoginViewModel; } set { DataContext = value; } }
+
+        private void PasswordBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key== Key.Enter)
+            {
+                LoginViewModel.LoginCommand.Execute();
+            }           
+        }
     }
 }

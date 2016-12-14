@@ -35,7 +35,7 @@ namespace Communitel.Views
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-                    }
+        }
 
         private void btnSignin_Click(object sender, RoutedEventArgs e)
         {
@@ -43,17 +43,19 @@ namespace Communitel.Views
             ServiceRequest svc = new ServiceRequest();
             string parsedContent = "grant_type=password&client_id=" + ConfigurationManager.AppSettings["clientID"] + "&client_secret=" + ConfigurationManager.AppSettings["clientSecret"] + "&username=" + txtUsername.Text.ToLower() + "&password=" + txtPassword.Password + "&scope=";
             dynamic obj;
-            Task.Factory.StartNew(() => {
+            Task.Factory.StartNew(() =>
+            {
                 try
                 {
-                   obj = svc.requestToken("/oauth/token", parsedContent);
+                    obj = svc.requestToken("/oauth/token", parsedContent);
                     App.Current.Properties["Token"] = (string)obj.access_token;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }).ContinueWith((task) => {
+            }).ContinueWith((task) =>
+            {
                 App.Current.Properties["User"] = svc.GET("/api/userIdentity/" + txtUsername.Text.ToLower());
                 Dashboard dsh = ((Dashboard)((Grid)((Grid)this.Parent).Parent).Parent);
                 dsh.InitDashboard();
