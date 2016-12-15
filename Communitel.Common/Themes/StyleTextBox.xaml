@@ -62,8 +62,7 @@
         <Setter Property="Margin" Value="10,0,10,10"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>    
-        <Setter Property="PasswordChar" Value="*"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>            
         <Setter Property="FontSize" Value="17"/>
         <Setter Property="Template" >
             <Setter.Value >

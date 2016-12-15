@@ -108,6 +108,7 @@
     <Compile Include="Controls\GifImage.cs" />
     <Compile Include="Controls\PasswordHelper.cs" />
     <Compile Include="Controls\TextBoxOnlyNumber.cs" />
+    <Compile Include="Converts\ConvertToDecimal.cs" />
     <Compile Include="Enums\DialogResultV.cs" />
     <Compile Include="Enums\MessageBoxButtonsV.cs" />
     <Compile Include="Enums\MessageBoxDefaultButtonV.cs" />

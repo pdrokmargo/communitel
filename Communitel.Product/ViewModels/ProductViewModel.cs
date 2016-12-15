@@ -301,9 +301,19 @@ namespace Communitel.Product.ViewModels
                 {
                     if (category.add)
                     {
+
+                        if (!Functions.IsPropertyExist(this.Product, "categories"))
+                            this.Product.categories = new Newtonsoft.Json.Linq.JArray();
+
+                        if (!(this.Product.categories is Newtonsoft.Json.Linq.JArray))
+                            this.Product.categories = new Newtonsoft.Json.Linq.JArray();
+
                         var categorias = (Newtonsoft.Json.Linq.JArray)this.Product.categories;
                         var json = Newtonsoft.Json.Linq.JToken.FromObject(category);
                         categorias.Add(json);
+                        ClosePopupModal();
+
+
                     }
                 }
             }

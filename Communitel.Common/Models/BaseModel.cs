@@ -92,5 +92,25 @@ namespace Communitel.Common.Models
             RegionManager.RequestNavigate(RegionNames.PopupRegion, viewUri);
         }
 
+        public void ClosePopupModal()
+        {
+            try
+            {
+                List<object> contents = new List<object>(RegionManager.Regions[RegionNames.ContentModalRegion].Views);
+                foreach (object view in contents)
+                    RegionManager.Regions[RegionNames.ContentModalRegion].Remove(view);
+
+                List<object> popups = new List<object>(RegionManager.Regions[RegionNames.PopupRegion].Views);
+                foreach (object view in popups)
+                    RegionManager.Regions[RegionNames.PopupRegion].Remove(view);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
     }
 }
