@@ -16,5 +16,5 @@ DEBUG;TRACE
 78-674844678
 Views\CategoriesView.xaml;Views\FilterView.xaml;Views\ProductView.xaml;Views\SearchProductView.xaml;
 
-False
+True
 
