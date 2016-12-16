@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communitel.Product", "Commu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communitel.Common", "Communitel.Common\Communitel.Common.csproj", "{3DA94798-CC36-4ED9-8E51-D4BBD5FDF206}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communitel.User", "Communitel.User\Communitel.User.csproj", "{A79B1126-023C-4A62-A816-A73E622F6EAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3DA94798-CC36-4ED9-8E51-D4BBD5FDF206}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DA94798-CC36-4ED9-8E51-D4BBD5FDF206}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DA94798-CC36-4ED9-8E51-D4BBD5FDF206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A79B1126-023C-4A62-A816-A73E622F6EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A79B1126-023C-4A62-A816-A73E622F6EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A79B1126-023C-4A62-A816-A73E622F6EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A79B1126-023C-4A62-A816-A73E622F6EAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

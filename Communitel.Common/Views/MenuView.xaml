@@ -42,7 +42,7 @@
                             <Button Style="{DynamicResource ResourceKey=DesignButtonMenu}" Visibility="{Binding Visible}" Command="{Binding Command}">
                                 <Button.Content>
                                     <StackPanel Orientation="Vertical">
-                                        <fa:ImageAwesome Icon="{Binding Icon}" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                                        <fa:ImageAwesome Icon="{Binding Icon}" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
                                         <TextBlock Text="{Binding Name}" Foreground="White" FontSize="14" HorizontalAlignment="Center" Margin="0,4,0,0"/>
                                     </StackPanel>
                                 </Button.Content>

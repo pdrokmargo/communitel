@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Communitel.Product.Models;
+using Communitel.Common.Extensions;
 
 namespace Communitel.Product.ViewModels
 {
@@ -264,13 +265,31 @@ namespace Communitel.Product.ViewModels
         {
             try
             {
+                this.Categories = new ObservableCollection<Models.Categories>();
                 OpenIndicator();
                 ServiceRequest s = new ServiceRequest();
                 Dictionary<string, object> headers = new Dictionary<string, object>();
                 headers.Add("sortBy", "description");
                 headers.Add("reverse", 0);
                 var result = await s.GET<Common.Models.Result<ObservableCollection<Categories>>>("/api/categories", headers);
-                this.Categories = result.data;
+
+                if (!Functions.IsPropertyExist(this.Product, "categories"))
+                    this.Product.categories = new Newtonsoft.Json.Linq.JArray();
+
+                if (!(this.Product.categories is Newtonsoft.Json.Linq.JArray))
+                    this.Product.categories = new Newtonsoft.Json.Linq.JArray();
+
+                List<int> categoriesid = new List<int>();
+
+                foreach (var item in this.Product.categories)
+                {
+                    var id = Convert.ToInt32(item["id"]);
+                    categoriesid.Add(id);
+                }
+
+
+                this.Categories = result.data.Where(a => !categoriesid.Contains(a.id)).ToObservableCollection();
+
                 CloseIndicator();
             }
             catch (Exception ex)

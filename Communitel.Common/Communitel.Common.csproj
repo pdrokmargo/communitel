@@ -113,6 +113,7 @@
     <Compile Include="Enums\MessageBoxButtonsV.cs" />
     <Compile Include="Enums\MessageBoxDefaultButtonV.cs" />
     <Compile Include="Enums\MessageBoxIconV.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Functions\Functions.cs" />
     <Compile Include="Helpers\ServiceRequest.cs" />
     <Compile Include="Messages\MessageBox.cs" />
