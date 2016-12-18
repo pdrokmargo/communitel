@@ -24,28 +24,28 @@ namespace Communitel.Product.Views
     [Export("SearchProductView")]
     public partial class SearchProductView : UserControl
     {
-        private ListSortDirection _direction= ListSortDirection.Ascending;
+        private ListSortDirection _direction = ListSortDirection.Ascending;
         public SearchProductView()
         {
             InitializeComponent();
         }
-                
+
         [Import]
         public ProductViewModel ProductViewModel { get { return DataContext as ProductViewModel; } set { DataContext = value; } }
 
-        private void DataGrid_Sorting(object sender, DataGridSortingEventArgs e)
+        private async void DataGrid_Sorting(object sender, DataGridSortingEventArgs e)
         {
             try
             {
-                               
-                _direction = _direction == ListSortDirection.Ascending ? ListSortDirection.Descending : ListSortDirection.Ascending;
 
-                e.Column.SortDirection = _direction;
+                _direction = _direction == ListSortDirection.Ascending ? ListSortDirection.Descending : ListSortDirection.Ascending;
 
                 ProductViewModel.Reverse = _direction == ListSortDirection.Ascending ? 1 : 0;
                 ProductViewModel.SortBy = e.Column.SortMemberPath;
 
-                ProductViewModel.GetAllCommand.Execute();
+                await ProductViewModel.GetAll();
+
+                e.Column.SortDirection = _direction;
             }
             catch (Exception ex)
             {

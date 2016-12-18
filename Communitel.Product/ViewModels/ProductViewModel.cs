@@ -34,6 +34,7 @@ namespace Communitel.Product.ViewModels
         public DelegateCommand GetCategoriesCommand { get; set; }
         public DelegateCommand OpenCategoriesCommand { get; set; }
         public DelegateCommand AddCategoriesCommand { get; set; }
+        public DelegateCommand GetCategoriesFiltersCommand { get; set; }
         [ImportingConstructor]
         public ProductViewModel()
         {
@@ -48,6 +49,7 @@ namespace Communitel.Product.ViewModels
             GetCategoriesCommand = new DelegateCommand(GetCategoriesExecute);
             OpenCategoriesCommand = new DelegateCommand(OpenCategoriesExecute);
             AddCategoriesCommand = new DelegateCommand(AddCategoriesExecute);
+            GetCategoriesFiltersCommand = new DelegateCommand(GetCategoriesFiltersExecute);
             Product = new System.Dynamic.ExpandoObject();
             this.Product.id = 0;
         }
@@ -60,6 +62,7 @@ namespace Communitel.Product.ViewModels
         private string _sortBy = "id";
         private int _reverse = 0;
         private ObservableCollection<Categories> _categories;
+        private ObservableCollection<Models.Categories> _categoriesFilters;
         #endregion
 
         #region property
@@ -70,6 +73,7 @@ namespace Communitel.Product.ViewModels
         public string SortBy { get { return _sortBy; } set { _sortBy = value; NotifyPropertyChanged("SortBy"); } }
         public int Reverse { get { return _reverse; } set { _reverse = value; NotifyPropertyChanged("Reverse"); } }
         public ObservableCollection<Models.Categories> Categories { get { return _categories; } set { _categories = value; NotifyPropertyChanged("Categories"); } }
+        public ObservableCollection<Models.Categories> CategoriesFilters { get { return _categoriesFilters; } set { _categoriesFilters = value; NotifyPropertyChanged("CategoriesFilters"); } }
         public List<Models.Status> Status
         {
             get
@@ -77,6 +81,7 @@ namespace Communitel.Product.ViewModels
                 List<Models.Status> status = new List<Models.Status>();
                 status.Add(new Models.Status { id = 0, name = "Off" });
                 status.Add(new Models.Status { id = 1, name = "On" });
+                status.Add(new Models.Status { id = 2, name = "All" });
                 return status;
             }
         }
@@ -134,6 +139,11 @@ namespace Communitel.Product.ViewModels
         }
 
         private async void GetAllExecute()
+        {
+            await GetAll();
+        }
+
+        public async Task GetAll()
         {
             try
             {
@@ -339,6 +349,29 @@ namespace Communitel.Product.ViewModels
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private async void GetCategoriesFiltersExecute()
+        {
+            try
+            {
+
+                OpenIndicator();
+                ServiceRequest s = new ServiceRequest();
+                Dictionary<string, object> headers = new Dictionary<string, object>();
+                headers.Add("sortBy", "description");
+                headers.Add("reverse", 0);
+                var result = await s.GET<Common.Models.Result<ObservableCollection<Categories>>>("/api/categories", headers);
+
+                this.CategoriesFilters = result.data;
+
+                CloseIndicator();
+            }
+            catch (Exception ex)
+            {
+                CloseIndicator();
+                MessageBox.Show(ex.Message, MessageBoxIconV.Error);
             }
         }
 

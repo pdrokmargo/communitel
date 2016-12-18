@@ -84,7 +84,7 @@
                         </Style>                        
                     </DataGrid.RowStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Reference" Binding="{Binding code}" SortMemberPath="code" SortDirection="{Binding code}"/>
+                        <DataGridTextColumn Header="Reference" Binding="{Binding code}" SortMemberPath="code"/>
                         <DataGridTextColumn Header="Name" Binding="{Binding name}" SortMemberPath="name"/>
                         <DataGridTextColumn Header="Stock" Binding="{Binding quantity}" SortMemberPath="quantity"/>
                         <DataGridTextColumn Header="Price" Binding="{Binding Path=price, StringFormat='{}{0:C}', Converter={StaticResource convertToDecimal}}" SortMemberPath="price"/>
