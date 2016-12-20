@@ -18,15 +18,19 @@ namespace Communitel.Common.ViewModels
 
         public DelegateCommand OpenSearchProductCommand { get; set; }
         public DelegateCommand OpenDashBoardCommand { get; set; }
+        public DelegateCommand OpenConfigurationCommand { get; set; }
+
         [ImportingConstructor]
         public MenuViewModel()
         {
             OpenSearchProductCommand = new DelegateCommand(OpenSearchProductExecute);
             OpenDashBoardCommand = new DelegateCommand(OpenDashBoardExecute);
+            OpenConfigurationCommand = new DelegateCommand(OpenConfigurationExecute);
             Menus = new ObservableCollection<Menu>();
             Menus.Add(new Menu { Name = "Dashboard", Icon = FontAwesome.WPF.FontAwesomeIcon.Home, Command = OpenDashBoardCommand });
             Menus.Add(new Menu { Name = "Users", Icon = FontAwesome.WPF.FontAwesomeIcon.Users });
             Menus.Add(new Menu { Name = "Catalog Products", Icon = FontAwesome.WPF.FontAwesomeIcon.ShoppingBag, Command = OpenSearchProductCommand });
+            Menus.Add(new Menu { Name = "Configuration", Icon = FontAwesome.WPF.FontAwesomeIcon.Cog, Command = OpenConfigurationCommand });
             this.FullName = $"{Variables.User.firstname} {Variables.User.lastname}";
             this.Profile = Variables.User.userprofile;
         }
@@ -60,6 +64,18 @@ namespace Communitel.Common.ViewModels
             try
             {
                 RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/HomeView");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void OpenConfigurationExecute()
+        {
+            try
+            {
+                RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/ConfigurationView");
             }
             catch (Exception ex)
             {
