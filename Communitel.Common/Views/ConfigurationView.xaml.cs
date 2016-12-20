@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace Communitel.Common.Views.Users
     /// <summary>
     /// Lógica de interacción para ConfigurationView.xaml
     /// </summary>
+    [Export("ConfigurationView")]
     public partial class ConfigurationView : UserControl
     {
         public ConfigurationView()

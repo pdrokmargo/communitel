@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\CAMILO\Documents\Visual Studio 2015\Projects\communitel\Communitel.Common\obj\Debug\
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\
 Communitel.Common
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 171496360840
 
-42-1628001557
-79-2004118797
+42-2028529226
+79-93861625
 Themes\StyleApp.xaml;Themes\StyleButton.xaml;Themes\StyleCheckBox.xaml;Themes\StyleComboBox.xaml;Themes\StyleDataGrid.xaml;Themes\StyleGroupBox.xaml;Themes\StylePopup.xaml;Themes\StyleScrollBar.xaml;Themes\StyleSwitch.xaml;Themes\StyleTextBox.xaml;Views\HomeView.xaml;Views\IndicatorView.xaml;Views\LoginView.xaml;Views\MenuView.xaml;Views\MessageBoxView.xaml;Views\PopupView.xaml;Views\ConfigurationView.xaml;
 
-False
+True
 
