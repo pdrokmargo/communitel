@@ -35,6 +35,9 @@ namespace Communitel.Product.ViewModels
         public DelegateCommand OpenCategoriesCommand { get; set; }
         public DelegateCommand AddCategoriesCommand { get; set; }
         public DelegateCommand GetCategoriesFiltersCommand { get; set; }
+        public DelegateCommand SearchByFiltersCommand { get; set; }
+        public DelegateCommand OpenAddCategoryCommand { get; set; }
+        public DelegateCommand AddCategoryCommand { get; set; }
         [ImportingConstructor]
         public ProductViewModel()
         {
@@ -50,8 +53,12 @@ namespace Communitel.Product.ViewModels
             OpenCategoriesCommand = new DelegateCommand(OpenCategoriesExecute);
             AddCategoriesCommand = new DelegateCommand(AddCategoriesExecute);
             GetCategoriesFiltersCommand = new DelegateCommand(GetCategoriesFiltersExecute);
+            SearchByFiltersCommand = new DelegateCommand(SearchByFiltersExecute);
+            OpenAddCategoryCommand = new DelegateCommand(OpenAddCategoryExecute);
+            AddCategoryCommand = new DelegateCommand(AddCategoryExecute);
             Product = new System.Dynamic.ExpandoObject();
             this.Product.id = 0;
+            _category = new Models.Categories();
         }
 
         #region variables
@@ -63,6 +70,9 @@ namespace Communitel.Product.ViewModels
         private int _reverse = 0;
         private ObservableCollection<Categories> _categories;
         private ObservableCollection<Models.Categories> _categoriesFilters;
+        private bool _filters = false;
+        private int _statusFilter = 2;
+        private Categories _category;
         #endregion
 
         #region property
@@ -74,6 +84,8 @@ namespace Communitel.Product.ViewModels
         public int Reverse { get { return _reverse; } set { _reverse = value; NotifyPropertyChanged("Reverse"); } }
         public ObservableCollection<Models.Categories> Categories { get { return _categories; } set { _categories = value; NotifyPropertyChanged("Categories"); } }
         public ObservableCollection<Models.Categories> CategoriesFilters { get { return _categoriesFilters; } set { _categoriesFilters = value; NotifyPropertyChanged("CategoriesFilters"); } }
+        public int StatusFilter { get { return _statusFilter; } set { _statusFilter = value; NotifyPropertyChanged("StatusFilter"); } }
+        public Models.Categories Category { get { return _category; } set { _category = value; NotifyPropertyChanged("Category"); } }
         public List<Models.Status> Status
         {
             get
@@ -125,10 +137,25 @@ namespace Communitel.Product.ViewModels
             {
                 ServiceRequest s = new ServiceRequest();
                 Dictionary<string, object> headers = new Dictionary<string, object>();
-                headers.Add("pageSize", 2);
+                headers.Add("pageSize", 4);
                 headers.Add("sortBy", sortBy);
                 headers.Add("reverse", reverse);
-                var result = await s.GET($"/api/products?page={Page}&search={Search}", headers);
+                dynamic result;
+                if (_filters)
+                {
+                    string categories = string.Empty;
+                    foreach (var item in CategoriesFilters)
+                    {
+                        if (item.add)
+                            categories += $"{item.id},";
+                    }
+                    result = await s.GET($"/api/products?page={Page}&categories={categories}&status={StatusFilter}", headers);
+                }
+                else
+                {
+                    result = await s.GET($"/api/products?page={Page}&search={Search}", headers);
+                }
+
                 this.Products = result.products;
             }
             catch (Exception ex)
@@ -140,6 +167,7 @@ namespace Communitel.Product.ViewModels
 
         private async void GetAllExecute()
         {
+            _filters = false;
             await GetAll();
         }
 
@@ -239,16 +267,18 @@ namespace Communitel.Product.ViewModels
             }
         }
 
-        private void SearchbyFiltersExecute()
+        private async void SearchByFiltersExecute()
         {
             try
             {
-                OpenPopupModal("Filters");
-                RegionManager.RequestNavigate(RegionNames.ContentModalRegion, "/FilterView");
+                _filters = true;
+                await GetAll();
+                ClosePopupModal();
             }
             catch (Exception ex)
             {
-
+                CloseIndicator();
+                MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
             }
         }
 
@@ -367,6 +397,37 @@ namespace Communitel.Product.ViewModels
                 this.CategoriesFilters = result.data;
 
                 CloseIndicator();
+            }
+            catch (Exception ex)
+            {
+                CloseIndicator();
+                MessageBox.Show(ex.Message, MessageBoxIconV.Error);
+            }
+        }
+
+        private  void OpenAddCategoryExecute()
+        {
+            try
+            {
+                OpenPopupModal2("Add New Category");
+                RegionManager.RequestNavigate(RegionNames.ContentModal2Region, "/AddCategoryView");
+            }
+            catch (Exception ex)
+            {              
+                MessageBox.Show(ex.Message, MessageBoxIconV.Error);
+            }
+        }
+
+        private async void AddCategoryExecute()
+        {
+            try
+            {
+                OpenIndicator();
+                ServiceRequest s = new ServiceRequest();
+                string json = JsonConvert.SerializeObject(Category);
+                await s.POST("/api/categories", json);
+                MessageBox.Show("A new product has been created!", "Products");
+                ClosePopupModal2();
             }
             catch (Exception ex)
             {

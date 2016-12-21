@@ -37,7 +37,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Status"/>
         <ComboBox Grid.Row="1" ItemsSource="{Binding Status}" Style="{DynamicResource DesignComboBox}"
-                  SelectedValuePath="id" DisplayMemberPath="name"/>
+                  SelectedValuePath="id" DisplayMemberPath="name" SelectedValue="{Binding StatusFilter}"/>
 
         <TextBlock Grid.Row="2" Text="Categories"/>        
         <DataGrid AutoGenerateColumns="False" IsReadOnly="False" Grid.Row="3" ItemsSource="{Binding CategoriesFilters}" ColumnWidth="*"
@@ -57,6 +57,6 @@
         </DataGrid>
         
         <Button Grid.Row="4" Content="Done" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
-                        VerticalAlignment="Bottom" Command="{Binding}" MaxWidth="300"/>
+                        VerticalAlignment="Bottom" Command="{Binding SearchByFiltersCommand}" MaxWidth="300"/>
     </Grid>
 </UserControl>

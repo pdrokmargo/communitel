@@ -13,5 +13,7 @@ namespace Communitel.Common.Models
         public const string IndicatorRegion = "IndicatorRegion";
         public const string PopupRegion = "PopupRegion";
         public const string ContentModalRegion = "ContentModalRegion";
+        public const string Popup2Region = "Popup2Region";
+        public const string ContentModal2Region = "ContentModal2Region";
     }
 }

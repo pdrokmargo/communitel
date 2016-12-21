@@ -109,7 +109,32 @@ namespace Communitel.Common.Models
             {
                 throw ex;
             }
+        }
 
+        public void OpenPopupModal2(string title = "Modal")
+        {
+            Parameters.save(title.GetHashCode(), title);
+            Uri viewUri = new Uri($"/PopupView2?Title={title.GetHashCode().ToString()}", UriKind.RelativeOrAbsolute);
+            RegionManager.RequestNavigate(RegionNames.Popup2Region, viewUri);
+        }
+
+        public void ClosePopupModal2()
+        {
+            try
+            {
+                List<object> contents = new List<object>(RegionManager.Regions[RegionNames.ContentModal2Region].Views);
+                foreach (object view in contents)
+                    RegionManager.Regions[RegionNames.ContentModal2Region].Remove(view);
+
+                List<object> popups = new List<object>(RegionManager.Regions[RegionNames.Popup2Region].Views);
+                foreach (object view in popups)
+                    RegionManager.Regions[RegionNames.Popup2Region].Remove(view);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

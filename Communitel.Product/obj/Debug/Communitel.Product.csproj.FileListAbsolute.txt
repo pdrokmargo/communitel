@@ -48,3 +48,5 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\Filter
 C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\FilterView.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\CategoriesView.g.cs
 C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\CategoriesView.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\AddCategoryView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\Views\AddCategoryView.baml

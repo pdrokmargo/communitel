@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-41540544763
+5124939800
 
-10-619761285
+111032932912
 78-674844678
-Views\CategoriesView.xaml;Views\FilterView.xaml;Views\ProductView.xaml;Views\SearchProductView.xaml;
+Views\AddCategoryView.xaml;Views\CategoriesView.xaml;Views\FilterView.xaml;Views\ProductView.xaml;Views\SearchProductView.xaml;
 
 False
 

@@ -13,15 +13,16 @@ using System.Threading.Tasks;
 namespace Communitel.Common.ViewModels
 {
     [Export(typeof(PopupModalViewModel))]
-    [PartCreationPolicy(CreationPolicy.Shared)]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     public class PopupModalViewModel : BaseModel, INavigationAware
-    {        
+    {
         public DelegateCommand ClosePopupModalCommand { get; set; }
-
+        public DelegateCommand ClosePopupModal2Command { get; set; }
         [ImportingConstructor]
         public PopupModalViewModel()
         {
-            ClosePopupModalCommand = new DelegateCommand(CerrarPopupModalExecute, () => true);
+            ClosePopupModalCommand = new DelegateCommand(ClosePopupModalExecute, () => true);
+            ClosePopupModal2Command = new DelegateCommand(ClosePopupModal2Execute, () => true);
         }
 
         private string _title = string.Empty;
@@ -43,27 +44,45 @@ namespace Communitel.Common.ViewModels
             Title = Parameters.request(hash).ToString();
         }
 
-        private void CerrarPopupModalExecute()
+
+        public void ClosePopupModalExecute()
         {
             try
             {
-
-                List<object> views2 = new List<object>(RegionManager.Regions[RegionNames.ContentModalRegion].Views);
-                foreach (object view in views2)
-                {
+                List<object> contents = new List<object>(RegionManager.Regions[RegionNames.ContentModalRegion].Views);
+                foreach (object view in contents)
                     RegionManager.Regions[RegionNames.ContentModalRegion].Remove(view);
-                }
 
-                List<object> views = new List<object>(RegionManager.Regions[RegionNames.PopupRegion].Views);
-                foreach (object view in views)
-                {
+                List<object> popups = new List<object>(RegionManager.Regions[RegionNames.PopupRegion].Views);
+                foreach (object view in popups)
                     RegionManager.Regions[RegionNames.PopupRegion].Remove(view);
-                }
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, MessageBoxIconV.Error);
+                throw ex;
             }
+
+        }
+
+        public void ClosePopupModal2Execute()
+        {
+            try
+            {
+                List<object> contents = new List<object>(RegionManager.Regions[RegionNames.ContentModal2Region].Views);
+                foreach (object view in contents)
+                    RegionManager.Regions[RegionNames.ContentModal2Region].Remove(view);
+
+                List<object> popups = new List<object>(RegionManager.Regions[RegionNames.Popup2Region].Views);
+                foreach (object view in popups)
+                    RegionManager.Regions[RegionNames.Popup2Region].Remove(view);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
     }

@@ -108,6 +108,7 @@
     <Compile Include="Controls\GifImage.cs" />
     <Compile Include="Controls\PasswordHelper.cs" />
     <Compile Include="Controls\TextBoxOnlyNumber.cs" />
+    <Compile Include="Converts\ConvertToBool.cs" />
     <Compile Include="Converts\ConvertToDecimal.cs" />
     <Compile Include="Enums\DialogResultV.cs" />
     <Compile Include="Enums\MessageBoxButtonsV.cs" />
@@ -161,6 +162,9 @@
     </Compile>
     <Compile Include="Views\ConfigurationView.xaml.cs">
       <DependentUpon>ConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopupView2.xaml.cs">
+      <DependentUpon>PopupView2.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -239,6 +243,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ConfigurationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopupView2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

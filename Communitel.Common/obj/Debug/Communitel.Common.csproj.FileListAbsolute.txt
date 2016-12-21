@@ -55,7 +55,6 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\Message
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StylePopup.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleScrollBar.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\MessageBoxView.baml
-C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Communitel.Common.csprojResolveAssemblyReference.cache
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleComboBox.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\PopupView.g.cs
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\PopupView.baml
@@ -126,3 +125,8 @@ C:\Users\CAMILO\Documents\Visual Studio 2015\Projects\communitel\Communitel.Comm
 C:\Users\CAMILO\Documents\Visual Studio 2015\Projects\communitel\Communitel.Common\obj\Debug\Communitel.Common.csproj.GenerateResource.Cache
 C:\Users\CAMILO\Documents\Visual Studio 2015\Projects\communitel\Communitel.Common\obj\Debug\Communitel.Common.dll
 C:\Users\CAMILO\Documents\Visual Studio 2015\Projects\communitel\Communitel.Common\obj\Debug\Communitel.Common.pdb
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\ConfigurationView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\ConfigurationView.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Communitel.Common.csprojResolveAssemblyReference.cache
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\PopupView2.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\PopupView2.baml

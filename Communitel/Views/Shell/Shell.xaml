@@ -20,6 +20,7 @@
 
         </Grid>
         <ContentControl prism:RegionManager.RegionName="PopupRegion" Width="Auto"/>
+        <ContentControl prism:RegionManager.RegionName="Popup2Region" Width="Auto"/>
         <ContentControl prism:RegionManager.RegionName="IndicatorRegion" Width="Auto"/>
     </Grid>
 </Window>
