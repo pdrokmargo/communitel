@@ -386,7 +386,6 @@ namespace Communitel.Product.ViewModels
         {
             try
             {
-
                 OpenIndicator();
                 ServiceRequest s = new ServiceRequest();
                 Dictionary<string, object> headers = new Dictionary<string, object>();
@@ -427,6 +426,7 @@ namespace Communitel.Product.ViewModels
                 string json = JsonConvert.SerializeObject(Category);
                 await s.POST("/api/categories", json);
                 MessageBox.Show("A new product has been created!", "Products");
+                CloseIndicator();
                 ClosePopupModal2();
             }
             catch (Exception ex)

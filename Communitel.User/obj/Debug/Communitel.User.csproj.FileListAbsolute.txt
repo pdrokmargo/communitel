@@ -1,0 +1,4 @@
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.csprojResolveAssemblyReference.cache
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\UserView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins_MarkupCompile.cache
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins_MarkupCompile.lref
