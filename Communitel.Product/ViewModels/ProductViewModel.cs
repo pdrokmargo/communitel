@@ -64,10 +64,7 @@ namespace Communitel.Product.ViewModels
         #region variables
         private dynamic _product;
         private dynamic _products;
-        private string _search = string.Empty;
-        private int _page = 1;
-        private string _sortBy = "id";
-        private int _reverse = 0;
+       
         private ObservableCollection<Categories> _categories;
         private ObservableCollection<Models.Categories> _categoriesFilters;
         private bool _filters = false;
@@ -78,10 +75,7 @@ namespace Communitel.Product.ViewModels
         #region property
         public dynamic Product { get { return _product; } set { _product = value; NotifyPropertyChanged("Product"); } }
         public dynamic Products { get { return _products; } set { _products = value; NotifyPropertyChanged("Products"); } }
-        public string Search { get { return _search; } set { _search = value; NotifyPropertyChanged("Search"); } }
-        public int Page { get { return _page; } set { _page = value; NotifyPropertyChanged("Page"); } }
-        public string SortBy { get { return _sortBy; } set { _sortBy = value; NotifyPropertyChanged("SortBy"); } }
-        public int Reverse { get { return _reverse; } set { _reverse = value; NotifyPropertyChanged("Reverse"); } }
+      
         public ObservableCollection<Models.Categories> Categories { get { return _categories; } set { _categories = value; NotifyPropertyChanged("Categories"); } }
         public ObservableCollection<Models.Categories> CategoriesFilters { get { return _categoriesFilters; } set { _categoriesFilters = value; NotifyPropertyChanged("CategoriesFilters"); } }
         public int StatusFilter { get { return _statusFilter; } set { _statusFilter = value; NotifyPropertyChanged("StatusFilter"); } }

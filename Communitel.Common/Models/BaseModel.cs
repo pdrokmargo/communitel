@@ -64,6 +64,22 @@ namespace Communitel.Common.Models
             }
         }
 
+        #region variables
+        private string _search = string.Empty;
+        private int _page = 1;
+        private string _sortBy = "id";
+        private int _reverse = 0;
+        #endregion
+
+        #region properties
+
+        public string Search { get { return _search; } set { _search = value; NotifyPropertyChanged("Search"); } }
+        public int Page { get { return _page; } set { _page = value; NotifyPropertyChanged("Page"); } }
+        public string SortBy { get { return _sortBy; } set { _sortBy = value; NotifyPropertyChanged("SortBy"); } }
+        public int Reverse { get { return _reverse; } set { _reverse = value; NotifyPropertyChanged("Reverse"); } }
+
+        #endregion
+
         public void OpenIndicator()
         {
             RegionManager.RequestNavigate("IndicatorRegion", "/IndicatorView");

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Communitel.User.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +20,15 @@ namespace Communitel.User.Views
     /// <summary>
     /// Lógica de interacción para SearchUserView.xaml
     /// </summary>
+    [Export("SearchUserView")]
     public partial class SearchUserView : UserControl
     {
         public SearchUserView()
         {
             InitializeComponent();
         }
+
+        [Import]
+        public UserViewModel UserViewModel { get { return DataContext as UserViewModel; } set { DataContext = value; } }
     }
 }

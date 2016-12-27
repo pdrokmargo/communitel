@@ -19,16 +19,17 @@ namespace Communitel.Common.ViewModels
         public DelegateCommand OpenSearchProductCommand { get; set; }
         public DelegateCommand OpenDashBoardCommand { get; set; }
         public DelegateCommand OpenConfigurationCommand { get; set; }
-
+        public DelegateCommand OpenSearchUserCommand { get; set; }
         [ImportingConstructor]
         public MenuViewModel()
         {
             OpenSearchProductCommand = new DelegateCommand(OpenSearchProductExecute);
             OpenDashBoardCommand = new DelegateCommand(OpenDashBoardExecute);
             OpenConfigurationCommand = new DelegateCommand(OpenConfigurationExecute);
+            OpenSearchUserCommand = new DelegateCommand(OpenSearchUserExecute);
             Menus = new ObservableCollection<Menu>();
             Menus.Add(new Menu { Name = "Dashboard", Icon = FontAwesome.WPF.FontAwesomeIcon.Home, Command = OpenDashBoardCommand });
-            Menus.Add(new Menu { Name = "Users", Icon = FontAwesome.WPF.FontAwesomeIcon.Users });
+            Menus.Add(new Menu { Name = "Users", Icon = FontAwesome.WPF.FontAwesomeIcon.Users, Command = OpenSearchUserCommand });
             Menus.Add(new Menu { Name = "Catalog Products", Icon = FontAwesome.WPF.FontAwesomeIcon.ShoppingBag, Command = OpenSearchProductCommand });
             Menus.Add(new Menu { Name = "Configuration", Icon = FontAwesome.WPF.FontAwesomeIcon.Cog, Command = OpenConfigurationCommand });
             this.FullName = $"{Variables.User.firstname} {Variables.User.lastname}";
@@ -76,6 +77,18 @@ namespace Communitel.Common.ViewModels
             try
             {
                 RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/ConfigurationView");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void OpenSearchUserExecute()
+        {
+            try
+            {
+                RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/SearchUserView");
             }
             catch (Exception ex)
             {

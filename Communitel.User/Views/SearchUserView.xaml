@@ -20,11 +20,11 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding GetAllCommand}"/>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -68,13 +68,13 @@
             <Button Grid.Column="1" Content="Search" Style="{DynamicResource DesignButtonSearch}" HorizontalAlignment="Left" Width="110" Command="{Binding GetAllCommand}"/>
         </Grid>
 
-        <GroupBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource DesignGroupBox}" Header="Search Products">
+        <GroupBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource DesignGroupBox}" Header="Search Users">
             <Grid>
-                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=Products.data}" ColumnWidth="*"
-                          Style="{DynamicResource DesignDataGrid}" Sorting="DataGrid_Sorting" CanUserSortColumns="True" CanUserReorderColumns="True">
-                    <DataGrid.Resources>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=Users.data}" ColumnWidth="*"
+                          Style="{DynamicResource DesignDataGrid}" CanUserSortColumns="True" CanUserReorderColumns="True">
+                    <!--<DataGrid.Resources>
                         <convert:ConvertToDecimal x:Key="convertToDecimal"/>
-                    </DataGrid.Resources>
+                    </DataGrid.Resources>-->
                     <DataGrid.RowStyle>
                         <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DesignRowsDataGrid}">
                             <Setter Property="MinHeight" Value="40"/>
@@ -82,12 +82,13 @@
                         </Style>
                     </DataGrid.RowStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Reference" Binding="{Binding code}" SortMemberPath="code"/>
-                        <DataGridTextColumn Header="Name" Binding="{Binding name}" SortMemberPath="name"/>
-                        <DataGridTextColumn Header="Stock" Binding="{Binding quantity}" SortMemberPath="quantity"/>
-                        <DataGridTextColumn Header="Price" Binding="{Binding Path=price, StringFormat='{}{0:C}', Converter={StaticResource convertToDecimal}}" SortMemberPath="price"/>
+                        <DataGridTextColumn Header="First Name" Binding="{Binding firstname}" SortMemberPath="firstname"/>
+                        <DataGridTextColumn Header="Last Name" Binding="{Binding lastname}" SortMemberPath="lastname"/>
+                        <DataGridTextColumn Header="User Name" Binding="{Binding username}" SortMemberPath="username"/>
+                        <DataGridTextColumn Header="Email" Binding="{Binding email}" SortMemberPath="email"/>
+                        <DataGridTextColumn Header="Profile" Binding="{Binding Path=userprofile.description}" SortMemberPath="userprofile.description"/>
                         <!--<DataGridTextColumn Header="Description" Binding="{Binding description}" SortMemberPath="description" />-->
-                        <DataGridTemplateColumn Header="Categories">
+                        <!--<DataGridTemplateColumn Header="Categories">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <ItemsControl ItemsSource="{Binding categories}">
@@ -109,7 +110,7 @@
                                     </ItemsControl>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+                        </DataGridTemplateColumn>-->
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -131,9 +132,9 @@
             <Button HorizontalAlignment="Center" Style="{DynamicResource DesignButtonPreviousPage}" Command="{Binding NextPageCommand}" CommandParameter="previous"/>
 
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">
-                <Run Text="{Binding Path=Products.current_page, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Run Text="{Binding Path=Users.current_page, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Run Text="of"/>
-                <Run Text="{Binding Path=Products.last_page, UpdateSourceTrigger=PropertyChanged}"/>
+                <Run Text="{Binding Path=Users.last_page, UpdateSourceTrigger=PropertyChanged}"/>
             </TextBlock>
 
             <Button Style="{DynamicResource DesignButtonNextPage}" Command="{Binding NextPageCommand}" CommandParameter="next"/>

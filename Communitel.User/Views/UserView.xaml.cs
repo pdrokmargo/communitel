@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Communitel.User.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
@@ -26,5 +27,8 @@ namespace Communitel.User.Views
         {
             InitializeComponent();
         }
+
+        [Import]
+        public UserViewModel UserViewModel { get { return DataContext as UserViewModel; } set { DataContext = value; } }
     }
 }
