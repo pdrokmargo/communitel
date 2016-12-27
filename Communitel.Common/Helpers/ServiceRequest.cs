@@ -59,7 +59,7 @@ namespace Communitel.Common.Helpers
             return magic;
         }
 
-        public async Task<dynamic> GET(string requestUri, Dictionary<string, object> headers)
+        public async Task<dynamic> GET(string requestUri, Dictionary<string, object> headers = null)
         {
             if (requestUri == null)
             {

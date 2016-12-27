@@ -10,6 +10,9 @@ using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
 using Communitel.Common.Messages;
 using Communitel.Common.Helpers;
+using Newtonsoft.Json;
+using Communitel.Common.Functions;
+using System.Collections.ObjectModel;
 
 namespace Communitel.User.ViewModels
 {
@@ -23,6 +26,10 @@ namespace Communitel.User.ViewModels
         public DelegateCommand<object> GetPrivilegesCommand { get; set; }
         public DelegateCommand GetAllCommand { get; set; }
         public DelegateCommand<string> NextPageCommand { get; set; }
+        public DelegateCommand OpenSearchCommand { get; set; }
+        public DelegateCommand SaveCommand { get; set; }
+        public DelegateCommand<dynamic> OpenEditCommand { get; set; }
+        public DelegateCommand OpenMoreFiltersCommand { get; set; }
         [ImportingConstructor]
         public UserViewModel()
         {
@@ -31,36 +38,103 @@ namespace Communitel.User.ViewModels
             GetPrivilegesCommand = new DelegateCommand<object>(GetPrivilegesExecute);
             GetAllCommand = new DelegateCommand(GetAllExecute);
             NextPageCommand = new DelegateCommand<string>(NextPageExecute);
-            User = new System.Dynamic.ExpandoObject();
+            OpenSearchCommand = new DelegateCommand(OpenSearchExecute);
+            SaveCommand = new DelegateCommand(SaveExecute);
+            OpenEditCommand = new DelegateCommand<dynamic>(OpenEditExecute);
+            OpenMoreFiltersCommand = new DelegateCommand(OpenMoreFiltersExecute);
+            User = new System.Dynamic.ExpandoObject();            
         }
 
         #region variables
         private dynamic _users;
         private dynamic _user;
-        private List<UserProfile> _userProfiles;
-       
+        private dynamic _userProfiles;        
         #endregion
 
         #region properties
         public dynamic Users { get { return _users; } set { _users = value; NotifyPropertyChanged("Users"); } }
         public dynamic User { get { return _user; } set { _user = value; NotifyPropertyChanged("User"); } }
-        public List<Models.UserProfile> UserProfiles { get { return _userProfiles; } set { _userProfiles = value; NotifyPropertyChanged("UserProfiles"); } }        
+        public dynamic UserProfiles { get { return _userProfiles; } set { _userProfiles = value; NotifyPropertyChanged("UserProfiles"); } }
+        public ObservableCollection<Models.UserProfile> MyProperty { get; set; }
         #endregion
 
-        private async void LoadExecute()
+        private void LoadExecute()
         {
             try
             {
-                OpenIndicator();
-                this.User = new System.Dynamic.ExpandoObject();
-                Common.Helpers.ServiceRequest s = new Common.Helpers.ServiceRequest();
-                var result = await s.GET<Common.Models.Result<List<Models.UserProfile>>>("/api/userprofile");
-                UserProfiles = result.data;
-                CloseIndicator();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private async void SaveExecute()
+        {
+            try
+            {
+                if (!Functions.IsPropertyExist(this.User, "firstname") || string.IsNullOrEmpty(User.firstname.ToString()))
+                {
+                    MessageBox.Show("Enter the first name", "User", Common.Enums.MessageBoxIconV.Warning);
+                    return;
+                }
+                if (!Functions.IsPropertyExist(this.User, "lastname") || string.IsNullOrEmpty(User.lastname.ToString()))
+                {
+                    MessageBox.Show("Enter the last name", "User", Common.Enums.MessageBoxIconV.Warning);
+                    return;
+                }
+                if (!Functions.IsPropertyExist(this.User, "username") || string.IsNullOrEmpty(User.username.ToString()))
+                {
+                    MessageBox.Show("Enter the user name", "User", Common.Enums.MessageBoxIconV.Warning);
+                    return;
+                }
+                if (!Functions.IsPropertyExist(this.User, "email") || string.IsNullOrEmpty(User.email.ToString()))
+                {
+                    MessageBox.Show("Enter the email", "User", Common.Enums.MessageBoxIconV.Warning);
+                    return;
+                }
+
+                if (!Functions.IsPropertyExist(this.User, "user_profile_id") || string.IsNullOrEmpty(User.user_profile_id.ToString()))
+                {
+                    MessageBox.Show("Select the user profile", "User", Common.Enums.MessageBoxIconV.Warning);
+                    return;
+                }
+
+                ServiceRequest s = new ServiceRequest();
+
+                if (Functions.IsPropertyExist(this.User, "id") && this.User.id > 0)
+                {
+                    string json = JsonConvert.SerializeObject(this.User);
+                    OpenIndicator();
+                    dynamic obj = await s.PUT("/api/users/" + User.id, json);
+                    CloseIndicator();
+                    MessageBox.Show("The user has been updated!", "User");
+                    User = new System.Dynamic.ExpandoObject();
+                    this.OpenSearchExecute();
+                }
+                else
+                {
+                    OpenIndicator();
+                    dynamic result = await s.GET($"/api/users?username={User.username}");
+                    var data = (Newtonsoft.Json.Linq.JArray)result.data;
+                    if (data.Count == 0)
+                    {
+                        this.User.password = "123456";
+                        string json = JsonConvert.SerializeObject(this.User);
+                        dynamic obj = await s.POST("/api/users", json);
+                        this.User = new System.Dynamic.ExpandoObject();
+                        MessageBox.Show("A new user has been created!", "User");
+                    }
+                    else
+                    {
+                        MessageBox.Show("User already exists!", "User");
+                    }
+                    CloseIndicator();
+                }
             }
             catch (Exception ex)
             {
                 CloseIndicator();
+                MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
             }
         }
 
@@ -70,7 +144,7 @@ namespace Communitel.User.ViewModels
             {
                 ServiceRequest s = new ServiceRequest();
                 Dictionary<string, object> headers = new Dictionary<string, object>();
-                headers.Add("pageSize", 4);
+                headers.Add("pageSize", 10);
                 headers.Add("sortBy", sortBy);
                 headers.Add("reverse", reverse);
                 dynamic result;
@@ -120,14 +194,21 @@ namespace Communitel.User.ViewModels
             }
         }
 
-        private void OpenCreateExecute()
+        private async void OpenCreateExecute()
         {
             try
             {
+                Common.Helpers.ServiceRequest s = new Common.Helpers.ServiceRequest();
+                OpenIndicator();
+                var result = await s.GET("/api/userprofile");
+                CloseIndicator();
+                UserProfiles = result.data;
+                this.User = new System.Dynamic.ExpandoObject();
                 RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/UserView");
             }
             catch (Exception ex)
             {
+                CloseIndicator();
                 MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
             }
         }
@@ -136,11 +217,14 @@ namespace Communitel.User.ViewModels
         {
             try
             {
-                OpenIndicator();
-                Common.Helpers.ServiceRequest s = new Common.Helpers.ServiceRequest();
-                var result = await s.GET($"/api/privileges?user_profile_id={user_profile_id}");
-                this.User.privileges = result.data;
-                CloseIndicator();
+                if (user_profile_id!=null && user_profile_id is Newtonsoft.Json.Linq.JValue)
+                {
+                    OpenIndicator();
+                    Common.Helpers.ServiceRequest s = new Common.Helpers.ServiceRequest();
+                    var result = await s.GET($"/api/privileges?user_profile_id={user_profile_id}");
+                    this.User.userprofile.privileges = result.data;
+                    CloseIndicator();
+                }
             }
             catch (Exception ex)
             {
@@ -172,6 +256,50 @@ namespace Communitel.User.ViewModels
             {
                 CloseIndicator();
                 MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
+            }
+        }
+
+        private void OpenSearchExecute()
+        {
+            try
+            {
+                RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/SearchUserView");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private async void OpenEditExecute(dynamic user)
+        {
+            try
+            {
+                ServiceRequest s = new ServiceRequest();
+                var profiles = await s.GET("/api/userprofile");
+                UserProfiles = profiles.data;
+                var result = await s.GET($"/api/users/{user.id}");
+                this.User = new System.Dynamic.ExpandoObject();
+                this.User = result.data;                
+                RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/UserView");
+            }
+            catch (Exception ex)
+            {
+                CloseIndicator();
+                MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
+            }
+        }
+
+        private void OpenMoreFiltersExecute()
+        {
+            try
+            {
+                OpenPopupModal("Filters");
+                RegionManager.RequestNavigate(RegionNames.ContentModalRegion, "/FilterUserView");
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

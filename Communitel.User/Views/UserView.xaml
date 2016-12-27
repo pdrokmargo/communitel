@@ -57,8 +57,8 @@
             <TextBox Grid.Column="0" Grid.Row="3" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.email}"/>
 
             <TextBlock Grid.Column="1" Grid.Row="2" Text="Profile"/>
-            <ComboBox Grid.Column="1" Grid.Row="3" Style="{DynamicResource DesignComboBox}" ItemsSource="{Binding UserProfiles}"
-                      SelectedValuePath="id" DisplayMemberPath="description" SelectedValue="{Binding Path=User.user_profile_id}">
+            <ComboBox Grid.Column="1" Grid.Row="3" Style="{DynamicResource DesignComboBox}" ItemsSource="{Binding UserProfiles}" IsReadOnly="True"
+                      SelectedValuePath="id" DisplayMemberPath="description" SelectedValue="{Binding Path=User.user_profile_id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
                         <i:InvokeCommandAction Command="{Binding GetPrivilegesCommand}" CommandParameter="{Binding Path=SelectedValue, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}"/>
@@ -69,7 +69,7 @@
             <TextBlock Grid.Column="0" Grid.Row="4" Text="Privileges"/>
             <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" BorderBrush="Gray" Padding="10"
                         BorderThickness="2" Height="200">
-                <ItemsControl ItemsSource="{Binding Path=User.privileges}">
+                <ItemsControl ItemsSource="{Binding Path=User.userprofile.privileges, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <UniformGrid Columns="3" />
@@ -77,14 +77,14 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <CheckBox Content="{Binding Path=views.description}" Style="{DynamicResource ResourceKey=DesignCheckBox}"/>
+                            <CheckBox Content="{Binding Path=views.description}" IsChecked="True" IsHitTestVisible="False" Style="{DynamicResource ResourceKey=DesignCheckBox}"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </Border>
 
             <Button Grid.Column="1" Grid.Row="7" Content="Close" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
-                        VerticalAlignment="Bottom" Command="{Binding OpenSearchProductCommand}" MaxWidth="300"/>
+                        VerticalAlignment="Bottom" Command="{Binding OpenSearchCommand}" MaxWidth="300"/>
 
             <Button Grid.Column="2" Grid.Row="7" Content="Save" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
                         VerticalAlignment="Bottom" Command="{Binding SaveCommand}" MaxWidth="300"/>

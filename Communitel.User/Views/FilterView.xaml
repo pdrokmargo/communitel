@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Communitel.User.Views.FilterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Communitel.User.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="450" Width="450" MaxHeight="450">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleApp.xaml"/>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleTextBox.xaml"/>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleButton.xaml"/>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleGroupBox.xaml"/>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleComboBox.xaml"/>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleDataGrid.xaml"/>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleCheckBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding GetCategoriesFiltersCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="2" Text="Privileges"/>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="False" Grid.Row="3" ItemsSource="{Binding CategoriesFilters}" ColumnWidth="*"
+                          Style="{DynamicResource DesignDataGrid}" CanUserSortColumns="True" CanUserReorderColumns="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <CheckBox Style="{DynamicResource DesignCheckBox}" IsChecked="{Binding Path=add,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Description" Binding="{Binding description}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="4" Content="Done" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
+                        VerticalAlignment="Bottom" Command="{Binding SearchByFiltersCommand}" MaxWidth="300"/>
+    </Grid>
+</UserControl>
+    

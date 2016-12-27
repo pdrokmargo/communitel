@@ -44,3 +44,5 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.csproj.GenerateResource.Cache
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins.pdb
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\FilterView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\FilterView.baml

@@ -104,9 +104,9 @@ namespace Communitel.Product.ViewModels
                 if (Functions.IsPropertyExist(this.Product, "id") && this.Product.id > 0)
                 {
                     dynamic obj = await s.PUT("/api/products/" + Product.id, json);
-                    CloseIndicator();
-                    Product = new System.Dynamic.ExpandoObject();
+                    CloseIndicator();                    
                     MessageBox.Show("The product has been updated!", "Products");
+                    Product = new System.Dynamic.ExpandoObject();
                     this.OpenSearchProductExecute();
                 }
                 else

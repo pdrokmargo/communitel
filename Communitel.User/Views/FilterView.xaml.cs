@@ -1,4 +1,4 @@
-﻿using Communitel.Common.ViewModels;
+﻿using Communitel.User.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
@@ -15,21 +15,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Communitel.Common.Views.Users
+namespace Communitel.User.Views
 {
     /// <summary>
-    /// Lógica de interacción para ConfigurationView.xaml
+    /// Lógica de interacción para FilterView.xaml
     /// </summary>
-    [Export("ConfigurationView")]
-    public partial class ConfigurationView : UserControl
+    [Export("FilterUserView")]
+    public partial class FilterView : UserControl
     {
-        public ConfigurationView()
+        public FilterView()
         {
             InitializeComponent();
         }
 
         [Import]
-        public ConfigurationViewModel ConfigurationViewModel { get { return DataContext as  ConfigurationViewModel; } set { DataContext = value; } }
+        public UserViewModel UserViewModel { get { return DataContext as UserViewModel; } set { DataContext = value; } }
 
     }
 }
