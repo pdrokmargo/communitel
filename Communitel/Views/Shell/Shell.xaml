@@ -8,13 +8,24 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"       
         mc:Ignorable="d"
         Title="Shell" Height="300" Width="300" WindowState="Maximized">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleScrollBar.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
             <ContentControl Grid.Row="0" Grid.Column="0" prism:RegionManager.RegionName="NavigationRegion" Width="Auto"/>
             <ContentControl Grid.Row="0" Grid.Column="1" prism:RegionManager.RegionName="WorkSpaceRegion" Width="Auto"/>
 

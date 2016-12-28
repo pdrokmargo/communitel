@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Communitel.Common.Views.Users"
-             xmlns:ctl="clr-namespace:Communitel.Common.Controls;assembly=Communitel.Common"
+             xmlns:ctl="clr-namespace:Communitel.Common.Controls"
              xmlns:fa="http://schemas.fontawesome.io/icons/"        
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
@@ -63,24 +63,24 @@
                 <TextBlock Grid.Column="0" FontSize="35" Grid.Row="0" Grid.ColumnSpan="4" Text="Baggage" />
 
                 <TextBlock Grid.Column="0" Grid.Row="1" Text="Yellow Lines Price" Foreground="#CBC50A"/>
-                <TextBox Grid.Column="0" Grid.Row="2" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.yellow_price}"/>
+                <ctl:TextBoxOnlyNumber Grid.Column="0" Grid.Row="2" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.yellow_price}"/>
 
                 <TextBlock Grid.Column="1" Grid.Row="1" Text="Red Lines Price" Foreground="#BC1313"/>
-                <TextBox Grid.Column="1" Grid.Row="2" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.red_price}"/>
+                <ctl:TextBoxOnlyNumber Grid.Column="1" Grid.Row="2" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.red_price}"/>
 
                 <TextBlock Grid.Column="2" Grid.Row="1" Text="Orange Lines Price" Foreground="#E95B14"/>
-                <TextBox Grid.Column="2" Grid.Row="2" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.orange_price}"/>
+                <ctl:TextBoxOnlyNumber Grid.Column="2" Grid.Row="2" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.orange_price}"/>
 
                 <TextBlock Grid.Column="3" Grid.Row="1" Text="Expiry Days"/>
-                <TextBox Grid.Column="3" Grid.Row="2" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.expiry_days}"/>
+                <ctl:TextBoxOnlyNumber Grid.Column="3" Grid.Row="2" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.expiry_days}"/>
 
                 <TextBlock Grid.Column="0" FontSize="35" Grid.Row="3" Grid.ColumnSpan="4" Text="Sales" />
 
                 <TextBlock Grid.Column="0" Grid.Row="4" Text="Tax (%)"/>
-                <TextBox Grid.Column="0" Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.tax_percent}"/>
+                <ctl:TextBoxOnlyNumber Grid.Column="0" Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=Configuration.tax_percent}"/>
 
                 <Button Grid.Column="2" Grid.Row="6" Content="Close" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
-                        VerticalAlignment="Bottom" Command="{Binding OpenSearchProductCommand}" MaxWidth="300"/>
+                        VerticalAlignment="Bottom" Command="{Binding CloseCommand}" MaxWidth="300"/>
 
                 <Button Grid.Column="4" Grid.Row="6" Content="Save" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
                         VerticalAlignment="Bottom" Command="{Binding SaveCommand}" MaxWidth="300"/>

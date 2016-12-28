@@ -111,6 +111,7 @@
     <Compile Include="Converts\ConvertToBool.cs" />
     <Compile Include="Converts\ConvertToDecimal.cs" />
     <Compile Include="Enums\DialogResultV.cs" />
+    <Compile Include="Enums\enView.cs" />
     <Compile Include="Enums\MessageBoxButtonsV.cs" />
     <Compile Include="Enums\MessageBoxDefaultButtonV.cs" />
     <Compile Include="Enums\MessageBoxIconV.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Models\Parameters.cs" />
     <Compile Include="Models\RegionNames.cs" />
     <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\Views.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -195,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\StyleDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\StyleExpander.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

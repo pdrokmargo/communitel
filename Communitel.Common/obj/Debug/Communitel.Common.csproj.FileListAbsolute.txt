@@ -130,3 +130,4 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\Configu
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Communitel.Common.csprojResolveAssemblyReference.cache
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\PopupView2.g.cs
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Views\PopupView2.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleExpander.baml

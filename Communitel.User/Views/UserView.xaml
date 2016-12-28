@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Communitel.User.Views"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ctr="clr-namespace:Communitel.Common.Controls;assembly=Communitel.Common"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="800">
 
@@ -41,6 +42,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>                
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
@@ -66,8 +68,16 @@
                 </i:Interaction.Triggers>
             </ComboBox>
 
-            <TextBlock Grid.Column="0" Grid.Row="4" Text="Privileges"/>
-            <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" BorderBrush="Gray" Padding="10"
+            <TextBlock Grid.Column="0" Grid.Row="4" Text="Password"/>
+            <PasswordBox Style="{DynamicResource ResourceKey=DesignPasswordbox}" Grid.Column="0" Grid.Row="5"
+                             ctr:PasswordHelper.Attach="True" ctr:PasswordHelper.Password="{Binding Path=User.password, Mode=TwoWay}"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="Confirm Password"/>
+            <PasswordBox Style="{DynamicResource ResourceKey=DesignPasswordbox}" Grid.Column="1" Grid.Row="5"
+                             ctr:PasswordHelper.Attach="True" ctr:PasswordHelper.Password="{Binding Path=User.confirmpassword, Mode=TwoWay}"/>
+
+            <TextBlock Grid.Column="0" Grid.Row="6" Text="Privileges"/>
+            <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" BorderBrush="Gray" Padding="10"
                         BorderThickness="2" Height="200">
                 <ItemsControl ItemsSource="{Binding Path=User.userprofile.privileges, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     <ItemsControl.ItemsPanel>
@@ -83,10 +93,10 @@
                 </ItemsControl>
             </Border>
 
-            <Button Grid.Column="1" Grid.Row="7" Content="Close" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
+            <Button Grid.Column="1" Grid.Row="8" Content="Close" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
                         VerticalAlignment="Bottom" Command="{Binding OpenSearchCommand}" MaxWidth="300"/>
 
-            <Button Grid.Column="2" Grid.Row="7" Content="Save" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
+            <Button Grid.Column="2" Grid.Row="8" Content="Save" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
                         VerticalAlignment="Bottom" Command="{Binding SaveCommand}" MaxWidth="300"/>
             
         </Grid>

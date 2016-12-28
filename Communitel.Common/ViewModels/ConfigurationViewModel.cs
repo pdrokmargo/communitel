@@ -17,9 +17,13 @@ namespace Communitel.Common.ViewModels
     {
 
         public DelegateCommand LoadCommand { get; set; }
+        public DelegateCommand SaveCommand { get; set; }
+        public DelegateCommand CloseCommand { get; set; }
         public ConfigurationViewModel()
         {
             LoadCommand = new DelegateCommand(LoadExecute);
+            SaveCommand = new DelegateCommand(SaveExecute);
+            CloseCommand = new DelegateCommand(CloseExecute);
             Configuration = new System.Dynamic.ExpandoObject();
         }
 
@@ -33,7 +37,7 @@ namespace Communitel.Common.ViewModels
                 OpenIndicator();
                 ServiceRequest s = new ServiceRequest();
                 Configuration = await s.GET("/api/config");
-                CloseIndicator();
+                CloseIndicator();               
             }
             catch (Exception ex)
             {
@@ -50,10 +54,26 @@ namespace Communitel.Common.ViewModels
                 string json = JsonConvert.SerializeObject(Configuration);
                 await s.PUT("/api/config/change", json);
                 CloseIndicator();
+                Messages.MessageBox.Show("Configuration updated successfully!", "Content Updated");
             }
             catch (Exception ex)
             {
                 CloseIndicator();
+                Messages.MessageBox.Show(ex.Message, Enums.MessageBoxIconV.Error);
+            }
+        }
+
+        private void CloseExecute()
+        {
+            try
+            {
+                List<object> contents = new List<object>(RegionManager.Regions[RegionNames.WorkSpaceRegion].Views);
+                if (contents != null && contents.Count > 0)
+                    foreach (object view in contents)
+                        RegionManager.Regions[RegionNames.WorkSpaceRegion].Remove(view);
+            }
+            catch (Exception ex)
+            {
                 Messages.MessageBox.Show(ex.Message, Enums.MessageBoxIconV.Error);
             }
         }

@@ -28,10 +28,21 @@ namespace Communitel.Common.ViewModels
             OpenConfigurationCommand = new DelegateCommand(OpenConfigurationExecute);
             OpenSearchUserCommand = new DelegateCommand(OpenSearchUserExecute);
             Menus = new ObservableCollection<Menu>();
+
+            var list = Variables.User.userprofile.privileges as Newtonsoft.Json.Linq.JArray;
+            bool hasUser = list.Where(item => item["id"].ToObject<int>() == (int)Enums.enView.Users).Count() > 0;
+            bool hasProduct = list.Where(item => item["id"].ToObject<int>() == (int)Enums.enView.CatalogProducts).Count() > 0;
+            bool hasConfiguration = list.Where(item => item["id"].ToObject<int>() == (int)Enums.enView.Configuration).Count() > 0;
+            bool hasCheckin = list.Where(item => item["id"].ToObject<int>() == (int)Enums.enView.CheckIn).Count() > 0;
+
+            //var t = list[0].Value<Newtonsoft.Json.Linq.JObject>("views")["description"];
+
             Menus.Add(new Menu { Name = "Dashboard", Icon = FontAwesome.WPF.FontAwesomeIcon.Home, Command = OpenDashBoardCommand });
-            Menus.Add(new Menu { Name = "Users", Icon = FontAwesome.WPF.FontAwesomeIcon.Users, Command = OpenSearchUserCommand });
-            Menus.Add(new Menu { Name = "Catalog Products", Icon = FontAwesome.WPF.FontAwesomeIcon.ShoppingBag, Command = OpenSearchProductCommand });
-            Menus.Add(new Menu { Name = "Configuration", Icon = FontAwesome.WPF.FontAwesomeIcon.Cog, Command = OpenConfigurationCommand });
+            Menus.Add(new Menu { Name = "Users", Icon = FontAwesome.WPF.FontAwesomeIcon.Users, Command = OpenSearchUserCommand, Visible = hasUser ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
+            Menus.Add(new Menu { Name = "Catalog Products", Icon = FontAwesome.WPF.FontAwesomeIcon.ShoppingBag, Command = OpenSearchProductCommand, Visible = hasProduct ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
+            Menus.Add(new Menu { Name = "Configuration", Icon = FontAwesome.WPF.FontAwesomeIcon.Cog, Command = OpenConfigurationCommand, Visible= hasConfiguration ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
+            Menus.Add(new Menu { Name = "CheckIn", Icon = FontAwesome.WPF.FontAwesomeIcon.CheckCircle, Visible= hasCheckin ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
+                        
             this.FullName = $"{Variables.User.firstname} {Variables.User.lastname}";
             this.Profile = Variables.User.userprofile;
         }

@@ -15,42 +15,57 @@
                 <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleApp.xaml"/>
                 <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleTextBox.xaml"/>
                 <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleButton.xaml"/>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleExpander.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
+    <Expander Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" ExpandDirection="Left" IsExpanded="True" 
+                  Margin="0,3,3,3" MaxWidth="310" Style="{DynamicResource ourAnimatedExpanderStyle}">
+        <Grid Width="250">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--<Border Grid.Row="0" Height="50" Background="{DynamicResource ResourceKey=BackGroundGridTop}"></Border>-->
+            <Border Grid.Row="1" Background="{DynamicResource ResourceKey=BackGroundGridMenu}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Row="0">
 
-    <Grid Width="200">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Border Grid.Row="0" Height="50" Background="{DynamicResource ResourceKey=BackGroundGridTop}"></Border>
-        <Border Grid.Row="1" Background="{DynamicResource ResourceKey=BackGroundGridMenu}">
-            <StackPanel Orientation="Vertical">
-                
-                    <Border Grid.Row="0" CornerRadius="50" Width="80" Height="80" Margin="0,10,0,0">
-                        <Border.Background>
-                            <ImageBrush ImageSource="/Communitel.Common;component/Images/profile.png"/>
-                        </Border.Background>
-                    </Border>
-                <TextBlock Text="{Binding Path=FullName}" Foreground="White" FontSize="14" HorizontalAlignment="Center" Margin="0,4,0,0"/>
-                <TextBlock Text="{Binding Path=Profile.description}" Foreground="White" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
-               
-                <ItemsControl ItemsSource="{Binding Menus}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Button Style="{DynamicResource ResourceKey=DesignButtonMenu}" Visibility="{Binding Visible}" Command="{Binding Command}">
-                                <Button.Content>
-                                    <StackPanel Orientation="Vertical">
-                                        <fa:ImageAwesome Icon="{Binding Icon}" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-                                        <TextBlock Text="{Binding Name}" Foreground="White" FontSize="14" HorizontalAlignment="Center" Margin="0,4,0,0"/>
-                                    </StackPanel>
-                                </Button.Content>
-                            </Button>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
-        </Border>
-    </Grid>
+                        <Border Grid.Row="0" CornerRadius="50" Width="80" Height="80" Margin="0,10,0,0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/Communitel.Common;component/Images/profile.png"/>
+                            </Border.Background>
+                        </Border>
+                        <TextBlock Text="{Binding Path=FullName}" Foreground="White" FontSize="14" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                        <TextBlock Text="{Binding Path=Profile.description}" Foreground="White" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+                        <Separator Background="White" BorderThickness="3" Height="5" BorderBrush="White"/>
+                    </StackPanel>
+                    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="1">
+
+                        <StackPanel VerticalAlignment="Top" Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                            <ItemsControl ItemsSource="{Binding Menus}" >
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button Style="{DynamicResource ResourceKey=DesignButtonMenu}" Visibility="{Binding Visible}" Command="{Binding Command}">
+                                            <Button.Content>
+                                                <StackPanel Orientation="Vertical">
+                                                    <fa:ImageAwesome Icon="{Binding Icon}" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                                                    <TextBlock Text="{Binding Name}" Foreground="White" FontSize="14" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
+    </Expander>
 </UserControl>

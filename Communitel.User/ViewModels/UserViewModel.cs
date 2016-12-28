@@ -42,13 +42,13 @@ namespace Communitel.User.ViewModels
             SaveCommand = new DelegateCommand(SaveExecute);
             OpenEditCommand = new DelegateCommand<dynamic>(OpenEditExecute);
             OpenMoreFiltersCommand = new DelegateCommand(OpenMoreFiltersExecute);
-            User = new System.Dynamic.ExpandoObject();            
+            User = new System.Dynamic.ExpandoObject();
         }
 
         #region variables
         private dynamic _users;
         private dynamic _user;
-        private dynamic _userProfiles;        
+        private dynamic _userProfiles;
         #endregion
 
         #region properties
@@ -72,6 +72,9 @@ namespace Communitel.User.ViewModels
         {
             try
             {
+
+                #region validation
+
                 if (!Functions.IsPropertyExist(this.User, "firstname") || string.IsNullOrEmpty(User.firstname.ToString()))
                 {
                     MessageBox.Show("Enter the first name", "User", Common.Enums.MessageBoxIconV.Warning);
@@ -99,10 +102,28 @@ namespace Communitel.User.ViewModels
                     return;
                 }
 
+                #endregion
+
                 ServiceRequest s = new ServiceRequest();
 
                 if (Functions.IsPropertyExist(this.User, "id") && this.User.id > 0)
                 {
+
+                    if (Functions.IsPropertyExist(this.User, "password") && !string.IsNullOrEmpty(User.password.ToString()))
+                    {
+                        if (!Functions.IsPropertyExist(this.User, "confirmpassword") || string.IsNullOrEmpty(User.confirmpassword.ToString()))
+                        {
+                            MessageBox.Show("Confirm password", "User", Common.Enums.MessageBoxIconV.Warning);
+                            return;
+                        }
+
+                        if (User.confirmpassword != User.password)
+                        {
+                            MessageBox.Show("Passwords do not match!", "User", Common.Enums.MessageBoxIconV.Warning);
+                            return;
+                        }
+                    }
+
                     string json = JsonConvert.SerializeObject(this.User);
                     OpenIndicator();
                     dynamic obj = await s.PUT("/api/users/" + User.id, json);
@@ -113,12 +134,29 @@ namespace Communitel.User.ViewModels
                 }
                 else
                 {
+                    if (!Functions.IsPropertyExist(this.User, "password") || string.IsNullOrEmpty(User.password.ToString()))
+                    {
+                        MessageBox.Show("Enter the password", "User", Common.Enums.MessageBoxIconV.Warning);
+                        return;
+                    }
+
+                    if (!Functions.IsPropertyExist(this.User, "confirmpassword") || string.IsNullOrEmpty(User.confirmpassword.ToString()))
+                    {
+                        MessageBox.Show("Confirm password", "User", Common.Enums.MessageBoxIconV.Warning);
+                        return;
+                    }
+
+                    if (User.confirmpassword != User.password)
+                    {
+                        MessageBox.Show("Passwords do not match!", "User", Common.Enums.MessageBoxIconV.Warning);
+                        return;
+                    }
+
                     OpenIndicator();
                     dynamic result = await s.GET($"/api/users?username={User.username}");
                     var data = (Newtonsoft.Json.Linq.JArray)result.data;
                     if (data.Count == 0)
                     {
-                        this.User.password = "123456";
                         string json = JsonConvert.SerializeObject(this.User);
                         dynamic obj = await s.POST("/api/users", json);
                         this.User = new System.Dynamic.ExpandoObject();
@@ -217,7 +255,7 @@ namespace Communitel.User.ViewModels
         {
             try
             {
-                if (user_profile_id!=null && user_profile_id is Newtonsoft.Json.Linq.JValue)
+                if (user_profile_id != null && user_profile_id is Newtonsoft.Json.Linq.JValue)
                 {
                     OpenIndicator();
                     Common.Helpers.ServiceRequest s = new Common.Helpers.ServiceRequest();
@@ -280,7 +318,7 @@ namespace Communitel.User.ViewModels
                 UserProfiles = profiles.data;
                 var result = await s.GET($"/api/users/{user.id}");
                 this.User = new System.Dynamic.ExpandoObject();
-                this.User = result.data;                
+                this.User = result.data;
                 RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/UserView");
             }
             catch (Exception ex)
