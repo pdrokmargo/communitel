@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Communitel.User.Views"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:ctr="clr-namespace:Communitel.Common.Controls;assembly=Communitel.Common"
+             xmlns:convert="clr-namespace:Communitel.Common.Converts;assembly=Communitel.Common"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="800">
 
@@ -30,6 +31,9 @@
     
     <GroupBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource DesignGroupBox}" Header="User">
         <Grid>
+            <Grid.Resources>
+                <convert:ConvertValidateProfile x:Key="convertValidateProfile"/>
+            </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -63,7 +67,8 @@
                       SelectedValuePath="id" DisplayMemberPath="description" SelectedValue="{Binding Path=User.user_profile_id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
-                        <i:InvokeCommandAction Command="{Binding GetPrivilegesCommand}" CommandParameter="{Binding Path=SelectedValue, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}"/>
+                        <i:InvokeCommandAction Command="{Binding GetPrivilegesCommand}" IsEnabled="{Binding Path=User.user_profile_id, Converter={StaticResource convertValidateProfile}}"
+                                               CommandParameter="{Binding Path=SelectedValue, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </ComboBox>

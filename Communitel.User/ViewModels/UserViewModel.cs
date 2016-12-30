@@ -55,7 +55,7 @@ namespace Communitel.User.ViewModels
         public dynamic Users { get { return _users; } set { _users = value; NotifyPropertyChanged("Users"); } }
         public dynamic User { get { return _user; } set { _user = value; NotifyPropertyChanged("User"); } }
         public dynamic UserProfiles { get { return _userProfiles; } set { _userProfiles = value; NotifyPropertyChanged("UserProfiles"); } }
-        public ObservableCollection<Models.UserProfile> MyProperty { get; set; }
+
         #endregion
 
         private void LoadExecute()
@@ -240,7 +240,13 @@ namespace Communitel.User.ViewModels
                 OpenIndicator();
                 var result = await s.GET("/api/userprofile");
                 CloseIndicator();
-                UserProfiles = result.data;
+                dynamic list = result.data;
+
+                if ((int)Common.Variables.User.user_profile_id.Value != (int)Common.Enums.enUserProfiles.SuperAdmin)
+                    list = ((Newtonsoft.Json.Linq.JArray)result.data).Where(a => a["id"].ToObject<int>() != (int)Common.Enums.enUserProfiles.SuperAdmin).ToList();
+
+                UserProfiles = list;
+
                 this.User = new System.Dynamic.ExpandoObject();
                 RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/UserView");
             }

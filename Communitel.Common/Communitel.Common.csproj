@@ -110,7 +110,9 @@
     <Compile Include="Controls\TextBoxOnlyNumber.cs" />
     <Compile Include="Converts\ConvertToBool.cs" />
     <Compile Include="Converts\ConvertToDecimal.cs" />
+    <Compile Include="Converts\ConvertValidateProfile.cs" />
     <Compile Include="Enums\DialogResultV.cs" />
+    <Compile Include="Enums\enUserProfiles.cs" />
     <Compile Include="Enums\enView.cs" />
     <Compile Include="Enums\MessageBoxButtonsV.cs" />
     <Compile Include="Enums\MessageBoxDefaultButtonV.cs" />

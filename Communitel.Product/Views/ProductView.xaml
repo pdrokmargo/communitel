@@ -35,7 +35,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <GroupBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource DesignGroupBox}" Header="Products Catalog">
+        <GroupBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource DesignGroupBox}" Header="Catalog Products">
             <GroupBox.Resources>
                 <convert:ConvertToBool x:Key="convertToBool"/>
             </GroupBox.Resources>
