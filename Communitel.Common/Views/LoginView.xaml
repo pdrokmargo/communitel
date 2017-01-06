@@ -43,7 +43,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="User" Grid.Row="0" HorizontalAlignment="Stretch"/>
-                <TextBox Style="{DynamicResource ResourceKey=DesignTextBox}" Grid.Row="1" Text="{Binding Path=User.user}"/>
+                <TextBox Style="{DynamicResource ResourceKey=DesignTextBox}" Grid.Row="1" Text="{Binding Path=User.user}" Focusable="True"/>
 
                 <TextBlock Text="Password" Grid.Row="2" HorizontalAlignment="Stretch"/>
                 <PasswordBox Style="{DynamicResource ResourceKey=DesignPasswordbox}" Grid.Row="3"

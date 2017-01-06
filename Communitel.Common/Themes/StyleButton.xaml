@@ -4,8 +4,7 @@
                     xmlns:local="clr-namespace:Communitel.Common.Themes">
 
     <SolidColorBrush x:Key="BackGroundButton" Color="#46be8a"/>
-    <SolidColorBrush x:Key="ForeGroundFontAwesome" Color="#FF37474F"/>
-    
+        
     <Style x:Key="DesignButton" TargetType="{x:Type Button}">
         <Setter Property="FontFamily" Value="Century Gothic"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
