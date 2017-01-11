@@ -142,3 +142,16 @@ C:\Users\CAMILO\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\
 C:\Users\CAMILO\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.g.resources
 C:\Users\CAMILO\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.Properties.Resources.resources
 C:\Users\CAMILO\Documents\Visual Studio 2015\Projects\communitel\Communitel\obj\Debug\Communitel.csproj.GenerateResource.Cache
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\Accord.dll.config
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Controls.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Imaging.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Math.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Video.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Controls.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Imaging.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Math.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Video.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel\bin\Debug\AForge.Video.DirectShow.xml

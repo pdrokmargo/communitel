@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Communitel.CheckIn.Views"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:convert="clr-namespace:Communitel.Common.Converts;assembly=Communitel.Common"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="700">
 
@@ -23,6 +24,9 @@
 
 
     <GroupBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource DesignGroupBox}" Header="Customer Information">
+        <GroupBox.Resources>
+            <convert:ConvertToImage x:Key="convertToImage"/>
+        </GroupBox.Resources>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -37,8 +41,6 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-
-
             <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,20,20,40">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -46,10 +48,10 @@
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" Style="{DynamicResource DesignBorder}" Margin="5"
                     Height="200" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2">
-                    <Image VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                    <Image VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="{Binding Path=SnapshotBitmap, Converter={StaticResource convertToImage}}"/>
                     <!--<fa:ImageAwesome Icon="Image" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
                 </Border>
-                <Button Grid.Row="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}">
+                <Button Grid.Row="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenCameraCaptureCommand}">
                     <fa:ImageAwesome Icon="Camera" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                 </Button>
             </Grid>

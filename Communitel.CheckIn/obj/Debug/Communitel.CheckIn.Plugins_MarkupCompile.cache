@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-9-1302957285
+10-547858279
 
-14906262707
-77311164504
-Views\AddBagView.xaml;Views\AddDocumentView.xaml;Views\AddPersonsView.xaml;Views\AutorizePersonsView.xaml;Views\BagsView.xaml;Views\CheckInView.xaml;Views\CompleteCheckInView.xaml;Views\CustomerView.xaml;Views\DocumentsView.xaml;
+15-369052636
+86519741866
+Views\AddBagView.xaml;Views\AddDocumentView.xaml;Views\AddPersonsView.xaml;Views\AutorizePersonsView.xaml;Views\BagsView.xaml;Views\CameraCaptureView.xaml;Views\CheckInView.xaml;Views\CompleteCheckInView.xaml;Views\CustomerView.xaml;Views\DocumentsView.xaml;
 
 False
 
