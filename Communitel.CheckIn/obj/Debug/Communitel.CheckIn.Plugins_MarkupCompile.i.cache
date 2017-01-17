@@ -16,5 +16,5 @@ DEBUG;TRACE
 86519741866
 Views\AddBagView.xaml;Views\AddDocumentView.xaml;Views\AddPersonsView.xaml;Views\AutorizePersonsView.xaml;Views\BagsView.xaml;Views\CameraCaptureView.xaml;Views\CheckInView.xaml;Views\CompleteCheckInView.xaml;Views\CustomerView.xaml;Views\DocumentsView.xaml;
 
-True
+False
 

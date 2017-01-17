@@ -30,6 +30,7 @@ namespace Communitel.CheckIn.ViewModels
         public DelegateCommand OpenAddBagCommand { get; set; }
         public DelegateCommand LoadCameraCaptureCommand { get; set; }
         public DelegateCommand OpenCameraCaptureCommand { get; set; }
+        public DelegateCommand CloseCameraCommand { get; set; }
         [ImportingConstructor]
         public CheckInViewModel()
         {
@@ -39,6 +40,7 @@ namespace Communitel.CheckIn.ViewModels
             OpenAddBagCommand = new DelegateCommand(OpenAddBagExecute);
             LoadCameraCaptureCommand = new DelegateCommand(LoadCameraCaptureExecure);
             OpenCameraCaptureCommand = new DelegateCommand(OpenCameraCaptureExecute);
+            CloseCameraCommand = new DelegateCommand(CloseCameraExecute);
             _documents = new ObservableCollection<Document>();
             _persons = new ObservableCollection<Person>();
             _bags = new ObservableCollection<Bag>();
@@ -106,6 +108,7 @@ namespace Communitel.CheckIn.ViewModels
         {
             var filterVideoDeviceCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             this.MediaDeviceList = (from FilterInfo filterInfo in filterVideoDeviceCollection select new MediaInformation { DisplayName = filterInfo.Name, UsbId = filterInfo.MonikerString }).ToList();
+            this.SelectedVideoDevice = this.MediaDeviceList != null ? this.MediaDeviceList.First() : null;
         }
 
         private void NextOrPreviousExecute(string view)
@@ -165,6 +168,18 @@ namespace Communitel.CheckIn.ViewModels
             {
                 OpenPopupModal("Camera");
                 RegionManager.RequestNavigate(RegionNames.ContentModalRegion, "/CameraCaptureView");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
+            }
+        }
+
+        private void CloseCameraExecute()
+        {
+            try
+            {
+                ClosePopupModal();
             }
             catch (Exception ex)
             {

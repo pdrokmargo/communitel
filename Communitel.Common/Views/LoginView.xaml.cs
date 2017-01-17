@@ -31,6 +31,12 @@ namespace Communitel.Common.Views
         public LoginView()
         {
             InitializeComponent();
+            this.Loaded += LoginView_Loaded;
+        }
+
+        private void LoginView_Loaded(object sender, RoutedEventArgs e)
+        {
+            txt_user.Focusable = true;
         }
 
         [Import]

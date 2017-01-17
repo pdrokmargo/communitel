@@ -10,7 +10,7 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:convert="clr-namespace:Communitel.Common.Converts;assembly=Communitel.Common"
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="460" Height="550" Width="460">
+             d:DesignHeight="550" d:DesignWidth="460" Height="550" Width="400">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -30,7 +30,7 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
-    <GroupBox Style="{DynamicResource DesigGroupBox}" Header="Capture Image">
+    <GroupBox Style="{DynamicResource DesignGroupBox}" Header="Capture Image">
         <GroupBox.Resources>
             <video:MediaInformationConverter x:Key="MediaInformationConverter" />            
         </GroupBox.Resources>
@@ -43,27 +43,30 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Text="Select Device Source"/>
-            <ComboBox Grid.Row="1" Style="{DynamicResource DesigComboBox}"
+            <ComboBox Grid.Row="1" Style="{DynamicResource DesignComboBox}"
                   ItemsSource="{Binding MediaDeviceList}"
                   DisplayMemberPath="DisplayName"
                   SelectedValuePath="UsbString"
-                  SelectedItem="{Binding SelectedVideoDevice}"
-                  Width="200"
-                  HorizontalAlignment="Left"
-                  VerticalAlignment="Center"
-                  Margin="0,20,20,20" />
+                  SelectedItem="{Binding SelectedVideoDevice}"/>
             <video:WebcamDevice Grid.Row="2"
                                 Grid.Column="0"
                                 Margin="20,0,20,20"
                                 x:Name="CameraVideoDeviceControl"
                                 VideoPreviewWidth="Auto"
-                                VideoPreviewHeight="Auto"
+                                VideoPreviewHeight="Auto"                              
                                 VideoSourceId="{Binding SelectedVideoDevice, Converter={StaticResource MediaInformationConverter}}"
                                 SnapshotBitmap="{Binding SnapshotBitmap, Mode=TwoWay}" />
 
             <Button Grid.Row="3" Style="{DynamicResource DesignButton}" Content="Take Snapshot"
-                Margin="20,20,20,5" Command="{Binding TakeSnapshot, ElementName=CameraVideoDeviceControl}">
-               
+                Margin="20,20,20,5">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding TakeSnapshot, ElementName=CameraVideoDeviceControl}"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding CloseCameraCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </Button>
 
         </Grid>

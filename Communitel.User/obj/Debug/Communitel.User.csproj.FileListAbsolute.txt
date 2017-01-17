@@ -1,8 +1,4 @@
-C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.csprojResolveAssemblyReference.cache
-C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\UserView.g.cs
-C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins_MarkupCompile.cache
-C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins_MarkupCompile.lref
-C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\SearchUserView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Accord.dll.config
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Communitel.User.Plugins.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Communitel.User.Plugins.pdb
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Communitel.Common.dll
@@ -17,6 +13,12 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Microsoft.Pract
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Newtonsoft.Json.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Controls.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Video.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Imaging.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Math.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Communitel.Common.pdb
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\FontAwesome.WPF.xml
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Microsoft.Practices.Prism.Composition.xml
@@ -27,6 +29,12 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Microsoft.Pract
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\Newtonsoft.Json.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Controls.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Video.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Imaging.xml
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\AForge.Math.xml
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\de\System.Windows.Interactivity.resources.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\en\System.Windows.Interactivity.resources.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\es\System.Windows.Interactivity.resources.dll
@@ -37,6 +45,13 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\ko\System.Windo
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.csprojResolveAssemblyReference.cache
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\FilterView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\SearchUserView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\UserView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins_MarkupCompile.cache
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins_MarkupCompile.lref
+C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\FilterView.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\SearchUserView.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\UserView.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins.g.resources
@@ -44,5 +59,3 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.csproj.GenerateResource.Cache
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Communitel.User.Plugins.pdb
-C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\FilterView.g.cs
-C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\Views\FilterView.baml

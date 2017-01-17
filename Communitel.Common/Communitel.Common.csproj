@@ -140,6 +140,7 @@
     <Compile Include="Behaviour\IViewRegionRegistration.cs" />
     <Compile Include="Behaviour\ViewExportAttribute.cs" />
     <Compile Include="CompositeCommands\CompositeCommands.cs" />
+    <Compile Include="Controls\Step.cs" />
     <Compile Include="Controls\GifImage.cs" />
     <Compile Include="Controls\PasswordHelper.cs" />
     <Compile Include="Controls\TextBoxOnlyNumber.cs" />

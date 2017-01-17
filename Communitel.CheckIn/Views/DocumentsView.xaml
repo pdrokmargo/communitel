@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Communitel.CheckIn.Views"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:control="clr-namespace:Communitel.Common.Controls;assembly=Communitel.Common"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="800" d:DesignWidth="1000">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -21,35 +22,42 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Button Grid.Row="0" Style="{DynamicResource DesignButtonImageFont}" HorizontalAlignment="Left" Width="Auto" Height="45"
-                Command="{Binding OpenAddDocumentCommand}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <fa:ImageAwesome Icon="PlusCircle" Grid.Column="0" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" VerticalAlignment="Center" Margin="4"/>
-                <TextBlock Text="Add Document" Grid.Column="1" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" VerticalAlignment="Center" Margin="7"/>
-            </Grid>
-        </Button>
 
-        <GroupBox Grid.Row="1" Grid.Column="0" Style="{DynamicResource DesignGroupBox}" Header="Scan customer documents">
-            <Grid>
+    <GroupBox Grid.Row="1" Grid.Column="0" Style="{DynamicResource DesignGroupBox}" Header="Scan customer documents">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <control:Step Style="{DynamicResource DesignStep}" StepNumberText="2"/>
+
+            <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=Documents}" ColumnWidth="*"
+
+
+                <Button Grid.Row="0" Style="{DynamicResource DesignButtonImageFont}" HorizontalAlignment="Left" Width="Auto" Height="45"
+                            Command="{Binding OpenAddDocumentCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <fa:ImageAwesome Icon="PlusCircle" Grid.Column="0" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" VerticalAlignment="Center" Margin="4"/>
+                        <TextBlock Text="Add Document" Grid.Column="1" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" VerticalAlignment="Center" Margin="7"/>
+                    </Grid>
+                </Button>
+
+                <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=Documents}" ColumnWidth="*"
                           Style="{DynamicResource DesignDataGrid}" CanUserSortColumns="True" CanUserReorderColumns="True" >
 
                     <DataGrid.RowStyle>
@@ -59,18 +67,18 @@
                         </Style>
                     </DataGrid.RowStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Document Type" Binding="{Binding DocumentType}" SortMemberPath="givenname"/>
-                        <DataGridTextColumn Header="Number" Binding="{Binding Number}" SortMemberPath="givenname"/>
-                        <DataGridTemplateColumn Header="Image">
+                        <DataGridTemplateColumn>                                                       
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Border Grid.Row="0" Style="{DynamicResource DesignBorder}" Margin="5"
                                            Height="50" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2">
                                         <Image/>
-                                    </Border>                                   
+                                    </Border>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Document Type" Binding="{Binding DocumentType}" SortMemberPath="givenname"/>
+                        <DataGridTextColumn Header="Number" Binding="{Binding Number}" SortMemberPath="givenname"/>
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -96,7 +104,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Grid Grid.Row="1" Grid.Column="1">
+                <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -109,6 +117,7 @@
                 </Grid>
 
             </Grid>
-        </GroupBox>
-    </Grid>
+        </Grid>
+    </GroupBox>
+
 </UserControl>
