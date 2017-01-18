@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\carlo\Source\Repos\communitel\Communitel\obj\Debug\
+D:\DEV\communitel\Communitel\obj\Debug\
 Communitel
 none
 false
 DEBUG;TRACE
-C:\Users\carlo\Source\Repos\communitel\Communitel\App.xaml
+D:\DEV\communitel\Communitel\App.xaml
 14192652396
 
 21932228951
-891205094574
+89-52804039
 CustomControls\AggregatedObject.xaml;CustomControls\GridMenu.xaml;CustomControls\MenuButton.xaml;CustomControls\PasswordField.xaml;CustomControls\ShowMessage.xaml;CustomControls\TextField.xaml;styles.xaml;Views\Configuration.xaml;Views\Dashboard.xaml;dMainWindow.xaml;Views\Login.xaml;Views\Products.xaml;Views\Shell\Shell.xaml;Views\Users.xaml;
 
 False

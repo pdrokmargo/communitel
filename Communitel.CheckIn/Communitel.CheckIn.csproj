@@ -164,6 +164,9 @@
     <Compile Include="Views\CompleteCheckInView.xaml.cs">
       <DependentUpon>CompleteCheckInView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CustomerPhotoView.xaml.cs">
+      <DependentUpon>CustomerPhotoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
@@ -211,6 +214,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CompleteCheckInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomerPhotoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
