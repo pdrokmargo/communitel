@@ -14,6 +14,7 @@ namespace Communitel.Common.Controls
         public Step()
         {
             Margin = new Thickness(200, 0, 200, 0);
+
         }
 
 

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-201892489103
+211605749604
 1-636023969
 501888908771
 88-971994751
-Themes\StyleApp.xaml;Themes\StyleButton.xaml;Themes\StyleCheckBox.xaml;Themes\StyleComboBox.xaml;Themes\StyleDataGrid.xaml;Themes\StyleExpander.xaml;Themes\StyleGroupBox.xaml;Themes\StylePopup.xaml;Themes\StyleScrollBar.xaml;Themes\StyleSwitch.xaml;Themes\StyleTextBox.xaml;Video\WebcamDevice.xaml;Views\HomeView.xaml;Views\IndicatorView.xaml;Views\LoginView.xaml;Views\MenuView.xaml;Views\MessageBoxView.xaml;Views\PopupView.xaml;Views\ConfigurationView.xaml;Views\PopupView2.xaml;
+Themes\StyleApp.xaml;Themes\StyleButton.xaml;Themes\StyleCheckBox.xaml;Themes\StyleComboBox.xaml;Themes\StyleDataGrid.xaml;Themes\StyleDatePicker.xaml;Themes\StyleExpander.xaml;Themes\StyleGroupBox.xaml;Themes\StylePopup.xaml;Themes\StyleScrollBar.xaml;Themes\StyleSwitch.xaml;Themes\StyleTextBox.xaml;Video\WebcamDevice.xaml;Views\HomeView.xaml;Views\IndicatorView.xaml;Views\LoginView.xaml;Views\MenuView.xaml;Views\MessageBoxView.xaml;Views\PopupView.xaml;Views\ConfigurationView.xaml;Views\PopupView2.xaml;
 
 False
 

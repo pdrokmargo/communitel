@@ -150,3 +150,4 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Communitel.Co
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Communitel.Common.csproj.GenerateResource.Cache
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Communitel.Common.dll
 C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Communitel.Common.pdb
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleDatePicker.baml

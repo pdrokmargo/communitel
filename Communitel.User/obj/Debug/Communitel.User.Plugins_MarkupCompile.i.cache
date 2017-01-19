@@ -16,5 +16,5 @@ DEBUG;TRACE
 77-241930055
 Views\FilterView.xaml;Views\SearchUserView.xaml;Views\UserView.xaml;
 
-False
+True
 
