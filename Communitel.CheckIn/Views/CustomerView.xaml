@@ -80,18 +80,14 @@
                         <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
+                        <RowDefinition />                                               
                     </Grid.RowDefinitions>
                     
                     <TextBlock Grid.Column="0" Grid.Row="0" Text="Passport No." />
                     <TextBox Grid.Column="0" Grid.Row="1" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.passportNo}"  Margin="0 0 10 0" />
 
-                    <TextBlock Grid.Column="1" Grid.Row="0" Text="Code" />
-                    <TextBox Grid.Column="1" Grid.Row="1" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.code}"  Margin="0 0 10 0" />
+                    <TextBlock Grid.Column="1" Grid.Row="0" Text="Nationality" />
+                    <TextBox Grid.Column="1" Grid.Row="1" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.nationality}"  Margin="0 0 10 0" />
 
                     <TextBlock Grid.Column="0" Grid.Row="2" Text="Given Name"/>
                     <TextBox Grid.Column="0" Grid.Row="3" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.firstname}"  Margin="0 0 10 0" />
@@ -99,32 +95,29 @@
                     <TextBlock Grid.Column="1" Grid.Row="2" Text="Middle Name"/>
                     <TextBox Grid.Column="1" Grid.Row="3" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.lastname}"  Margin="0 0 10 0" />
 
-                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Surname"/>
-                    <TextBox Grid.Column="0" Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.username}" Margin="0 0 10 0"/>
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Sex" />
+                    <TextBox Grid.Column="0" Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.placebirth}"  Margin="0 0 10 0" />
 
-                    <TextBlock Grid.Column="1" Grid.Row="4" Text="Surname 2"/>
-                    <TextBox Grid.Column="1" Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.username}"  Margin="0 0 10 0" />
+                    <TextBlock Grid.Column="1" Grid.Row="4" Text="Date of birth" />
+                    <TextBox Grid.Column="1" Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.datebirth}"  Margin="0 0 10 0" />                   
 
-                    <TextBlock Grid.Column="0" Grid.Row="6" Text="Date of birth" />
-                    <TextBox Grid.Column="0" Grid.Row="7" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.datebirth}"  Margin="0 0 10 0" />
+                    <Grid Grid.Row="6" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Column="1" Grid.Row="6" Text="Place of birth" />
-                    <TextBox Grid.Column="1" Grid.Row="7" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.placebirth}"  Margin="0 0 10 0" />
+                        <Button Grid.Row="0" Grid.Column="0" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenCameraCaptureCommand}">
+                            <fa:ImageAwesome Icon="Camera" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        </Button>
 
-                    <TextBlock Grid.Column="0" Grid.Row="8" Text="Date of issue" />
-                    <TextBox Grid.Column="0" Grid.Row="9" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.datebirth}"  Margin="0 0 10 0" />
-
-                    <TextBlock Grid.Column="1" Grid.Row="8" Text="Date of expiration" />
-                    <TextBox Grid.Column="1" Grid.Row="9" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.placebirth}"  Margin="0 0 10 0" />
-
-                    <Button Grid.Row="10" Grid.Column="0" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenCameraCaptureCommand}">
-                        <fa:ImageAwesome Icon="Camera" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                    </Button>
-
-                    <Button Grid.Row="10" Grid.Column="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenCameraCaptureCommand}">
-                        <fa:ImageAwesome Icon="Qrcode" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                    </Button>
-
+                        <Button Grid.Row="0" Grid.Column="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenCameraCaptureCommand}">
+                            <fa:ImageAwesome Icon="Qrcode" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        </Button>
+                    </Grid>
                 </Grid>
                 
                 <Grid Grid.Row="1" Grid.Column="1">

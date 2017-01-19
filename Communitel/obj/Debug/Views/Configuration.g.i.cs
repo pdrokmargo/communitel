@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Communitel;
 using Communitel.CustomControls;
 using Communitel.Views;
 using System;

@@ -87,7 +87,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Button Grid.Column="0" Grid.Row="0" Content="Previous" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
-                        VerticalAlignment="Bottom" Command="{Binding NextOrPreviousCommand}" CommandParameter="CustomerPhotoView" MaxWidth="300"/>
+                        VerticalAlignment="Bottom" Command="{Binding NextOrPreviousCommand}" CommandParameter="CustomerView" MaxWidth="300"/>
 
                     <Button Grid.Column="1" Grid.Row="0" Content="Next" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
                         VerticalAlignment="Bottom" Command="{Binding NextOrPreviousCommand}" CommandParameter="DocumentsView" MaxWidth="300"/>

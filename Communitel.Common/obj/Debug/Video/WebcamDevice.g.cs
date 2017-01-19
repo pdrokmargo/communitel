@@ -10,6 +10,10 @@
 //------------------------------------------------------------------------------
 
 using AForge.Controls;
+using Communitel.Common.Controls;
+using Communitel.Common.Themes;
+using FontAwesome.WPF;
+using FontAwesome.WPF.Converters;
 using System;
 using System.Diagnostics;
 using System.Windows;
