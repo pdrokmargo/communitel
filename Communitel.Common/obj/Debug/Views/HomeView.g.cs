@@ -9,11 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Communitel.Common.Controls;
-using Communitel.Common.Themes;
 using Communitel.Common.Views;
-using FontAwesome.WPF;
-using FontAwesome.WPF.Converters;
 using System;
 using System.Diagnostics;
 using System.Windows;

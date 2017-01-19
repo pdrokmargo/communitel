@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\carlo\Source\Repos\communitel\Communitel.Product\obj\Debug\
+D:\DEV\communitel\Communitel.Product\obj\Debug\
 Communitel.Product
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 5124939800
 
 111032932912
-78-674844678
+781832433839
 Views\AddCategoryView.xaml;Views\CategoriesView.xaml;Views\FilterView.xaml;Views\ProductView.xaml;Views\SearchProductView.xaml;
 
 False

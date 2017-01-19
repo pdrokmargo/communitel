@@ -236,3 +236,5 @@ D:\DEV\communitel\Communitel.Common\obj\Debug\Communitel.Common.Properties.Resou
 D:\DEV\communitel\Communitel.Common\obj\Debug\Communitel.Common.csproj.GenerateResource.Cache
 D:\DEV\communitel\Communitel.Common\obj\Debug\Communitel.Common.dll
 D:\DEV\communitel\Communitel.Common\obj\Debug\Communitel.Common.pdb
+D:\DEV\communitel\Communitel.Common\obj\Debug\Themes\StyleDatePicker.baml
+D:\DEV\communitel\Communitel.Common\obj\Debug\Communitel.Common.csprojResolveAssemblyReference.cache

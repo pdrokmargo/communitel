@@ -92,18 +92,25 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Grid.Row="0" Content="Previous" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
+                <DockPanel VerticalAlignment="Bottom" Height="50" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="#FFD8D8D8" Margin="0,5,5,0">
+                    <Grid VerticalAlignment="Center" Margin="0,5,5,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Content="Previous" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
                         VerticalAlignment="Bottom" Command="{Binding NextOrPreviousCommand}" CommandParameter="AutorizePersonsView" MaxWidth="300"/>
 
-                    <Button Grid.Column="1" Grid.Row="0" Content="Next" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
+                            <Button Grid.Column="1" Content="Next" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
                         VerticalAlignment="Bottom" Command="{Binding NextOrPreviousCommand}" CommandParameter="CompleteCheckInView" MaxWidth="300"/>
-                </Grid>
-
+                        </Grid>
+                    </Grid>
+                </DockPanel>
             </Grid>
         </Grid>
     </GroupBox>

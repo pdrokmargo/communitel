@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\carlo\Source\Repos\communitel\Communitel.User\obj\Debug\
+D:\DEV\communitel\Communitel.User\obj\Debug\
 Communitel.User
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 3617800972
 
 81216957255
-77-241930055
+77-2029618834
 Views\FilterView.xaml;Views\SearchUserView.xaml;Views\UserView.xaml;
 
 False
