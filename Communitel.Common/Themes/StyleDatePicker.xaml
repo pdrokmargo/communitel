@@ -181,6 +181,9 @@
                         <Trigger Property="IsFocused" Value="True">
                             <Setter Property="BorderBrush" TargetName="borderitem1" Value="#FF6AC7F4"/>
                         </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" TargetName="borderitem1" Value="#FFF1ECEC"/>
+                        </Trigger>-->
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

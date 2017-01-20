@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Communitel.CheckIn.Views"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:control="clr-namespace:Communitel.Common.Controls;assembly=Communitel.Common"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="460" Height="380" Width="460">
+             d:DesignHeight="380" d:DesignWidth="460" Height="500" Width="460">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -14,6 +16,7 @@
                 <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleTextBox.xaml"/>
                 <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleButton.xaml"/>
                 <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleGroupBox.xaml"/>
+                <ResourceDictionary  Source="/Communitel.Common;component/Themes/StyleComboBox.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -30,17 +33,36 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>                
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Length" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Length Type" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <ComboBox ItemsSource="{Binding LengthTypes}" DisplayMemberPath="description" SelectedValuePath="id" SelectedValue="{Binding Path=OrderBagDetail.length_type}"
+                Style="{DynamicResource DesignComboBox}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectPriceCommand}" 
+                                               CommandParameter="{Binding Path=SelectedValue, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+            
             <TextBlock Text="Weight" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="3" Grid.Column="0"/>
+            <control:TextBoxOnlyNumber Style="{DynamicResource DesignTextBox}" Grid.Row="3" Grid.Column="0" Text="{Binding Path=OrderBagDetail.weight}"/>
             <Button Grid.Row="3" Grid.Column="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" ToolTip="Take from scale via serial port">
                 <fa:ImageAwesome Width="40" Height="40" Icon="BalanceScale" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </Button>
             
-            <Button Content="Add" Style="{DynamicResource DesignButton}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding AddCategoryCommand}"/>
+            <TextBlock Text="Location Label" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="5" Grid.Column="0" Text="{Binding Path=OrderBagDetail.location_label}"/>
+
+            <TextBlock Text="Price" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <control:TextBoxOnlyNumber Style="{DynamicResource DesignTextBox}" Grid.Row="7" Grid.Column="0" Text="{Binding Path=OrderBagDetail.price}"/>
+
+            <Button Content="Add" Style="{DynamicResource DesignButton}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding AddCommand}" CommandParameter="bag"/>
 
         </Grid>
     </GroupBox>

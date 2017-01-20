@@ -155,6 +155,9 @@
     <Compile Include="Views\BagsView.xaml.cs">
       <DependentUpon>BagsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CameraCaptureDocumentView.xaml.cs">
+      <DependentUpon>CameraCaptureDocumentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CameraCaptureView.xaml.cs">
       <DependentUpon>CameraCaptureView.xaml</DependentUpon>
     </Compile>
@@ -202,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BagsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CameraCaptureDocumentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

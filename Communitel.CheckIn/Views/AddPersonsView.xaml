@@ -31,18 +31,18 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
-            <TextBlock Text="Given Name" Grid.Row="0"/>
-            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="1" Text="{Binding Path=Category.code}"/>
-            <TextBlock Text="Midle name" Grid.Row="2" />
-            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="3" Text="{Binding Path=Category.description}"/>
 
-            <TextBlock Text="Surname" Grid.Row="4"/>
-            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="5" Text="{Binding Path=Category.code}"/>
-            <TextBlock Text="Surname 2" Grid.Row="6" />
-            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="7" Text="{Binding Path=Category.description}"/>
+            <TextBlock Text="ID Number" Grid.Row="0"/>
+            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="1" Text="{Binding Path=AutorizationPerson.customer.id_number}"/>
+            <TextBlock Text="Nationality" Grid.Row="2" />
+            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="3" Text="{Binding Path=AutorizationPerson.customer.nationality}"/>
 
-            <Button Content="Add" Style="{DynamicResource DesignButton}" Grid.Row="8" Command="{Binding AddCategoryCommand}"/>
+            <TextBlock Text="Given Name" Grid.Row="4"/>
+            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="5" Text="{Binding Path=AutorizationPerson.customer.firstname}"/>
+            <TextBlock Text="Surname" Grid.Row="6" />
+            <TextBox Style="{DynamicResource DesignTextBox}" Grid.Row="7" Text="{Binding Path=AutorizationPerson.customer.lastname}"/>
+
+            <Button Content="Add" Style="{DynamicResource DesignButton}" Grid.Row="8" Command="{Binding AddCommand}" CommandParameter="autorize_person"/>
 
         </Grid>
     </GroupBox>

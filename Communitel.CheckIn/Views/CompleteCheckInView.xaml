@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Communitel.CheckIn.Views"
              xmlns:control="clr-namespace:Communitel.Common.Controls;assembly=Communitel.Common"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="1000">
+             d:DesignHeight="700" d:DesignWidth="1000">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -29,63 +29,97 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <control:Step Style="{DynamicResource DesignStep}" StepNumberText="6"/>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <GroupBox Grid.Row="0" Grid.Column="0" Style="{DynamicResource DesignGroupBox}" Header="Bag List">
+            <Grid Grid.Row="1">               
+                <ScrollViewer>
                     <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
-                        <DataGrid Grid.Row="0" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=Bags}" ColumnWidth="*"
-                          Style="{DynamicResource DesignDataGrid}" CanUserSortColumns="True" CanUserReorderColumns="True" >
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Length" Binding="{Binding Length}" SortMemberPath="givenname"/>
-                                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" SortMemberPath="givenname"/>
-                                <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='c'}" SortMemberPath="givenname"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                        <StackPanel Grid.Row="1">
-                            <TextBlock FontSize="20" Text="$50" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    </Grid>
-                </GroupBox>
-
-                <GroupBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource DesignGroupBox}" Header="Half payment">
-                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
+                        <GroupBox Grid.Row="0" Grid.Column="0" Style="{DynamicResource DesignGroupBox}" Header="Bag List">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <DataGrid Grid.Row="0" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=CheckIn.order_detail}" ColumnWidth="*"
+                          Style="{DynamicResource DesignDataGrid}" CanUserSortColumns="False" CanUserReorderColumns="True" >
+                                    <DataGrid.Columns>
+                                        <!--<DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ComboBox Style="{DynamicResource DesignComboBox}" SelectedValue="{Binding length_type}"
+                                              DisplayMemberPath="description" SelectedValuePath="id" IsEnabled="False"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>-->
+                                        <DataGridTextColumn Header="Weight" Binding="{Binding weight}" SortMemberPath="weight"/>
+                                        <DataGridTextColumn Header="Price" Binding="{Binding price, StringFormat='c'}" SortMemberPath="price"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                    <TextBlock FontSize="20">
+                                <Run Text="Quantity:" Foreground="Blue"/>
+                                <Run Text="{Binding Path=CheckIn.quantity}"/>
+                                    </TextBlock>
+                                    <TextBlock FontSize="20" >
+                                <Run Text="Total:" Foreground="Blue"/>
+                                <Run Text="{Binding Path=CheckIn.total, StringFormat='c'}"/>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
 
-                        <TextBlock Grid.Row="0" Text="Half payment"/>
-                        <ComboBox Grid.Row="1" Style="{DynamicResource DesignComboBox}">
-                            <ComboBoxItem>Visa</ComboBoxItem>
-                            <ComboBoxItem>MasterCard</ComboBoxItem>
-                            <ComboBoxItem>Amex</ComboBoxItem>
-                            <ComboBoxItem>Discover</ComboBoxItem>
-                            <ComboBoxItem>Cash</ComboBoxItem>
-                        </ComboBox>
+                        <GroupBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource DesignGroupBox}" Header="Half payment">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="2" Text="Total"/>
-                        <TextBox Grid.Row="3" Style="{DynamicResource DesignTextBox}" Text="50"/>
+                                <TextBlock Grid.Row="0" Text="Payment Mathod"/>
+                                <ComboBox Grid.Row="1" Style="{DynamicResource DesignComboBox}" ItemsSource="{Binding PaymentTypes}"
+                                  DisplayMemberPath="description" SelectedValuePath="id"
+                                  SelectedValue="{Binding Path=payment.payment_method_id}">
+                                </ComboBox>
+
+                                <TextBlock Grid.Row="2" Text="Tax"/>
+                                <TextBox Grid.Row="3" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=CheckIn.order_bag.tax}"/>
+
+                                <TextBlock Grid.Row="4" Text="Total"/>
+                                <TextBox Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=CheckIn.total}" IsReadOnly="True"/>
+
+                                <TextBlock Grid.Row="6" Text="Discount"/>
+                                <TextBox Grid.Row="7" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=CheckIn.order_bag.discount}"/>
+
+                                <TextBlock Grid.Row="8" Text="Subtotal"/>
+                                <TextBox Grid.Row="9" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=CheckIn.subtotal, StringFormat='c'}" IsReadOnly="True"/>
+
+                                <TextBlock Grid.Row="10" Text="Value"/>
+                                <TextBox Grid.Row="11" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=CheckIn.payment.value}"/>
+
+                            </Grid>
+                        </GroupBox>
                     </Grid>
-                </GroupBox>
-
+                </ScrollViewer>
                 <DockPanel VerticalAlignment="Bottom" Height="50" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Background="#FFD8D8D8" Margin="0,5,5,0">
                     <Grid VerticalAlignment="Center" Margin="0,5,5,5">
                         <Grid.ColumnDefinitions>
@@ -101,7 +135,7 @@
                         VerticalAlignment="Bottom" Command="{Binding NextOrPreviousCommand}" CommandParameter="BagsView" MaxWidth="300"/>
 
                             <Button Grid.Column="1" Content="Complete CheckIn" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
-                        VerticalAlignment="Bottom" Command="{Binding}" CommandParameter="DocumentsView" MaxWidth="300"/>
+                        VerticalAlignment="Bottom" Command="{Binding SaveCommand}" MaxWidth="300"/>
                         </Grid>
                     </Grid>
                 </DockPanel>

@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Communitel.CheckIn.Views"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              xmlns:control="clr-namespace:Communitel.Common.Controls;assembly=Communitel.Common"
+             xmlns:convert="clr-namespace:Communitel.Common.Converts;assembly=Communitel.Common"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000">
     <UserControl.Resources>
@@ -25,7 +26,9 @@
 
 
     <GroupBox Grid.Row="1" Grid.Column="0" Style="{DynamicResource DesignGroupBox}" Header="Scan customer documents">
-
+        <GroupBox.Resources>
+            <convert:ConvertToImage x:Key="convertToImage"/>
+        </GroupBox.Resources>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
@@ -57,28 +60,40 @@
                     </Grid>
                 </Button>
 
-                <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=Documents}" ColumnWidth="*"
+                <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=CheckIn.attachments}" ColumnWidth="*"
                           Style="{DynamicResource DesignDataGrid}" CanUserSortColumns="True" CanUserReorderColumns="True" >
 
                     <DataGrid.RowStyle>
                         <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DesignRowsDataGrid}">
                             <Setter Property="MinHeight" Value="40"/>
                             <Setter Property="Height" Value="Auto"/>
+                            <Setter Property="Visibility" Value="{Binding visible}"/>
                         </Style>
                     </DataGrid.RowStyle>
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn>                                                       
+                        <DataGridTemplateColumn Header="Image">                                                       
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Border Grid.Row="0" Style="{DynamicResource DesignBorder}" Margin="5"
                                            Height="50" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2">
-                                        <Image/>
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="{Binding url_media, Converter={StaticResource convertToImage}}"/>
+                                        </Border.Background>
+
                                     </Border>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="Document Type" Binding="{Binding DocumentType}" SortMemberPath="givenname"/>
-                        <DataGridTextColumn Header="Number" Binding="{Binding Number}" SortMemberPath="givenname"/>
+                        <DataGridTemplateColumn Header="Type">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox VerticalAlignment="Center" Style="{DynamicResource DesignComboBox}" ItemsSource="{Binding Path=DataContext.DodumentTypes, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
+                                              DisplayMemberPath="description" SelectedValuePath="id" IsEnabled="False" SelectedValue="{Binding Path=attachtype_id}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!--<DataGridTextColumn Header="Document Type" Binding="{Binding DocumentType}" SortMemberPath="givenname"/>-->
+                        <!--<DataGridTextColumn Header="Number" Binding="{Binding Number}" SortMemberPath="givenname"/>-->
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -94,7 +109,7 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Style="{DynamicResource DesignButtonImageFont}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                            Command="{Binding Path=DataContext.RemovePersonCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                            Command="{Binding Path=DataContext.RemoveDocumentCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
                                             CommandParameter="{Binding}">
                                         <fa:ImageAwesome Icon="Trash" Width="25" Height="25" Foreground="{DynamicResource ForeGroundFontAwesomeTrash}"/>
                                     </Button>

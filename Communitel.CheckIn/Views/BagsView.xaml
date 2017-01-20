@@ -54,7 +54,7 @@
                     </Grid>
                 </Button>
 
-                <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=Bags}" ColumnWidth="*"
+                <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=CheckIn.order_detail}" ColumnWidth="*"
                           Style="{DynamicResource DesignDataGrid}" CanUserSortColumns="True" CanUserReorderColumns="True" >
 
                     <DataGrid.RowStyle>
@@ -64,9 +64,19 @@
                         </Style>
                     </DataGrid.RowStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Length" Binding="{Binding Length}" SortMemberPath="givenname"/>
-                        <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" SortMemberPath="givenname"/>
 
+                        <DataGridTextColumn Header="Location Label" Binding="{Binding location_label}" SortMemberPath="location_label"/>
+                        <DataGridTextColumn Header="Weight" Binding="{Binding weight}" SortMemberPath="givenname"/>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding Path=DataContext.LengthTypes, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Style="{DynamicResource DesignComboBox}" SelectedValue="{Binding length_type}"
+                                              DisplayMemberPath="description" SelectedValuePath="id" IsEnabled="False"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Price" Binding="{Binding price, StringFormat='c'}" SortMemberPath="price"/>
+                                                
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>

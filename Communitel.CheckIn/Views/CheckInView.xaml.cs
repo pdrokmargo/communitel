@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Communitel.CheckIn.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
@@ -26,5 +27,9 @@ namespace Communitel.CheckIn.Views
         {
             InitializeComponent();
         }
+
+        [Import]
+        public CheckInViewModel CheckInViewModel { get { return DataContext as CheckInViewModel; } set { DataContext = value; } }
+
     }
 }

@@ -54,7 +54,7 @@
                     </Grid>
                 </Button>
 
-                <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=Persons}" ColumnWidth="*"
+                <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=CheckIn.autorization_persons}" ColumnWidth="*"
                           Style="{DynamicResource DesignDataGrid}" CanUserSortColumns="True" CanUserReorderColumns="True" >
 
                     <DataGrid.RowStyle>
@@ -64,10 +64,10 @@
                         </Style>
                     </DataGrid.RowStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Given Name" Binding="{Binding GivenName}" SortMemberPath="givenname"/>
-                        <DataGridTextColumn Header="Middle Name" Binding="{Binding MiddleName}" SortMemberPath="middlename"/>
-                        <DataGridTextColumn Header="Surname" Binding="{Binding SurName}" SortMemberPath="surname"/>
-                        <DataGridTextColumn Header="Surname2" Binding="{Binding SurName2}" SortMemberPath="surname2"/>
+                        <DataGridTextColumn Header="ID Number" Binding="{Binding Path=customer.id_number}" SortMemberPath="givenname"/>
+                        <DataGridTextColumn Header="Nationality" Binding="{Binding Path=customer.nationality}" SortMemberPath="middlename"/>
+                        <DataGridTextColumn Header="Given Name" Binding="{Binding Path=customer.firstname}" SortMemberPath="surname"/>
+                        <DataGridTextColumn Header="Surname" Binding="{Binding Path=customer.lastname}" SortMemberPath="surname2"/>
 
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>

@@ -4,17 +4,17 @@
 library
 C#
 .cs
-D:\DEV\communitel\Communitel.CheckIn\obj\Debug\
+C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\
 Communitel.CheckIn
 none
 false
 DEBUG;TRACE
 
-11-1282182567
+12402507230
 
-16926552855
-86928381033
-Views\AddBagView.xaml;Views\AddDocumentView.xaml;Views\AddPersonsView.xaml;Views\AutorizePersonsView.xaml;Views\BagsView.xaml;Views\CameraCaptureView.xaml;Views\CheckInView.xaml;Views\CompleteCheckInView.xaml;Views\CustomerPhotoView.xaml;Views\CustomerView.xaml;Views\DocumentsView.xaml;
+171988802636
+86519741866
+Views\AddBagView.xaml;Views\AddDocumentView.xaml;Views\AddPersonsView.xaml;Views\AutorizePersonsView.xaml;Views\BagsView.xaml;Views\CameraCaptureDocumentView.xaml;Views\CameraCaptureView.xaml;Views\CheckInView.xaml;Views\CompleteCheckInView.xaml;Views\CustomerPhotoView.xaml;Views\CustomerView.xaml;Views\DocumentsView.xaml;
 
 False
 

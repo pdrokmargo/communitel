@@ -150,3 +150,7 @@ D:\DEV\communitel\Communitel.CheckIn\obj\Debug\Communitel.CheckIn.Properties.Res
 D:\DEV\communitel\Communitel.CheckIn\obj\Debug\Communitel.CheckIn.csproj.GenerateResource.Cache
 D:\DEV\communitel\Communitel.CheckIn\obj\Debug\Communitel.CheckIn.Plugins.dll
 D:\DEV\communitel\Communitel.CheckIn\obj\Debug\Communitel.CheckIn.Plugins.pdb
+C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\CustomerPhotoView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\CustomerPhotoView.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\CameraCaptureDocumentView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\CameraCaptureDocumentView.baml

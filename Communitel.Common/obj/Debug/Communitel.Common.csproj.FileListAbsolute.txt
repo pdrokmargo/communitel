@@ -238,3 +238,4 @@ D:\DEV\communitel\Communitel.Common\obj\Debug\Communitel.Common.dll
 D:\DEV\communitel\Communitel.Common\obj\Debug\Communitel.Common.pdb
 D:\DEV\communitel\Communitel.Common\obj\Debug\Themes\StyleDatePicker.baml
 D:\DEV\communitel\Communitel.Common\obj\Debug\Communitel.Common.csprojResolveAssemblyReference.cache
+C:\Users\carlo\Source\Repos\communitel\Communitel.Common\obj\Debug\Themes\StyleDatePicker.baml

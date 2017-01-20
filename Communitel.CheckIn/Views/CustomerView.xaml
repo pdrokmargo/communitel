@@ -7,6 +7,7 @@
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              xmlns:convert="clr-namespace:Communitel.Common.Converts;assembly=Communitel.Common"
              xmlns:control="clr-namespace:Communitel.Common.Controls;assembly=Communitel.Common"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000">
 
@@ -24,10 +25,10 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-
     <GroupBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource DesignGroupBox}" Header="Customer Information">
         <GroupBox.Resources>
             <convert:ConvertToImage x:Key="convertToImage"/>
+            <convert:ConvertToVisibility x:Key="convertToVisibility"/>
         </GroupBox.Resources>
         <Grid>
             <Grid.RowDefinitions>
@@ -36,91 +37,90 @@
             </Grid.RowDefinitions>
             <control:Step Style="{DynamicResource DesignStep}" StepNumberText="1"/>
             <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="450"/>                                   
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-                <!--Grid photo customer-->
-                <Grid Grid.Row="0" Grid.Column="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition Height="40"/>
-                    </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Style="{DynamicResource DesignBorder}" Margin="5"
+                    <!--Grid photo customer-->
+                    <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Style="{DynamicResource DesignBorder}" Margin="5"
                     Height="400" Width="450" VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2">
-                        <Border.OpacityMask>
+                            <!--<Border.OpacityMask>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0"/>
                                 <GradientStop Color="#FF73B942" Offset="1"/>
                             </LinearGradientBrush>
-                        </Border.OpacityMask>
+                        </Border.OpacityMask>-->
 
-                        <Border.Background>
-                            <ImageBrush ImageSource="{Binding Path=SnapshotBitmap, Converter={StaticResource convertToImage}}"/>
-                        </Border.Background>
+                            <Border.Background>
+                                <ImageBrush ImageSource="{Binding Path=CheckIn.attachments[1].url_media, Converter={StaticResource convertToImage}}"/>
+                            </Border.Background>
 
-                        <!--<Image VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="{Binding Path=SnapshotBitmap, Converter={StaticResource convertToImage}}"/>-->
-                    </Border>
-                </Grid>
+                            <!--<Image VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="{Binding Path=SnapshotBitmap, Converter={StaticResource convertToImage}}"/>-->
+                        </Border>
+                    </Grid>
 
-                <!--Grid info customer-->
-                <Grid Grid.Row="0" Grid.Column="1" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="30" />
-                    </Grid.RowDefinitions>
+                    <!--Grid info customer-->
 
-                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Passport No."/>
-                    <TextBox Grid.Column="0" Grid.Row="1" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.passportNo}"  Margin="0 0 10 0" />
-
-                    <TextBlock Grid.Column="1" Grid.Row="0" Text="Nationality" />
-                    <TextBox Grid.Column="1" Grid.Row="1" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.nationality}"  Margin="0 0 10 0" />
-
-                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Given Name" Padding="0 10 0 0" />
-                    <TextBox Grid.Column="0" Grid.Row="3" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.firstname}"  Margin="0 0 10 0" />
-
-                    <TextBlock Grid.Column="1" Grid.Row="2" Text="Middle Name" Padding="0 10 0 0"/>
-                    <TextBox Grid.Column="1" Grid.Row="3" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.lastname}"  Margin="0 0 10 0" />
-
-                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Sex" Padding="0 10 0 0"/>
-                    <TextBox Grid.Column="0" Grid.Row="5" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=User.username}"/>
-
-                    <TextBlock Grid.Column="1" Grid.Row="4" Text="Date of Birth" Padding="0 10 0 0"/>
-                    <DatePicker  Grid.Column="1" Grid.Row="5" Style="{DynamicResource DesignDatePicker}" CalendarStyle="{DynamicResource DesignCalendar}"/>
-
-                    <Grid Grid.Column="1" Grid.Row="6">
+                    <Grid Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition />                            
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
 
-                        <Button Grid.Row="0" Grid.Column="0" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenCameraCaptureCommand}">
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="ID Number."/>
+                        <TextBox Grid.Column="0" Grid.Row="1" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=CheckIn.customer.id_number}"  Margin="0 0 10 0"/>
+
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="Nationality" />
+                        <TextBox Grid.Column="1" Grid.Row="1" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=CheckIn.customer.nationality}"  Margin="0 0 10 0" />
+
+                        <TextBlock Grid.Column="0" Grid.Row="2" Text="Given Name" Padding="0 10 0 0" />
+                        <TextBox Grid.Column="0" Grid.Row="3" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=CheckIn.customer.firstname}"  Margin="0 0 10 0" />
+
+                        <TextBlock Grid.Column="1" Grid.Row="2" Text="Middle Name" Padding="0 10 0 0"/>
+                        <TextBox Grid.Column="1" Grid.Row="3" Style="{DynamicResource DesignTextBox}" Text="{Binding Path=CheckIn.customer.lastname}"  Margin="0 0 10 0" />
+
+                        <TextBlock Grid.Column="0" Grid.Row="4" Text="Sex" Padding="0 10 0 0"/>
+                        <ComboBox ItemsSource="{Binding Sexs}" Grid.Column="0" Grid.Row="5" Style="{DynamicResource DesignComboBox}" 
+                              SelectedValue="{Binding Path=CheckIn.customer.sex}" DisplayMemberPath="description" SelectedValuePath="id" />
+
+                        <TextBlock Grid.Column="1" Grid.Row="4" Text="Date of Birth" Padding="0 10 0 0"/>
+                        <DatePicker  Grid.Column="1" Grid.Row="5" Style="{DynamicResource DesignDatePicker}" CalendarStyle="{DynamicResource DesignCalendar}" 
+                                 SelectedDate="{Binding Path=CheckIn.customer.date_birth}"/>
+
+                        <Button Grid.Row="6" Grid.Column="0" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" 
+                            Command="{Binding OpenCameraCaptureCommand}" CommandParameter="boardingpass">
                             <fa:ImageAwesome Icon="Camera" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                         </Button>
-                        <Button Grid.Row="0" Grid.Column="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenCameraCaptureCommand}">
+                        <Button Grid.Row="6" Grid.Column="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenCameraCaptureDocumentCommand}">
                             <fa:ImageAwesome Icon="Qrcode" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                         </Button>
-                    </Grid>
-                    
-                </Grid>
 
+
+                    </Grid>
+
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Background="#7F151414" Visibility="{Binding NoNewOrder, Converter={StaticResource convertToVisibility}}"></Border>
+
+                </Grid>
                 <DockPanel VerticalAlignment="Bottom" Height="50" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Background="#FFD8D8D8" Margin="0,5,5,0">
                     <Grid VerticalAlignment="Center" Margin="0,5,5,5">
                         <Grid.ColumnDefinitions>
@@ -133,10 +133,14 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <Button Grid.Column="0" Content="Close" Style="{DynamicResource DesignButton}" Margin="0,0,5,0" 
-                        VerticalAlignment="Bottom" Command="{Binding OpenSearchCommand}" MaxWidth="300"/>
+                        VerticalAlignment="Bottom" Command="{Binding CloseCommand}" MaxWidth="300"/>
 
                             <Button Grid.Column="1" Content="Next" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
-                        VerticalAlignment="Bottom" Command="{Binding NextOrPreviousCommand}" CommandParameter="DocumentsView" MaxWidth="300"/>
+                        VerticalAlignment="Bottom" Command="{Binding NextOrPreviousCommand}" CommandParameter="CustomerPhotoView" MaxWidth="300"
+                                    Visibility="{Binding Path=NewOrder, Converter={StaticResource convertToVisibility}}"/>
+
+                            <Button Grid.Column="1" Content="New Order" Style="{DynamicResource DesignButton}" Margin="5,0,0,0" 
+                        VerticalAlignment="Bottom" Command="{Binding NewOrderCommand}" Visibility="{Binding Path=NoNewOrder, Converter={StaticResource convertToVisibility}}" MaxWidth="300"/>
                         </Grid>
                     </Grid>
                 </DockPanel>

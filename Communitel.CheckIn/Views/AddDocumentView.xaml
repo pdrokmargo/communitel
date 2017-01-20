@@ -4,9 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Communitel.CheckIn.Views"
+             xmlns:convert="clr-namespace:Communitel.Common.Converts;assembly=Communitel.Common"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="460" Height="550" Width="460">
+             d:DesignHeight="450" d:DesignWidth="460" Height="450" Width="460">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -21,9 +22,15 @@
     </UserControl.Resources>
 
     <GroupBox Style="{DynamicResource DesignGroupBox}" Header="Document Information">
+        <GroupBox.Resources>
+            <convert:ConvertToImage x:Key="convertToImage"/>
+        </GroupBox.Resources>
         <Grid>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -37,27 +44,33 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.Column="0" Style="{DynamicResource DesignBorder}" Margin="5"
-                    Height="150" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2">
-                    <Image VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Style="{DynamicResource DesignBorder}" Margin="5"
+                    Height="150" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2">                    
                     <!--<fa:ImageAwesome Icon="Image" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
+                    <Border.Background>
+                        <ImageBrush ImageSource="{Binding Path=Attachment.url_media, Converter={StaticResource convertToImage}}"/>
+                    </Border.Background>
                 </Border>
-                <Button Grid.Column="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}">
+                <Button Grid.Row="0" Grid.Column="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenCameraCaptureCommand}" CommandParameter="documents">
                     <fa:ImageAwesome Width="50" Height="50" Icon="Camera" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                 </Button>
+                <TextBlock Grid.Row="1" Grid.Column="1" TextAlignment="Center" Text="Or"/>
+                <Button Grid.Row="2" Grid.Column="1" Style="{DynamicResource ResourceKey=DesignButtonImageFont}" Command="{Binding OpenBrowserCommand}" CommandParameter="documents">
+                    <fa:ImageAwesome Width="50" Height="50" Icon="FolderOutlinepenOutline" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Button>
             </Grid>
-
-            <TextBlock Grid.Row="1" Text="Document Type"/>
-            <ComboBox Grid.Row="2" Style="{DynamicResource DesignComboBox}">
-                <ComboBoxItem>ID (Passport/DL)</ComboBoxItem>
-                <ComboBoxItem>Reservation/Boarding Pass</ComboBoxItem>
-                <ComboBoxItem>Reservation/Boarding Pass on phone</ComboBoxItem>
+                       
+            <TextBlock Grid.Row="3" Text="Document Type"/>
+            <ComboBox Grid.Row="4" Style="{DynamicResource DesignComboBox}" ItemsSource="{Binding DodumentTypes}" SelectedValue="{Binding Path=Attachment.attachtype_id}"
+                      SelectedValuePath="id" DisplayMemberPath="description">                
             </ComboBox>
 
-            <TextBlock Grid.Row="3" Text="Number"/>
-            <TextBox Grid.Row="4" Style="{DynamicResource DesignTextBox}"/>
-
-            <Button Content="Add" Style="{DynamicResource DesignButton}" Grid.Row="5" Command="{Binding AddCategoryCommand}"/>
+            <Button Content="Add" Style="{DynamicResource DesignButton}" Grid.Row="5" Command="{Binding AddCommand}" CommandParameter="attachment"/>
 
         </Grid>
     </GroupBox>

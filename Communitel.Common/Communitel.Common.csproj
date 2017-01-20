@@ -147,8 +147,10 @@
     <Compile Include="Converts\ConvertToBool.cs" />
     <Compile Include="Converts\ConvertToDecimal.cs" />
     <Compile Include="Converts\ConvertToImage.cs" />
+    <Compile Include="Converts\ConvertToVisibility.cs" />
     <Compile Include="Converts\ConvertValidateProfile.cs" />
     <Compile Include="Enums\DialogResultV.cs" />
+    <Compile Include="Enums\enDataLookUp.cs" />
     <Compile Include="Enums\enUserProfiles.cs" />
     <Compile Include="Enums\enView.cs" />
     <Compile Include="Enums\MessageBoxButtonsV.cs" />
@@ -159,6 +161,8 @@
     <Compile Include="Helpers\ServiceRequest.cs" />
     <Compile Include="Messages\MessageBox.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\DataLookup.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\NotifyProperty.cs" />
     <Compile Include="Models\Parameters.cs" />

@@ -5,6 +5,7 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,33 @@ namespace Communitel.Common.Helpers
 
         public ServiceRequest()
         { }
+
+        //public Task<dynamic> GET(string requestUri, Dictionary<string, object> headers = null)
+        //{
+        //    if (requestUri == null)
+        //    {
+        //        throw new ArgumentNullException("RequestUri");
+        //    }
+
+        //    var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + requestUri));
+        //    http.Method = "GET";
+        //    http.ContentType = "application/json";
+        //    http.Accept = "application/json";
+        //    http.Headers["Authorization"] = "Bearer " + Variables.Token;
+
+        //    if (headers != null && headers.Count > 0)
+        //        foreach (var item in headers)
+        //            http.Headers[item.Key] = item.Value.ToString();
+
+
+        //    var response = http.GetResponse();
+        //    var stream = response.GetResponseStream();
+        //    var sr = new StreamReader(stream);
+        //    var content = sr.ReadToEnd();
+        //    dynamic magic = JsonConvert.DeserializeObject(content);
+        //    return magic;
+        //}
+
         public async Task<dynamic> requestToken(string oauthUri, string parsedContent)
         {
             var http = (HttpWebRequest)WebRequest.Create(new Uri(ConfigurationManager.AppSettings["baseURL"] + oauthUri));
@@ -180,6 +208,39 @@ namespace Communitel.Common.Helpers
             var content = await sr.ReadToEndAsync();
             dynamic magic = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject(content));
             return magic;
+        }
+
+        public async Task<dynamic> POST(string requestUri, System.Net.Http.MultipartFormDataContent formData)
+        {
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                client.BaseAddress = new Uri(ConfigurationManager.AppSettings["baseURL"]);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Variables.Token);
+                var response = await client.PostAsync(requestUri, formData);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    dynamic magic = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject(content));
+                    return magic;
+                }
+            }
+            return null;
+        }
+
+        public async Task<dynamic> PUT(string requestUri, string parsedContent, System.Net.Http.MultipartFormDataContent formData)
+        {
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Variables.Token);
+                var response = await client.PutAsync(requestUri, formData);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    dynamic magic = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject(content));
+                    return magic;
+                }
+            }
+            return null;
         }
     }
 }
