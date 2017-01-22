@@ -154,3 +154,5 @@ C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\Custom
 C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\CustomerPhotoView.baml
 C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\CameraCaptureDocumentView.g.cs
 C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\CameraCaptureDocumentView.baml
+C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\SearchCheckInView.g.cs
+C:\Users\carlo\Source\Repos\communitel\Communitel.CheckIn\obj\Debug\Views\SearchCheckInView.baml

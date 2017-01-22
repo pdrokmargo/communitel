@@ -45,6 +45,9 @@ namespace Communitel.CheckIn.ViewModels
         public DelegateCommand<object> RemoveDocumentCommand { get; set; }
         public DelegateCommand<object> SelectPriceCommand { get; set; }
         public DelegateCommand CloseCommand { get; set; }
+        public DelegateCommand<string> NextPageCommand { get; set; }
+        public DelegateCommand GetAllCommand { get; set; }
+        public DelegateCommand OpenCreateCommand { get; set; }
         [ImportingConstructor]
         public CheckInViewModel()
         {
@@ -64,6 +67,9 @@ namespace Communitel.CheckIn.ViewModels
             RemoveDocumentCommand = new DelegateCommand<object>(RemoveDocumentExecute);
             SelectPriceCommand = new DelegateCommand<object>(SelectPriceExecute);
             CloseCommand = new DelegateCommand(CloseExecute);
+            NextPageCommand = new DelegateCommand<string>(NextPageExecute);
+            GetAllCommand = new DelegateCommand(GetAllExecute);
+            OpenCreateCommand = new DelegateCommand(OpenCreateExecute);
             _checkin = new Models.CheckIn();
 
 
@@ -91,6 +97,7 @@ namespace Communitel.CheckIn.ViewModels
         private List<DataLookup> _lengthTypes;
         private OrderBagDetail _orderBagDetail;
         private List<DataLookup> _paymentTypes;
+        private dynamic _checkIns;
         #endregion
 
         #region properties
@@ -118,6 +125,7 @@ namespace Communitel.CheckIn.ViewModels
         public List<DataLookup> PaymentTypes { get { return _paymentTypes; } set { _paymentTypes = value; NotifyPropertyChanged("PaymentTypes"); } }
         public bool NewOrder { get { return _newOrder; } set { _newOrder = value; NotifyPropertyChanged("NewOrder"); } }
         public bool NoNewOrder { get { return _noNewOrder; } set { _noNewOrder = value; NotifyPropertyChanged("NoNewOrder"); } }
+        public dynamic CheckIns { get { return _checkIns; } set { _checkIns = value; NotifyPropertyChanged("CheckIns"); } }
         #endregion
 
         private void LoadCameraCaptureExecure()
@@ -306,8 +314,10 @@ namespace Communitel.CheckIn.ViewModels
                 OpenIndicator();
                 var result = await s.GET<Result<int>>("/api/consecutive_order");
                 CheckIn.order_bag.order_number = result.data.ToString();
+
                 NewOrder = true;
                 NoNewOrder = false;
+
                 CloseIndicator();
             }
             catch (Exception ex)
@@ -542,11 +552,85 @@ namespace Communitel.CheckIn.ViewModels
             RegionManager.RequestNavigate(RegionNames.ContentStep, "/HomeView}");
         }
 
-        /// <summary>
-        /// https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui
-        /// https://blog.jsinh.in/preview-webcam-video-and-take-snapshot-in-wpf-using-aforge-and-mvvm/#.WHZoyBt97IU
-        /// </summary>
+        private async Task Get(string search, string sortBy = "id", int reverse = 0)
+        {
+            try
+            {
+                ServiceRequest s = new ServiceRequest();
+                Dictionary<string, object> headers = new Dictionary<string, object>();
+                headers.Add("pageSize", 4);
+                headers.Add("sortBy", sortBy);
+                headers.Add("reverse", reverse);
+                dynamic result;
 
+                result = await s.GET($"/api/checkin?page={Page}&search={Search}", headers);
 
+                this.CheckIns = result.data;
+            }
+            catch (Exception ex)
+            {
+                CloseIndicator();
+                MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
+            }
+        }
+
+        private async void GetAllExecute()
+        {
+            await GetAll();
+        }
+
+        public async Task GetAll()
+        {
+            try
+            {
+                OpenIndicator();
+                await Get(this.Search, this.SortBy, this.Reverse);
+                CloseIndicator();
+            }
+            catch (Exception ex)
+            {
+                CloseIndicator();
+                MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
+            }
+        }
+
+        private async void NextPageExecute(string option)
+        {
+            try
+            {
+                OpenIndicator();
+
+                if (option == "next")
+                {
+                    if (Page < int.Parse(this.CheckIns.last_page.ToString()))
+                        Page++;
+                }
+                else
+                {
+                    if (Page > 1)
+                        Page--;
+                }
+
+                await Get(this.Search, this.SortBy, this.Reverse);
+                CloseIndicator();
+            }
+            catch (Exception ex)
+            {
+                CloseIndicator();
+                MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
+            }
+        }
+
+        private void OpenCreateExecute()
+        {
+            try
+            {
+                RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/CheckInView");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Common.Enums.MessageBoxIconV.Error);
+            }
+        }
     }
 }
