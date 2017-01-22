@@ -21,6 +21,7 @@ namespace Communitel.Common.ViewModels
         public DelegateCommand OpenConfigurationCommand { get; set; }
         public DelegateCommand OpenSearchUserCommand { get; set; }
         public DelegateCommand OpenCheckInCommand { get; set; }
+        public DelegateCommand OpenOrderLookupCommand { get; set; }
         [ImportingConstructor]
         public MenuViewModel()
         {
@@ -29,6 +30,8 @@ namespace Communitel.Common.ViewModels
             OpenConfigurationCommand = new DelegateCommand(OpenConfigurationExecute);
             OpenSearchUserCommand = new DelegateCommand(OpenSearchUserExecute);
             OpenCheckInCommand = new DelegateCommand(OpenCheckInExecute);
+            OpenOrderLookupCommand = new DelegateCommand(OpenCheckInExecute);
+
             Menus = new ObservableCollection<Menu>();
 
             var list = Variables.User.userprofile.privileges as Newtonsoft.Json.Linq.JArray;
@@ -36,6 +39,7 @@ namespace Communitel.Common.ViewModels
             bool hasProduct = list.Where(item => item["id"].ToObject<int>() == (int)Enums.enView.CatalogProducts).Count() > 0;
             bool hasConfiguration = list.Where(item => item["id"].ToObject<int>() == (int)Enums.enView.Configuration).Count() > 0;
             bool hasCheckin = list.Where(item => item["id"].ToObject<int>() == (int)Enums.enView.CheckIn).Count() > 0;
+            bool hasOrderLookup = list.Where(item => item["id"].ToObject<int>() == (int)Enums.enView.OrderLookup).Count() > 0;
 
             //var t = list[0].Value<Newtonsoft.Json.Linq.JObject>("views")["description"];
 
@@ -44,6 +48,7 @@ namespace Communitel.Common.ViewModels
             Menus.Add(new Menu { Name = "Catalog Products", Icon = FontAwesome.WPF.FontAwesomeIcon.ShoppingBag, Command = OpenSearchProductCommand, Visible = hasProduct ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
             Menus.Add(new Menu { Name = "Configuration", Icon = FontAwesome.WPF.FontAwesomeIcon.Cog, Command = OpenConfigurationCommand, Visible = hasConfiguration ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
             Menus.Add(new Menu { Name = "CheckIn", Icon = FontAwesome.WPF.FontAwesomeIcon.CheckCircle, Command = OpenCheckInCommand, Visible = hasCheckin ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
+            Menus.Add(new Menu { Name = "Order Lookup", Icon = FontAwesome.WPF.FontAwesomeIcon.CheckCircle, Command = OpenOrderLookupCommand, Visible = hasOrderLookup ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
 
             this.FullName = $"{Variables.User.firstname} {Variables.User.lastname}";
             this.Profile = Variables.User.userprofile;
@@ -114,6 +119,18 @@ namespace Communitel.Common.ViewModels
             try
             {
                 RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/CheckInView");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void OpenOrderLookup()
+        {
+            try
+            {
+                RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/OrderLookupView");
             }
             catch (Exception ex)
             {

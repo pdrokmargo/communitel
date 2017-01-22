@@ -8,9 +8,10 @@ namespace Communitel.Common.Enums
 {
     public enum enView
     {
-        CheckIn = 1,
-        CatalogProducts = 2,
-        Configuration = 3,
-        Users = 4
+        OrderLookup = 1,
+        CheckIn = 2,
+        CatalogProducts = 3,
+        Configuration = 4,
+        Users = 5
     }
 }
