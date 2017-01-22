@@ -20,7 +20,7 @@ namespace Communitel.Common.ViewModels
         public DelegateCommand OpenDashBoardCommand { get; set; }
         public DelegateCommand OpenConfigurationCommand { get; set; }
         public DelegateCommand OpenSearchUserCommand { get; set; }
-        public DelegateCommand OpenCheckInCommand { get; set; }
+        public DelegateCommand OpenSearchCheckInCommand { get; set; }
         [ImportingConstructor]
         public MenuViewModel()
         {
@@ -28,7 +28,7 @@ namespace Communitel.Common.ViewModels
             OpenDashBoardCommand = new DelegateCommand(OpenDashBoardExecute);
             OpenConfigurationCommand = new DelegateCommand(OpenConfigurationExecute);
             OpenSearchUserCommand = new DelegateCommand(OpenSearchUserExecute);
-            OpenCheckInCommand = new DelegateCommand(OpenCheckInExecute);
+            OpenSearchCheckInCommand = new DelegateCommand(OpenSearchCheckInExecute);
             Menus = new ObservableCollection<Menu>();
 
             var list = Variables.User.userprofile.privileges as Newtonsoft.Json.Linq.JArray;
@@ -43,7 +43,7 @@ namespace Communitel.Common.ViewModels
             Menus.Add(new Menu { Name = "Users", Icon = FontAwesome.WPF.FontAwesomeIcon.Users, Command = OpenSearchUserCommand, Visible = hasUser ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
             Menus.Add(new Menu { Name = "Catalog Products", Icon = FontAwesome.WPF.FontAwesomeIcon.ShoppingBag, Command = OpenSearchProductCommand, Visible = hasProduct ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
             Menus.Add(new Menu { Name = "Configuration", Icon = FontAwesome.WPF.FontAwesomeIcon.Cog, Command = OpenConfigurationCommand, Visible = hasConfiguration ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
-            Menus.Add(new Menu { Name = "CheckIn", Icon = FontAwesome.WPF.FontAwesomeIcon.CheckCircle, Command = OpenCheckInCommand, Visible = hasCheckin ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
+            Menus.Add(new Menu { Name = "CheckIn", Icon = FontAwesome.WPF.FontAwesomeIcon.CheckCircle, Command = OpenSearchCheckInCommand, Visible = hasCheckin ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed });
 
             this.FullName = $"{Variables.User.firstname} {Variables.User.lastname}";
             this.Profile = Variables.User.userprofile;
@@ -109,11 +109,11 @@ namespace Communitel.Common.ViewModels
             }
         }
 
-        private void OpenCheckInExecute()
+        private void OpenSearchCheckInExecute()
         {
             try
             {
-                RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/CheckInView");
+                RegionManager.RequestNavigate(RegionNames.WorkSpaceRegion, "/SearchCheckInView");
             }
             catch (Exception ex)
             {

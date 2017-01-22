@@ -176,6 +176,9 @@
     <Compile Include="Views\DocumentsView.xaml.cs">
       <DependentUpon>DocumentsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SearchCheckInView.xaml.cs">
+      <DependentUpon>SearchCheckInView.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -233,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchCheckInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
